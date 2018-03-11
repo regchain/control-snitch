@@ -1,11 +1,11 @@
 <?php
 
-namespace e_Kejaksaaan\Sample\Providers;
+namespace EKejaksaaan\Lapdu\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 
-class SampleServiceProvider extends ServiceProvider
+class LapduServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -23,14 +23,18 @@ class SampleServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations/');
         $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'sample');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'lapdu');
 
         $this->publishes([
-            __DIR__.'/../../resources/views' => base_path('resources/views/vendor/sample'),
+            __DIR__.'/../../resources/views' => base_path('resources/views/vendor/lapdu'),
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../../config/sample.php' => config_path('sample.php'),
+            __DIR__.'/../../resources/assets' => public_path('vendor/lapdu'),
+        ], 'public');
+
+        $this->publishes([
+            __DIR__.'/../../config/lapdu.php' => config_path('lapdu.php'),
         ], 'config');
     }
 
@@ -41,6 +45,6 @@ class SampleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../../config/sample.php', 'sample');
+        $this->mergeConfigFrom(__DIR__.'/../../config/lapdu.php', 'lapdu');
     }
 }
