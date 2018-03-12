@@ -34,7 +34,7 @@ class LapduServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/../../config/lapdu.php' => config_path('lapdu.php'),
+            __DIR__.'/../../config/app.php' => config_path('lapdu.php'),
         ], 'config');
     }
 
@@ -45,6 +45,6 @@ class LapduServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../../config/lapdu.php', 'lapdu');
+        $this->mergeConfigFrom(__DIR__.'/../../config/app.php', 'lapdu');
     }
 }
