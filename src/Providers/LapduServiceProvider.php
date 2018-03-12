@@ -1,6 +1,6 @@
 <?php
 
-namespace EKejaksaaan\Lapdu\Providers;
+namespace EKejaksaan\Lapdu\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
