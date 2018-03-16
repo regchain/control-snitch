@@ -1,5 +1,8 @@
 <?php
 
 Route::prefix('lapdu')->group(function () {
-    Route::get('/', 'EKejaksaan\Lapdu\Http\Controllers\HomeController@index')->name('lapdu.home');
+    Route::get('/', 'EKejaksaan\Lapdu\Http\Controllers\PageController@index')->name('lapdu.home');
+    Route::get('cara_lapdu', 'EKejaksaan\Lapdu\Http\Controllers\PageController@lapdu')->name('lapdu.howtolapdu');
+    Route::get('cara_whistle', 'EKejaksaan\Lapdu\Http\Controllers\PageController@whistle')->name('lapdu.howtowhistle');
+    Route::get('lapor/{page}', 'EKejaksaan\Lapdu\Http\Controllers\PageController@question')->name('lapdu.question');
 });
