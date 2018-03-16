@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>@yield('title') | e-LAPDU</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    @include('elapdu.pelapor.head')
+    @include('vendor.lapdu.pelapor.head')
 
     @yield('stylesheets')
 
@@ -17,10 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="skin-green-light sidebar-mini sidebar-collapse ">
     <div class="wrapper">
         <!-- Header -->
-        @include('elapdu.pelapor.header')
+        @include('vendor.lapdu.pelapor.header')
 
         <!-- Sidebar -->
-        @include('elapdu.pelapor.sidebar')
+        @include('vendor.lapdu.pelapor.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="media">
                     <div class="media-left media-middle">
                         <a href="operator">
-                            <img class="media-object" src="{{asset('bower_components/admin-lte/dist/img/logo-kejaksaan.png')}}" alt="logo"  height="100">
+                            <img class="media-object" src="{{asset('vendor/core/admin-lte/dist/img/logo-kejaksaan.png')}}" alt="logo"  height="100">
                         </a>
                     </div>
                     <div class="media-body">
@@ -54,11 +54,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-wrapper -->
 
         <!-- Footer -->
-        @include('elapdu.pelapor.footer')
+        @include('vendor.lapdu.pelapor.footer')
 
         <!-- Control Sidebar -->
 
-        @include('elapdu.pelapor.sidebar-right')
+        @include('vendor.lapdu.pelapor.sidebar-right')
 
         <!-- /.control-sidebar -->
         <!-- Add the sidebar's background. This div must be placed
@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-    @include('elapdu.pelapor.scripts')
+    @include('vendor.lapdu.pelapor.scripts')
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
         Both of these plugins are recommended to enhance the
