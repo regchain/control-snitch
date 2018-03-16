@@ -1186,7 +1186,7 @@
 	#banner {
 		background-attachment:	scroll,							fixed;
 		background-color:		#666;
-		background-image:		url('images/overlay.png'),		url('{{ asset('bower_components/templates/alpha/images/kejaksaan.jpg')}}');
+		background-image:		url('images/overlay.png'),		url('{{ asset('vendor/lapdu/templates/alpha/images/kejaksaan.jpg')}}');
 		background-position:	top left,						center center;
 		background-repeat:		repeat,							no-repeat;
 		background-size:		auto,							cover;

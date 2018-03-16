@@ -54,7 +54,7 @@
 	html {
 		background-color:		_palette(accent2, bg);
 		background-attachment:	fixed,						fixed;
-		background-image:		url('{{ asset('bower_components/templates/welcome/images/ovelay.png')}}'),	url('bower_components/templates/welcome/images/bg.jpg');
+		background-image:		url('{{ asset('vendor/lapdu/templates/welcome/images/ovelay.png')}}'),	url('vendor/lapdu/templates/welcome/images/bg.jpg');
 		background-position:	top left,					center center;
 		background-repeat:		repeat,						none;
 		background-size:		auto,						cover;
