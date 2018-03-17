@@ -59,7 +59,7 @@
                 <span class="icon major fa-search-plus accent4"></span>
                 <h3>KAWAL PENGADUAN</h3>
                 <ul class="actions">
-                    <li><a href="kawal" class="button alt">Lihat Detil</a></li>
+                    <li><a href="{{ route('lapdu.trace') }}" class="button alt">Lihat Detil</a></li>
                 </ul>
             </section>
 

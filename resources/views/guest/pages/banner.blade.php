@@ -5,6 +5,6 @@
 
     <ul class="actions">
         <li><a href="#fitur" class="button special icon">LAPOR!</a></li>
-        <li><a href="kawal" class="button icon">PERIKSA PENGADUAN</a></li>
+        <li><a href="{{ route('lapdu.trace') }}" class="button icon">PERIKSA PENGADUAN</a></li>
     </ul>
 </section>

@@ -11,7 +11,7 @@
                     <li><a href="{{ route('lapdu.howtowhistle') }}">Wishtle Blower</a></li>
                     <li><a href="{{ route('lapdu.howtowhistle') }}">Perlindungan Saksi</a></li>
                     <li><a href="{{ route('lapdu.question', ['page' => 1]) }}">Lapor..!</a></li>
-                    <li><a href="kawal">Periksa Pengaduan</a></li>
+                    <li><a href="{{ route('lapdu.trace') }}">Periksa Pengaduan</a></li>
                     {{-- <li>
                         <a href="#">Masuk</a>
                         <ul>
@@ -23,8 +23,8 @@
                     </li> --}}
                 </ul>
             </li>
-            <li><a href="kawal" class="button">Masuk</a></li>
-            <li><a href="register" class="button">Buat Akun</a></li>
+            <li><a href="{{ route('lapdu.trace') }}" class="button">Masuk</a></li>
+            <li><a href="{{ route('register') }}" class="button">Buat Akun</a></li>
         </ul>
     </nav>
 </header>
