@@ -47,4 +47,9 @@ class PageController extends Controller
         }
         # code...
     }
+
+    public function trace()
+    {
+        return view('lapdu::guest.pages.kawal');
+    }
 }
