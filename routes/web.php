@@ -6,4 +6,7 @@ Route::prefix('lapdu')->group(function () {
     Route::get('cara_whistle', 'EKejaksaan\Lapdu\Http\Controllers\PageController@whistle')->name('lapdu.howtowhistle');
     Route::get('lapor/{page}', 'EKejaksaan\Lapdu\Http\Controllers\PageController@question')->name('lapdu.question');
     Route::get('kawal', 'EKejaksaan\Lapdu\Http\Controllers\PageController@trace')->name('lapdu.trace');
+    Route::resource('report', 'EKejaksaan\Lapdu\Http\Controllers\ReportController', [
+        'as' => 'lapdu'
+    ]);
 });
