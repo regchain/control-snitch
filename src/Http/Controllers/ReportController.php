@@ -72,7 +72,25 @@ class ReportController extends Controller
         $input = $request->except('_method');
 
         foreach ($input as $k => $i) {
-            $data->$k = $i;
+            if ($k != 'files') {
+                $data->$k = $i;
+            } else {
+                $paths = [];
+
+                foreach ($i as $u) {
+                    $paths[] = $u->store('files');
+                }
+
+                if (!$data->files) {
+                    $data->files = [];
+                }
+
+                $files = $data->files;
+                $files = array_merge($files, $paths);
+                $data->files = $files;
+                $data->update();
+                return redirect()->back();
+            }
         }
 
         $data->save();
