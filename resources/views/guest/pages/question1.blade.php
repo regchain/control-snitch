@@ -20,12 +20,12 @@
                 Data Terlapor
             </div>
 
-            <h3 class="box-title">DATA PELAPOR</h3>
+            <h4 class="box-title">DATA PELAPOR</h4>
 
             <div class="box-body">
                 <div class="col-xs-12">
                     <div class="progress">
-                    <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                    <div class="progress-bar progress-bar-primary progress-bar-striped progress-sm" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
                         <span class="sr-only">5% Complete (success)</span>
                     </div>
                     </div>
@@ -157,11 +157,11 @@
             <div class="row no-print">
                 <div class="col-xs-12">
 
-                    <a href='{{ route('lapdu.question', ['page' => 2, 'id' => $data->_id]) }}' class="button special pull-right">
+                    <a href='{{ route('lapdu.question', ['page' => 2, 'id' => $data->_id]) }}' class="button special small pull-right">
                         <i class="fa fa-check"></i> Lanjut
                     </a>
 
-                    <a href='#' class="button alt pull-right" style="margin-right: 5px;">
+                    <a href='#' class="button alt small pull-right" style="margin-right: 5px;">
                         <i class="fa fa-exclamation-triangle"></i> Batal
                     </a>
                 </div>
