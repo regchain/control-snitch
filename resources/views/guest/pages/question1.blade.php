@@ -145,7 +145,9 @@
         </div>
 
         <div class="box-footer">
-            <a href="#" class="btn btn-primary pull-right" id="submit-pelapor"><span class="fa fa-plus"></span> Pelapor / Saksi</a>
+            <a href="javascript:void(0)" class="btn btn-primary pull-right" id="submit-pelapor">
+                <span class="fa fa-plus"></span> Pelapor / Saksi
+            </a>
         </div>
 
         <div class="row">
@@ -218,15 +220,13 @@
                 let data = $('#pelapor-form').serialize();
                 $.post("{{ route('api.lapdu.reporter.store') }}", data)
                     .done(function(res) {
-                        console.log(res)
-
                         pelaporTbl.row.add([
                             counter,
                             res.name,
                             res.organization,
                             res.handphone + ' - ' + res.phone + ' - ' + res.email
                         ]).draw(false)
-                        // pelaporTbl.row.add()
+                        counter++
                     })
             })
         })
