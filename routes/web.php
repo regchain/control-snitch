@@ -9,4 +9,8 @@ Route::prefix('lapdu')->group(function () {
     Route::resource('report', 'EKejaksaan\Lapdu\Http\Controllers\ReportController', [
         'as' => 'lapdu'
     ]);
+
+    Route::prefix('operator')->middleware('web')->group(function() {
+        Route::get('/', 'EKejaksaan\Lapdu\Http\Controllers\OperatorController@index')->name('lapdu.operator.home');
+    });
 });
