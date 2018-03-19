@@ -8,8 +8,8 @@
 
 @section('content')
     <header>
-        <h2>Periksa Pengaduan</h2>
-        <p>Masukkan nomor tiket pengaduan anda.</p>
+        <h2>Login</h2>
+        <p>Laporan Pengaduan Masyarakat</p>
     </header>
 
     <div class="box">
@@ -41,11 +41,11 @@
             </div>
 
 
-            <div class="row uniform 50%">
+            {{--  <div class="row uniform 50%">
                 <div class="12u">
                     <input type="text" name="subject" id="subject" value="" placeholder="Cantumkan nomor Laporan Pengaduan" />
                 </div>
-            </div>
+            </div>  --}}
 
             <div class="row uniform 50%">
                 <div class="6u 12u(narrower)">
@@ -64,7 +64,7 @@
             <div class="row uniform">
                 <div class="12u">
                     <ul class="actions align-center">
-                        <li><input type="submit" value="kirim" /></li>
+                        <li><input type="submit" value="Masuk" /></li>
                     </ul>
                 </div>
             </div>
