@@ -74,6 +74,7 @@
                         </thead>
 
                         <tbody>
+                            @if ($data->files)
                             @foreach ($data->files as $f)
                             <tr>
                                 <td>{{ $f }}</td>
@@ -82,6 +83,7 @@
                                 <td></td>
                             </tr>
                             @endforeach
+                            @endif
                         </tbody>
 
                         <tfoot>
