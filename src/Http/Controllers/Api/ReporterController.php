@@ -48,7 +48,8 @@ class ReporterController extends Controller
             'address' => $request->get('address'),
             'zipcode' => $request->get('zipcode'),
             'city' => $request->get('city'),
-            'province' => $request->get('province')
+            'province' => $request->get('province'),
+            'status' => $request->has('status') ? $request->get('status') : 'pelapor'
         ];
 
         if (!$data->reporters) {
