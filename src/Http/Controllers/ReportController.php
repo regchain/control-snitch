@@ -75,10 +75,15 @@ class ReportController extends Controller
             if ($k != 'files') {
                 $data->$k = $i;
             } else {
-                $paths = [];
+                $items = [];
 
                 foreach ($i as $u) {
-                    $paths[] = $u->store('files');
+                    $items[] = [
+                        'filename' => $u->getClientOriginalName(),
+                        'extension' => $u->getClientOriginalExtension(),
+                        'size' => $u->getClientSize(),
+                        'path' => $u->store('files')
+                    ];
                 }
 
                 if (!$data->files) {
@@ -86,7 +91,7 @@ class ReportController extends Controller
                 }
 
                 $files = $data->files;
-                $files = array_merge($files, $paths);
+                $files = array_merge($files, $items);
                 $data->files = $files;
                 $data->update();
                 return redirect()->back();
