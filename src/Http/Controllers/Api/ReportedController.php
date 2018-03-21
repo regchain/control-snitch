@@ -40,7 +40,11 @@ class ReportedController extends Controller
         $user = User::find($request->get('reported-id'));
         $reported = [
             'name' => $user->name,
+            'nip' => $user->nip,
+            'nrp' => $user->nrp,
+            'jobtitle' => $user->jobtitle,
             'institute' => $user->institute,
+            'unit' => $user->unit,
             'position' => $request->get('position'),
             'status' => $request->get('status')
         ];
