@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -24,11 +24,11 @@
 
         <div class="box-body">
             <div class="row">
-                @include('vendor.lapdu.partials.dashboard.putusan')
+                @include('lapdu::partials.dashboard.putusan')
 
-                @include('vendor.lapdu.partials.dashboard.subyek_hukum')
+                @include('lapdu::partials.dashboard.subyek_hukum')
 
-                @include('vendor.lapdu.partials.dashboard.kasus')
+                @include('lapdu::partials.dashboard.kasus')
             </div>
         </div>
         <!-- /.box-body -->

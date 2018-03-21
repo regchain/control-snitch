@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.templates.alpha.template')
+@extends('lapdu::templates.alpha.template')
 
 @section('title', 'Pengaduan Masyarakat')
 
@@ -30,7 +30,7 @@
                     <h3>Akuntabilitas Pengaduan Masyarakat</h3>
                 </div>
 
-                @include('vendor.lapdu.guest.pages.public_info1')
+                @include('lapdu::guest.pages.public_info1')
             </section>
         </div>
     </section>

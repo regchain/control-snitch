@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'home')
 
@@ -7,11 +7,11 @@
 @section('subjudul', 'REPUBLIK INDONESIA')
 
 @section('stylesheets')
-      
+
 @endsection
 
 @section('content')
-  
+
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -326,6 +326,6 @@
 @endsection
 
 @section('scripts')
-    
+
 @endsection
 

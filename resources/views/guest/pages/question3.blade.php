@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.templates.alpha.templatealt')
+@extends('lapdu::templates.alpha.templatealt')
 
 @section('title', 'Uraian Permasalahan')
 

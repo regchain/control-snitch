@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>@yield('title') | e-LAPDU</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    @include('vendor.lapdu.pelapor.head')
+    @include('lapdu::pelapor.head')
 
     @yield('stylesheets')
 
@@ -17,10 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="skin-green-light sidebar-mini sidebar-collapse ">
     <div class="wrapper">
         <!-- Header -->
-        @include('vendor.lapdu.pelapor.header')
+        @include('lapdu::pelapor.header')
 
         <!-- Sidebar -->
-        @include('vendor.lapdu.pelapor.sidebar')
+        @include('lapdu::pelapor.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -54,11 +54,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-wrapper -->
 
         <!-- Footer -->
-        @include('vendor.lapdu.pelapor.footer')
+        @include('lapdu::pelapor.footer')
 
         <!-- Control Sidebar -->
 
-        @include('vendor.lapdu.pelapor.sidebar-right')
+        @include('lapdu::pelapor.sidebar-right')
 
         <!-- /.control-sidebar -->
         <!-- Add the sidebar's background. This div must be placed
@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-    @include('vendor.lapdu.pelapor.scripts')
+    @include('lapdu::pelapor.scripts')
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
         Both of these plugins are recommended to enhance the

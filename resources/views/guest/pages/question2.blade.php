@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.templates.alpha.templatealt')
+@extends('lapdu::templates.alpha.templatealt')
 
 @section('title', 'Data Terlapor')
 
@@ -106,7 +106,7 @@
         </div>
 
         <div class="row">
-            @include('vendor.lapdu.guest.pages.terlapor_view')
+            @include('lapdu::guest.pages.terlapor_view')
         </div>
 
         <div class="row">

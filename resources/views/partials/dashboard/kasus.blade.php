@@ -18,7 +18,7 @@
                 <i class="fa fa-bullhorn"></i>
             </div>
 
-            <a href="laporan" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.laporan.index') }}" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->

@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.pelapor.template')
+@extends('lapdu::pelapor.template')
 
 @section('title', 'Pelapor')
 
@@ -32,7 +32,7 @@
                     <div class="tab-pane active" id="tab_1-1">
                         <div class="row">
                             <div class="box-body">
-                                @include('vendor.lapdu.pelapor.partials.progress')
+                                @include('lapdu::pelapor.partials.progress')
                             </div>
                             <!-- /.box-body -->
                         </div>

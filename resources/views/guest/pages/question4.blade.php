@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.templates.alpha.templatealt')
+@extends('lapdu::templates.alpha.templatealt')
 
 @section('title', 'Data Penunjang')
 
@@ -77,9 +77,9 @@
                             @if ($data->files)
                             @foreach ($data->files as $f)
                             <tr>
-                                <td>{{ $f }}</td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $f['filename'] }}</td>
+                                <td>{{ $f['extension'] }}</td>
+                                <td>{{ $f['size']/1000 . ' kB' }}</td>
                                 <td></td>
                             </tr>
                             @endforeach

@@ -11,21 +11,21 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab_1-1">
 
-            	@include('elapdu.partials.kasus')
+            	@include('lapdu::partials.kasus')
 
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2-2">
 
-            	@include('elapdu.partials.datapenunjang')
-              
+            	@include('lapdu::partials.datapenunjang')
+
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_3-2">
 
-              @include('elapdu.partials.terlapor_view')
+              @include('lapdu::partials.terlapor_view')
 
-              @include('elapdu.partials.pelapor_view')
+              @include('lapdu::partials.pelapor_view')
 
             </div>
             <!-- /.tab-pane -->

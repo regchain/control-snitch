@@ -1,4 +1,4 @@
-@extends('vendor.lapdu.templates.alpha.templatealt')
+@extends('lapdu::templates.alpha.templatealt')
 
 @section('title', 'Data Pelapor')
 
@@ -151,7 +151,7 @@
         </div>
 
         <div class="row">
-            @include('vendor.lapdu.guest.pages.pelapor_view')
+            @include('lapdu::guest.pages.pelapor_view')
         </div>
 
         <div class="box-footer">
