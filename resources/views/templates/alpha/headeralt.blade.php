@@ -8,7 +8,7 @@
                 <a href="#" class="icon fa-angle-down">Aplikasi</a>
                 <ul>
                     <li><a href="{{ route('lapdu.howtolapdu') }}">Cara Pengaduan</a></li>
-                    <li><a href="{{ route('lapdu.howtowhistle') }}">Wishtle Blower</a></li>
+                    <li><a href="{{ route('lapdu.howtowhistle') }}">Whistle Blower</a></li>
                     <li><a href="{{ route('lapdu.howtowhistle') }}">Perlindungan Saksi</a></li>
                     <li><a href="{{ route('lapdu.question', ['page' => 1]) }}">Lapor..!</a></li>
                     <li><a href="{{ route('lapdu.trace') }}">Periksa Pengaduan</a></li>
