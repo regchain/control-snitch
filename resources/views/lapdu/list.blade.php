@@ -25,7 +25,7 @@
 
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab_1" data-toggle="tab"><span class="badge bg-yellow pull-right">{{ count($new) }}</span> LAPORAN BARU&nbsp;</a></li>
-                    <li><a href="#tab_2" data-toggle="tab"><span class="badge bg-green pull-right">7</span>LANJUTAN INSPEKTUR&nbsp;</a></li>
+                    <li><a href="#tab_2" data-toggle="tab"><span class="badge bg-green pull-right">{{ count($advanced) }}</span>LANJUTAN INSPEKTUR&nbsp;</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -34,13 +34,13 @@
                             <h3 class="box-title">LAPORAN PENGADUAN BARU</h3>
 
                             <div class="box-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -63,7 +63,9 @@
                                         <td>
                                             @foreach ($d->reporteds as $r)
                                                 @if ($r['status'] == 'terlapor')
-                                                {{ $r['name'] }}<br>[Pangkat] [Golongan]<br>{{ $r['nip'] . ' | ' . $r['nrp'] }}<br>
+                                                {{ $r['name'] }}<br>
+                                                {{--  [Pangkat] [Golongan]<br>  --}}
+                                                {{ $r['nip'] . ' | ' . $r['nrp'] }}<br>
                                                 @endif
                                             @endforeach
                                         </td>
@@ -76,7 +78,7 @@
                                         </td>
                                         <td>
                                             @foreach ($d->reporters as $r)
-                                                <strong>Dilaporkan oleh:</strong> {{ $r['name'] . ', '. $r['organization'] }}
+                                                <strong>Dilaporkan oleh:</strong> {{ $r['name'] . ', '. $r['organization'] }}<br>
                                             @endforeach
                                             <br><strong>Perihal: </strong>{{ $d->title }}
                                         </td>
@@ -141,144 +143,103 @@
                             <h3 class="box-title">LAPORAN PENGADUAN LANJUTAN</h3>
 
                             <div class="box-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         <!-- /.box-header -->
+
                         <div class="box-body table-responsive no-padding">
                             <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                <th width="15%">Terlapor</th>
-                                <th width="15%">Jabatan</th>
-                                <th>Perihal</th>
-                                <th>Proses</th>
-                                <th width="10%">Tindakan</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Earum dolores dolor aut, perferendis ab laborum labore at, commodi, magni ratione nulla explicabo porro ipsam deserunt fuga officia doloribus tempore soluta!</td>
-                                <td>IRMUD</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Beatae consectetur tenetur nihil minus veritatis, minima nisi aperiam voluptas impedit earum aspernatur libero iure obcaecati reprehenderit sequi soluta rem sapiente nemo.</td>
-                                <td>RIKSA</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Est doloribus at repudiandae voluptas suscipit pariatur quas deserunt autem consequuntur, fugiat nulla voluptatem ad. Optio ipsa iusto quaerat ipsum! Quam, voluptatem?</td>
-                                <td>JAMWAS</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Perspiciatis quod, sequi, quaerat vero explicabo quidem error nam, illo nihil dolore, unde qui est iusto recusandae numquam ipsa consequatur deleniti porro.</td>
-                                <td>SESJAMWAS</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Dolore vel earum quis quae. Veniam ex fuga unde recusandae animi aut atque totam quod consequatur impedit ullam natus, minima, nobis accusamus.</td>
-                                <td>JAMWAS</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Odit a quas accusantium ea beatae. Quia fuga ut laboriosam, rem possimus distinctio veniam! Laboriosam necessitatibus neque, quos nobis officiis magnam a.</td>
-                                <td>INSPEKTUR</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>[Nama Lengkap]<br>[Pangkat] [Golongan]<br>[NIP] | [NRP]<br></td>
-                                <td>[Jabatan]<br>[Satker]</td>
-                                <td><strong>Dilaporkan oleh:</strong> [Nama Pelapor], [Organisasi] <br><strong>Perihal: </strong>Quam dolores similique nam iste voluptatem, voluptate fugiat. Nam atque aperiam quasi molestias architecto enim odit, deserunt accusantium ipsam delectus repudiandae facilis.</td>
-                                <td>IRMUD</td>
-                                <td>
-                                    <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-                                    <a href="laporan_view" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                    <a href="laporan_edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="laporan_disposisi" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
-                                    </div>
-                                </td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                <th>Terlapor</th>
-                                <th>Jabatan</th>
-                                <th>Perihal</th>
-                                <th>Proses</th>
-                                <th>Tindakan</th>
-                                </tr>
-                            </tfoot>
+                                <thead>
+                                    <tr>
+                                        <th width="15%">Terlapor</th>
+                                        <th width="15%">Jabatan</th>
+                                        <th>Perihal</th>
+                                        <th>Proses</th>
+                                        <th width="10%">Tindakan</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach ($advanced as $d)
+                                    <tr>
+                                        <td>
+                                            @foreach ($d->reporteds as $r)
+                                                @if ($r['status'] == 'terlapor')
+                                                {{ $r['name'] }}<br>
+                                                {{--  [Pangkat] [Golongan]<br>  --}}
+                                                {{ $r['nip'] . ' | ' . $r['nrp'] }}<br>
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach ($d->reporteds as $r)
+                                                @if ($r['status'] == 'terlapor')
+                                                {{ $r['jobtitle'] . ' | '. $r['institute'] }}
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach ($d->reporters as $r)
+                                                <strong>Dilaporkan oleh:</strong> {{ $r['name'] . ', '. $r['organization'] }}<br>
+                                            @endforeach
+                                            <br><strong>Perihal: </strong>{{ $d->title }}
+                                        </td>
+                                        <td>
+                                            @if (!$d->disposition_ja && !$d->disposition_waja)
+                                            JAKSA AGUNG
+                                            @elseif (!$d->disposition_jamwas && !$d->disposition_sesjamwas)
+                                            JAMWAS
+                                            @elseif (!$d->disposition_inspector)
+                                            {{ strtoupper($d->to_inspector) }}
+                                            @elseif (!$d->disposition_young_inspector)
+                                            {{ strtoupper($d->to_young_inspector) }}
+                                            @elseif ($d->disposition_young_inspector)
+                                            RIKSA
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <div class="btn-group-vertical pull-right" role="group" aria-label="...">
+                                            <a href="{{ route('lapdu.operator.laporan.show', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
+                                            <a href="{{ route('lapdu.operator.laporan.edit', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
+                                            <a href="{{ route('lapdu.operator.laporan.action', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <th>Terlapor</th>
+                                        <th>Jabatan</th>
+                                        <th>Perihal</th>
+                                        <th>Proses</th>
+                                        <th>Tindakan</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                         <!-- /.box-body -->
+
                         <div class="box-footer">
                             <!-- Date and time range -->
                             <div class="form-group">
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-default btn-sm pull-right" id="daterange-btn2">
+                                        <span>
+                                            <i class="fa fa-calendar"></i> Filter tanggal laporan
+                                        </span>
 
-                            <div class="input-group">
-                                <button type="button" class="btn btn-default btn-sm pull-right" id="daterange-btn2">
-                                <span>
-                                    <i class="fa fa-calendar"></i> Filter tanggal laporan
-                                </span>
-                                <i class="fa fa-caret-down"></i>
-                                </button>
-                            </div>
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                </div>
                             </div>
                             <!-- /.form group -->
                         </div><!-- /.box-footer-->

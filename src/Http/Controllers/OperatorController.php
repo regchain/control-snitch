@@ -15,8 +15,12 @@ class OperatorController extends Controller
             'sedang' => Report::where('status', 'sedang')->count(),
             'berat' => Report::where('status', 'berat')->count(),
             'berhenti' => Report::where('status', 'berhenti')->count(),
-            'terlapor' => Report::count(),
-            'laporan' => Report::count()
+            'terlapor' => Report::where('reporteds', '!=', NULL)
+                ->where('reporters', '!=', NULL)
+                ->count(),
+            'laporan' => Report::where('reporteds', '!=', NULL)
+                ->where('reporters', '!=', NULL)
+                ->count()
         ];
 
         return view('lapdu::operator.home', compact('data'));
