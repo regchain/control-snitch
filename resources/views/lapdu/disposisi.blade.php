@@ -40,11 +40,11 @@
                 <!-- this row will not appear when printing -->
                 <div class="row no-print">
                     <div class="col-xs-12">
-                        <a href="javascript:void(0)" class="btn btn-success pull-right" style="margin-right: 5px;">
+                        {{--  <a href="javascript:void(0)" class="btn btn-success pull-right" style="margin-right: 5px;">
                             <i class="fa fa-check-square-o"></i> Lanjut
-                        </a>
+                        </a>  --}}
                         <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
-                            <i class="fa fa-exclamation-triangle"></i> Batal
+                            <i class="fa fa-exclamation-triangle"></i> Daftar Lapdu
                         </a>
                     </div>
                 </div>
