@@ -15,6 +15,7 @@
         </thead>
 
         <tbody>
+            @if ($data->files)
             @foreach ($data->files as $k => $f)
             <tr>
                 <td>{{ $f['filename'] }}</td>
@@ -30,6 +31,7 @@
                 </td>  --}}
             </tr>
             @endforeach
+            @endif
         </tbody>
 
         <tfoot>
