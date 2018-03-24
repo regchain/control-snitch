@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <section class="content-header">
                 <div class="media">
                     <div class="media-left media-middle">
-                        <a href="operator">
+                        <a href="{{ route('lapdu.operator.home') }}">
                             <img class="media-object" src="{{asset('vendor/core/admin-lte/dist/img/logo-kejaksaan.png')}}" alt="logo"  height="100">
                         </a>
                     </div>

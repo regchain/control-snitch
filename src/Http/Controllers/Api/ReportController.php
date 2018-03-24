@@ -3,11 +3,10 @@
 namespace EKejaksaan\Lapdu\Http\Controllers\Api;
 
 use EKejaksaan\Lapdu\Models\Report;
-use EKejaksaan\Core\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReportedController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +24,6 @@ class ReportedController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -36,31 +34,6 @@ class ReportedController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Report::find($request->get('id'));
-        $user = User::find($request->get('reported-id'));
-        $reported = [
-            'name' => $user->name,
-            'nip' => $user->nip,
-            'nrp' => $user->nrp,
-            'jobtitle' => $user->jobtitle,
-            'institute' => $user->institute,
-            'unit' => $user->unit,
-            'position' => $request->get('position'),
-            'status' => $request->get('status'),
-            'handphone' => $request->has('handphone') ? $request->get('handphone') : null,
-            'phone' => $request->has('phone') ? $request->get('phone') : null
-        ];
-
-        if (!$data->reporteds) {
-            $data->reporteds = [];
-        }
-
-        $reporteds = $data->reporteds;
-        array_push($reporteds, $reported);
-        $data->reporteds = $reporteds;
-        $data->update();
-
-        return $reported;
     }
 
     /**
@@ -71,7 +44,6 @@ class ReportedController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -82,7 +54,6 @@ class ReportedController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -94,7 +65,32 @@ class ReportedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Report::find($id);
+        $input = $request->except('_method');
+
+        foreach ($input as $k => $i) {
+            if ($k != 'files') {
+                $data->$k = $i;
+            } else {
+                $paths = [];
+
+                foreach ($i as $u) {
+                    $paths[] = $u->store('files');
+                }
+
+                if (!$data->files) {
+                    $data->files = [];
+                }
+
+                $files = $data->files;
+                $files = array_merge($files, $paths);
+                $data->files = $files;
+                $data->update();
+            }
+        }
+
+        $data->save();
+        return response()->json([]);
     }
 
     /**
@@ -106,5 +102,11 @@ class ReportedController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function action($id)
+    {
+        $data = Report::find($id);
+        return $data ? view('lapdu::lapdu.disposisi', compact('data')) : redirect()->back();
     }
 }

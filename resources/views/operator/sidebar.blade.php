@@ -33,7 +33,7 @@
     {{-- <li class="header"><h4>JAM PENGAWASAN</h4></li> --}}
     <!-- Optionally, you can add icons to the links -->
     {{-- <li class="active treeview">
-        <a href="operator"><i class="fa fa-home fa-lg"></i>&nbsp; <span>DASHBOARD</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+        <a href="{{ route('lapdu.operator.home') }}"><i class="fa fa-home fa-lg"></i>&nbsp; <span>DASHBOARD</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
         </a>
         <ul class="treeview-menu">
             <li><a href="laporan"><i class="fa fa-bullhorn"></i> Lapdu Baru</a></li>

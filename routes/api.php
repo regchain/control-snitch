@@ -3,6 +3,7 @@
 Route::prefix('api')->group(function() {
     Route::prefix('lapdu')->as('api.lapdu.')->group(function () {
         Route::resources([
+            'report' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReportController',
             'reporter' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReporterController',
             'reported' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReportedController',
         ]);

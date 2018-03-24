@@ -9,6 +9,22 @@ class Report extends Eloquent
 {
     use SoftDeletes;
 
+    protected $fillable = [
+        '_id',
+        'title',
+        'description',
+        'number_disposition',
+        'date_done',
+        'number_letter',
+        'date_letter',
+        'importance',
+        'disposition_ja',
+        'disposition_waja',
+        'information/instruction',
+        'dialihkan_to',
+        'dialihkan_bidang_to',
+    ];
+
     protected $dates = [
         'created_at',
         'updated_at',

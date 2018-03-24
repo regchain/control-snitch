@@ -12,7 +12,7 @@
         <div class="pull-left info">
         <p>{{ Auth::user()->name }}</p>
         <!-- Status -->
-        <a href="operator"><i class="fa fa-user"></i> PELAPOR</a>
+        <a href="{{ route('lapdu.operator.home') }}"><i class="fa fa-user"></i> PELAPOR</a>
         </div>
     </div> --}}
 
@@ -71,7 +71,7 @@
         </li>
     </ul>
     </li> --}}
-    {{-- <li><a href="operator"><span class="label label-danger pull-right">Progres</span><i class="fa fa-gear"></i> <span>OPERATOR</span></a></li> --}}
+    {{-- <li><a href="{{ route('lapdu.operator.home') }}"><span class="label label-danger pull-right">Progres</span><i class="fa fa-gear"></i> <span>OPERATOR</span></a></li> --}}
     {{-- <li class="treeview">
         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
         <span class="pull-right-container">
