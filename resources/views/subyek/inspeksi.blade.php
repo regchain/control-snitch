@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Subyek Hukum')
 
@@ -8,11 +8,11 @@
 
 @section('stylesheets')
   <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/core/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 @endsection
 
 @section('content')
-  
+
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        @include('elapdu.partials.subyek')
+        @include('lapdu::partials.subyek')
 
         <div class="box-footer">
           Footer
@@ -40,12 +40,12 @@
 
 @section('scripts')
   <!-- DataTables -->
-  <script src="{{ asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-  <script src="{{ asset('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
   <!-- SlimScroll -->
-  <script src="{{ asset('/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
   <!-- FastClick -->
-  <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
+  <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
 
   <!-- page script -->
   <script>

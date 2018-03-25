@@ -25,35 +25,39 @@
 
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        {{-- <div class="small-box bg-aqua">
-        <div class="inner">
-            <p></p>
-            <h3>13<sup style="font-size: 20px"> orang</sup></h3>
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <p></p>
+                <h3>{{ $data['terklarifikasi'] }}<sup style="font-size: 20px"> orang</sup></h3>
 
-            <strong>KLARIFIKASI</strong>
+                <strong>KLARIFIKASI</strong>
+            </div>
+
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <a href="{{ route('lapdu.operator.subject', ['type' => 'klarifikasi']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-            <i class="fa fa-user"></i>
-        </div>
-        <a href="subyek_klarifikasi" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
-        </div> --}}
     </div>
     <!-- ./col -->
 
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        {{-- <div class="small-box bg-yellow">
-        <div class="inner">
-            <p></p>
-            <h3>6<sup style="font-size: 20px"> orang</sup></h3>
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <p></p>
+                <h3>{{ $data['terinspeksi'] }}<sup style="font-size: 20px"> orang</sup></h3>
 
-            <strong>INSPEKSI KASUS</strong>
+                <strong>INSPEKSI KASUS</strong>
+            </div>
+
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <a href="{{ route('lapdu.operator.subject', ['type' => 'inspeksi']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-            <i class="fa fa-user"></i>
-        </div>
-        <a href="subyek_inspeksi" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
-        </div> --}}
     </div>
     <!-- ./col -->
 

@@ -7,13 +7,13 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('vendor/core/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('/bower_components/font-awesome/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('vendor/core/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{ asset('/bower_components/Ionicons/css/ionicons.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('vendor/core/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/dist/css/AdminLTE.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('vendor/core/admin-lte/dist/css/AdminLTE.min.css')}}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,9 +34,9 @@
       <div class="col-xs-12">
         <small class="pull-right"><a href="#" class="btn btn-default"><i class="fa fa-remove"> </i> Tutup</a></small>
         <h2 class="page-header">
-          
+
           <i class="fa fa-user"></i> [Prof. Dr.] Nama Lengkap [SH., MH]
-          
+
         </h2>
       </div>
       <!-- /.col -->

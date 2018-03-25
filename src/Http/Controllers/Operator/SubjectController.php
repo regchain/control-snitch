@@ -15,12 +15,30 @@ class SubjectController extends Controller
      */
     public function index($type = null)
     {
-        $data = Report::where('analysis', NULL)
-            ->where('reporteds', '!=', NULL)
-            ->where('reporters', '!=', NULL)
-            ->get();
+        $data = Report::where('reporteds', '!=', NULL)
+            ->where('reporters', '!=', NULL);
 
-        return view('lapdu::subyek.terlapor', compact('data'));
+        switch ($type) {
+            case 'terlapor':
+                $data = $data->where('analysis', NULL);
+                break;
+
+            case 'klarifikasi':
+                $data = $data->where('date_warrant', '!=', NULL)
+                    ->where('date_warrant_2', NULL);
+                break;
+
+            case 'inspeksi':
+                $data = $data->where('date_warrant_2', '!=', NULL);
+                break;
+
+            default:
+                # code...
+                break;
+        }
+
+        $data = $data->get();
+        return view('lapdu::subyek.'.$type, compact('data'));
     }
 
     /**
@@ -30,9 +48,6 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        $data = new Report();
-        $data->save();
-        return view('lapdu::lapdu.create', compact('data'));
     }
 
     /**
@@ -53,8 +68,6 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.view', compact('data')) : redirect()->back();
     }
 
     /**
@@ -65,8 +78,6 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
-        $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.edit', compact('data')) : redirect()->back();
     }
 
     /**
@@ -78,38 +89,6 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Report::find($id);
-        $input = $request->except(['_method', '_token']);
-
-        foreach ($input as $k => $i) {
-            if ($k != 'files') {
-                $data->$k = $i;
-            } else {
-                $items = [];
-
-                foreach ($i as $u) {
-                    $items[] = [
-                        'filename' => $u->getClientOriginalName(),
-                        'extension' => $u->getClientOriginalExtension(),
-                        'size' => $u->getClientSize(),
-                        'path' => $u->store('files')
-                    ];
-                }
-
-                if (!$data->files) {
-                    $data->files = [];
-                }
-
-                $files = $data->files;
-                $files = array_merge($files, $items);
-                $data->files = $files;
-                $data->update();
-                return redirect()->route('lapdu.operator.laporan.edit', ['id' => $id]);
-            }
-        }
-
-        $data->save();
-        return redirect()->route('lapdu.operator.laporan.index');
     }
 
     /**
@@ -121,25 +100,5 @@ class SubjectController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function action($id)
-    {
-        $data = Report::find($id);
-        $institutions = Institution::get();
-        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions')) : redirect()->back();
-    }
-
-    public function warrant($id)
-    {
-        $data = Report::find($id);
-        $users = User::where('institution', NULL)->get();
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users')) : redirect()->back();
-    }
-
-    public function study($id)
-    {
-        $data = Report::find($id);
-        return $data ? view('lapdu::surat.was1_create', compact('data')) : redirect()->back();
     }
 }
