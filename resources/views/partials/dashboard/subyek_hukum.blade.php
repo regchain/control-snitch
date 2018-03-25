@@ -18,7 +18,7 @@
                 <i class="fa fa-user"></i>
             </div>
 
-            <a href="subyek_terlapor" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.subject', ['type' => 'terlapor']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
