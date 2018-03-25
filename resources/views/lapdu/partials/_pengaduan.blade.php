@@ -53,7 +53,7 @@
             </h4>
         </div>
 
-        <div id="collapseTelaahan" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTelaahan">
+        <div id="collapseTelaahan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTelaahan">
             <div class="panel-body">
                 <div class="row">
                     @include('lapdu::surat.partials._was1_view')
