@@ -18,13 +18,9 @@ class ClarificationController extends Controller
     public function index()
     {
         $new = Report::where('date_warrant', '!=', NULL)
-            ->where('reporteds', '!=', NULL)
-            ->where('reporters', '!=', NULL)
             ->get();
 
-        $advanced = Report::where('analysis_clarification', '!=', NULL)
-            ->where('reporteds', '!=', NULL)
-            ->where('reporters', '!=', NULL)
+        $advanced = Report::where('interview', '!=', NULL)
             ->get();
 
         return view('lapdu::klarifikasi.list', compact('new', 'advanced'));

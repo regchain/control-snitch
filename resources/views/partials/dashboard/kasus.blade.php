@@ -25,18 +25,20 @@
 
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        {{-- <div class="small-box bg-aqua">
-        <div class="inner">
-            <p></p>
-            <h3>13<sup style="font-size: 20px"> kasus</sup></h3>
+        <div class="small-box bg-aqua">
+            <div class="inner">
+                <p></p>
+                <h3>{{ $data['klarifikasi'] }}<sup style="font-size: 20px"> kasus</sup></h3>
 
-            <strong>KLARIFIKASI</strong>
+                <strong>KLARIFIKASI</strong>
+            </div>
+
+            <div class="icon">
+                <i class="fa fa-comments"></i>
+            </div>
+
+            <a href="{{ route('lapdu.operator.klarifikasi.index') }}" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-            <i class="fa fa-comments"></i>
-        </div>
-        <a href="klarifikasi" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
-        </div> --}}
     </div>
     <!-- ./col -->
 

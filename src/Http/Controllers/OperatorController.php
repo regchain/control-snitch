@@ -20,6 +20,8 @@ class OperatorController extends Controller
                 ->count(),
             'laporan' => Report::where('reporteds', '!=', NULL)
                 ->where('reporters', '!=', NULL)
+                ->count(),
+            'klarifikasi' => Report::where('date_warrant', '!=', NULL)
                 ->count()
         ];
 
