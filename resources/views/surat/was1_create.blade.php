@@ -98,12 +98,12 @@
                         <i class="fa fa-save"></i> Simpan
                     </a>
 
-                    <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-success pull-right">
+                    {{--  <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-success pull-right">
                         <i class="fa fa-check-square-o"></i> Lanjut
-                    </a>
+                    </a>  --}}
 
                     <a href="{{ route('lapdu.operator.laporan.action', ['id' => $data->_id]) }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
-                        <i class="fa fa-exclamation-triangle"></i> Batal
+                        <i class="fa fa-exclamation-triangle"></i> Kartu Penerus Disposisi
                     </a>
                 </div>
             </div>
