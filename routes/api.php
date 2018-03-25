@@ -7,6 +7,7 @@ Route::prefix('api')->group(function() {
             'reporter' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReporterController',
             'reported' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReportedController',
             'examiner' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ExaminerController',
+            'qna' => 'EKejaksaan\Lapdu\Http\Controllers\Api\QnaController',
         ]);
     });
 });
