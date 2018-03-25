@@ -12,54 +12,54 @@
 @endsection
 
 @section('content')
-      <!-- Default box -->
-      <div class="box">
+    <!-- Default box -->
+    <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">EDIT HASIL KLARIFIKASI</h3>
-          </div>
-          <div class="box-body">
+            <h3 class="box-title">EDIT HASIL KLARIFIKASI</h3>
+        </div>
+
+        <div class="box-body">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      <span class="label label-success pull-right">Detil</span> I. PERMASALAHAN
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">
-
-                    <div class="box-body">
-                      @include('lapdu::lapdu.partials.kasus_edit')
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <span class="label label-success pull-right">Detil</span> I. PERMASALAHAN
+                            </a>
+                        </h4>
                     </div>
 
-                  </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="box-body">
+                                @include('lapdu::lapdu.partials.kasus_edit')
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <span class="label label-success pull-right">Detil</span> II. DATA
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="box-body">
-                      @include('lapdu::lapdu.partials.pelapor_edit')
 
-                      @include('lapdu::lapdu.partials.terlapor_edit')
-
-                       @include('lapdu::lapdu.partials.datapenunjang_edit')
-
-                       {{-- @include('lapdu::lapdu.partials._telaahan') --}}
-
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="label label-success pull-right">Detil</span> II. DATA
+                            </a>
+                        </h4>
                     </div>
 
-                  </div>
-                </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="box-body">
+                                @include('lapdu::lapdu.partials.pelapor_create')
+
+                                @include('lapdu::lapdu.partials.terlapor_create')
+
+                                @include('lapdu::lapdu.partials.datapenunjang_create')
+
+                               {{-- @include('lapdu::lapdu.partials._telaahan') --}}
+                            </div>
+                        </div>
+                    </div>
               </div>
               {{-- <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingFive">
