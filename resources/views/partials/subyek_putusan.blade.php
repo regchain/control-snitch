@@ -11,19 +11,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($result as $k => $r)
+                    @foreach ($data as $k => $r)
                     <tr>
                         <td  width="30%">
                             {{--  <span class="label bg-green pull-right">Jaksa</span>
                             <span class="label bg-blue pull-right">staf</span>  --}}
-                            <strong>{{ $r->nama}}</strong>
+                            <strong>{{ $r->name }}</strong>
                             {{--  [Prof. Dr.] Nama Lengkap [SH., MH]  --}}
                             <br>
-                            {{ $r->pangkat_nip_nrp_jabatan }}
+                            {{ $r->detail }}
                             {{--  [Jabatan] - [Kejaksaan...]  --}}
                         </td  width="40%">
-                        <td>{{ $r->uraian }}</td>
-                        <td>{{ $r->keterangan }}</td>
+                        <td>{{ $r->description }}</td>
+                        <td>{{ $r->status }}</td>
                         <td>
                             <div class="btn-group pull-right" role="group" aria-label="...">
                             <!-- Button trigger modal -->
@@ -41,7 +41,7 @@
                                                 <h2>
                                                     <i class="fa fa-user"></i>
                                                     {{--  [Prof. Dr.] Nama Lengkap [SH., MH]  --}}
-                                                    {{ $r->nama }}
+                                                    {{ $r->name }}
                                                 </h2>
                                             </h4>
                                         </div>
@@ -50,33 +50,33 @@
                                                 {{--  <span class="label bg-green pull-right">Jaksa</span>  --}}
 
                                                 <p>
-                                                    {{ $r->pangkat_nip_nrp_jabatan }}
+                                                    {{ $r->detail }}
                                                     {{--  [Pangkat] - [NIP] - [NRP] - [Jabatan] pada [Kejaksaan...]  --}}
                                                 </p>
                                                 <p>
                                                     <strong>Uraian Singkat Perbuatan:</strong><br>
-                                                    {{ $r->uraian }}
+                                                    {{ $r->description }}
                                                 </p>
                                                 <p>
                                                     <strong>MELANGGAR PASAL:</strong><br>
-                                                    {{ $r->pasal }}
+                                                    {{ $r->violation }}
                                                 </p>
                                                 <p>
                                                     <strong>HUKUMAN DISIPLIN YANG DIJATUHKAN:</strong><br>
-                                                    {{ $r->hukuman }}
+                                                    {{ $r->punishment }}
                                                 </p>
                                                 <p>
                                                     <strong>KEPUTUSAN: </strong>
                                                     <i class="text-info">
-                                                        {{ $r->keputusan_pejabat }} No. {{ $r->keputusan_nomor_tanggal }}
+                                                        {{ $r->decision_by }}
                                                     </i>
                                                 </p>
                                                 <p>
                                                     <strong>PELAKSANAAN HUKUMAN: </strong>
-                                                    <i class="text-info">{{ $r->keputusan_pelaksanaan }}</i>
+                                                    <i class="text-info">{{ $r->implement_date }}</i>
                                                 </p>
-                                                <p><strong>SELESAI: </strong><i class="text-info">{{ $r->selesai }}</i></p>
-                                                <p><strong>KETERANGAN: </strong><i class="text-info">{{ $r->keterangan }}</i></p>
+                                                <p><strong>SELESAI: </strong><i class="text-info">{!! json_encode($r->done_date) !!}</i></p>
+                                                <p><strong>KETERANGAN: </strong><i class="text-info">{{ $r->status }}</i></p>
                                             </div>
                                             <!-- /.col -->
                                         </div>

@@ -3,6 +3,7 @@
 namespace EKejaksaan\Lapdu\Http\Controllers;
 
 use EKejaksaan\Lapdu\Models\Report;
+use EKejaksaan\Core\Models\Punishment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,11 @@ class OperatorController extends Controller
                 ->where('date_warrant_2', NULL)
                 ->count(),
             'inspeksi' => Report::where('date_warrant_2', '!=', NULL)
-                ->count()
+                ->count(),
+            'ringan' => Punishment::where('status', 'RINGAN')->count(),
+            'sedang' => Punishment::where('status', 'SEDANG')->count(),
+            'berat' => Punishment::where('status', 'BERAT')->count(),
+            'berhenti' => Punishment::where('status', 'BERHENTI SEMENTARA')->count(),
         ];
 
         return view('lapdu::operator.home', compact('data'));

@@ -22,10 +22,10 @@
               <button type="button" class="btn dropdown-toggle btn-primary" data-toggle="dropdown" role="button" title="Kejaksaan Negeri"><span class="filter-option pull-left">JENIS HUKUMAN</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button>
               <div class="dropdown-menu open" role="combobox">
                 <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                  <li data-original-index="0" class="selected"><a href="{{ url('subyek_putusan?status=berat') }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">BERAT</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  <li data-original-index="1"><a href="{{ url('subyek_putusan?status=sedang') }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">SEDANG</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  <li data-original-index="2"><a href="{{ url('subyek_putusan?status=ringan') }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">RINGAN</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
-                  <li data-original-index="2"><a href="{{ url('subyek_putusan?status=berhenti') }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">BERHENTI SEMENTARA</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  <li data-original-index="0" class="selected"><a href="{{ route('lapdu.operator.putusan.index', ['status' => 'berat']) }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">BERAT</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  <li data-original-index="1"><a href="{{ route('lapdu.operator.putusan.index', ['status' => 'sedang']) }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">SEDANG</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  <li data-original-index="2"><a href="{{ route('lapdu.operator.putusan.index', ['status' => 'ringan']) }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">RINGAN</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
+                  <li data-original-index="2"><a href="{{ route('lapdu.operator.putusan.index', ['status' => 'berhenti']) }}" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">BERHENTI SEMENTARA</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>
                 </ul></div><select class="selectpicker" tabindex="-98">
               <option value="volvo">Sedang</option>
               <option value="saab">Ringan</option>
@@ -71,13 +71,13 @@
             </div> --}}
           </div>
 
-        @include('lapdu::partials.subyek_putusan')
+          @include('lapdu::partials.subyek_putusan')
 
         <div class="box-footer">
             <!-- this row will not appear when printing -->
             <div class="row no-print">
               <div class="col-xs-12">
-                <a href="subyek_putusanprint" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Cetak</a>
+                <a href="#" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Cetak</a>
                 <button type="button" class="btn btn-default" style="margin-left: 5px;">
                   <i class="fa fa-download"></i> Buat PDF
                 </button>

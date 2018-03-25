@@ -11,6 +11,7 @@ Route::prefix('lapdu')->group(function () {
     Route::prefix('operator')->middleware('web', 'auth')->group(function() {
         Route::get('/', 'EKejaksaan\Lapdu\Http\Controllers\OperatorController@index')->name('lapdu.operator.home');
         Route::get('subyek/{type}', 'EKejaksaan\Lapdu\Http\Controllers\Operator\SubjectController@index')->name('lapdu.operator.subject');
+        Route::resource('putusan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\DecisionController', ['as' => 'lapdu.operator']);
 
         Route::resource('laporan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController', ['as' => 'lapdu.operator']);
         Route::get('laporan/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@action')->name('lapdu.operator.laporan.action');

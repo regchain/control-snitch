@@ -17,7 +17,7 @@
             <div class="icon">
                 <i class="ion-alert"></i>
             </div>
-            <a href="{{ url('subyek_putusan?status=ringan') }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.putusan.index', ['status' => 'ringan']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -35,7 +35,7 @@
             <div class="icon">
                 <i class="ion-android-alert"></i>
             </div>
-            <a href="{{ url('subyek_putusan?status=sedang') }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.putusan.index', ['status' => 'sedang']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -53,7 +53,7 @@
             <div class="icon">
                 <i class="ion-android-warning"></i>
             </div>
-            <a href="{{ url('subyek_putusan?status=berat') }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.putusan.index', ['status' => 'berat']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -71,7 +71,7 @@
             <div class="icon">
                 <i class="ion-close-circled"></i>
             </div>
-            <a href="{{ url('subyek_putusan?status=berhenti') }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('lapdu.operator.putusan.index', ['status' => 'berhenti']) }}" class="small-box-footer">Lihat Daftar <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
