@@ -10,9 +10,13 @@ Route::prefix('lapdu')->group(function () {
 
     Route::prefix('operator')->middleware('web', 'auth')->group(function() {
         Route::get('/', 'EKejaksaan\Lapdu\Http\Controllers\OperatorController@index')->name('lapdu.operator.home');
+
         Route::resource('laporan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController', ['as' => 'lapdu.operator']);
         Route::get('laporan/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@action')->name('lapdu.operator.laporan.action');
         Route::get('laporan/{id}/surat-perintah-was-1', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@warrant')->name('lapdu.operator.laporan.warrant');
         Route::get('laporan/{id}/was-1', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@study')->name('lapdu.operator.laporan.study');
+
+        Route::resource('klarifikasi', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController', ['as' => 'lapdu.operator']);
+        Route::get('klarifikasi/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@action')->name('lapdu.operator.klarifikasi.action');
     });
 });
