@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    @if ($data->clarification_result)
+    @if ($data->interviews)
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSix">
             <h4 class="panel-title">
