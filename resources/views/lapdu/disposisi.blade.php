@@ -43,8 +43,8 @@
                         {{--  <a href="javascript:void(0)" class="btn btn-success pull-right" style="margin-right: 5px;">
                             <i class="fa fa-check-square-o"></i> Lanjut
                         </a>  --}}
-                        <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
-                            <i class="fa fa-exclamation-triangle"></i> Daftar Lapdu
+                        <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-default pull-right" style="margin-right: 5px;">
+                            <i class="fa fa-mail-reply"></i> Daftar Lapdu
                         </a>
                     </div>
                 </div>
