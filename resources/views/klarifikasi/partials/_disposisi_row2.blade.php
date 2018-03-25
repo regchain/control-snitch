@@ -14,7 +14,7 @@
 
                 @if ($data->interviews)
                 <div class="box-footer">
-                    <a href='sp_was2_create' for="spwas1" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH INSPEKSI KASUS" style="margin-right: 5px;">
+                    <a href="{{ route('lapdu.operator.klarifikasi.warrant', ['id' => $data->_id]) }}" for="spwas2" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH INSPEKSI KASUS" style="margin-right: 5px;">
                         <i class="fa fa-plus"></i> SP.WAS-2
                     </a>
                 </div>
@@ -39,7 +39,7 @@
 
                 @if ($data->interviews)
                 <div class="box-footer">
-                    <a href='sp_was2_create' for="spwas1" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH INSPEKSI KASUS" style="margin-right: 5px;">
+                    <a href="{{ route('lapdu.operator.klarifikasi.warrant', ['id' => $data->_id]) }}" for="spwas2" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH INSPEKSI KASUS" style="margin-right: 5px;">
                         <i class="fa fa-plus"></i> SP.WAS-2
                     </a>
                 </div>
