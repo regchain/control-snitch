@@ -17,6 +17,7 @@
         </thead>
 
         <tbody>
+            @if ($data->interviews)
             @foreach ($data->interviews as $i)
             <tr>
                 <td>{{ $i['date'] }}</td>
@@ -34,6 +35,7 @@
                 </td>
             </tr>
             @endforeach
+            @endif
         </tbody>
 
         <tfoot>

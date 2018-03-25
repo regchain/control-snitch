@@ -136,9 +136,9 @@
         <div class="row no-print">
           <div class="col-xs-12">
 
-            <a href='klarifikasi' class="btn btn-success pull-right"><i class="fa fa-check-square-o"></i> Lanjut
+            <a href="javascript:void(0)" class="btn btn-success pull-right" id="btn-lanjut"><i class="fa fa-check-square-o"></i> Lanjut
             </a>
-            <a href='klarifikasi' class="btn btn-danger pull-right" style="margin-right: 5px;">
+            <a href="{{ route('lapdu.operator.klarifikasi.index') }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
               <i class="fa fa-exclamation-triangle"></i> Batal
             </a>
           </div>
@@ -148,61 +148,70 @@
     <!-- /.box-footer-->
   </div>
   <!-- /.box -->
-
 @endsection
-@section('scripts')
 
-<!-- iCheck 1.0.1 -->
+@section('scripts')
+    <!-- iCheck 1.0.1 -->
     <script src="{{ asset('vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
     <!-- FastClick -->
     <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
     <!-- bootstrap datepicker -->
     <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-      <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
-      <script>
+    <script>
         $(function () {
-          //iCheck for checkbox and radio inputs
-          $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-            checkboxClass: 'icheckbox_minimal-blue',
-            radioClass   : 'iradio_minimal-blue'
-          })
-          //Red color scheme for iCheck
-          $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass   : 'iradio_minimal-red'
-          })
-          //Flat red color scheme for iCheck
-          $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass   : 'iradio_flat-green'
-          })
-          //Date picker
-        $('#datepicker').datepicker({
-          autoclose: true
-        })
-          //Date picker
-        $('#datepicker2').datepicker({
-          autoclose: true
-        })
-        //Date picker
-        $('#notadinas').datepicker({
-          autoclose: true
-        })
-        //Date picker
-        $('#klarifikasi').datepicker({
-          autoclose: true
-        })
+            //iCheck for checkbox and radio inputs
+            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass   : 'iradio_minimal-blue'
+            })
+            //Red color scheme for iCheck
+            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+                checkboxClass: 'icheckbox_minimal-red',
+                radioClass   : 'iradio_minimal-red'
+            })
+            //Flat red color scheme for iCheck
+            $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass   : 'iradio_flat-green'
+            })
+            //Date picker
+            $('#datepicker').datepicker({
+                autoclose: true
+            })
+            //Date picker
+            $('#datepicker2').datepicker({
+                autoclose: true
+            })
+            //Date picker
+            $('#notadinas').datepicker({
+                autoclose: true
+            })
+            //Date picker
+            $('#klarifikasi').datepicker({
+                autoclose: true
+            })
 
-         // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('uraian_masalah')
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('editor1')
 
+
+            $('#btn-lanjut').click(function() {
+                let data = {
+                    '_method': 'PUT',
+                    'title': $('#title').val(),
+                    'description': CKEDITOR.instances.editor1.getData()
+                }
+
+                $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
+                    .done(function(res) {
+                        window.location.replace("{{ env('APP_URL') }}/lapdu/operator/klarifikasi")
+                    })
+            })
         })
-      </script>
-
+    </script>
 @endsection
