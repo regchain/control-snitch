@@ -14,11 +14,12 @@ Route::prefix('lapdu')->group(function () {
 
         Route::resource('laporan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController', ['as' => 'lapdu.operator']);
         Route::get('laporan/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@action')->name('lapdu.operator.laporan.action');
-        Route::get('laporan/{id}/surat-perintah-was-1', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@warrant')->name('lapdu.operator.laporan.warrant');
-        Route::get('laporan/{id}/was-1', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@study')->name('lapdu.operator.laporan.study');
+        Route::get('laporan/{id}/telaahan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@study')->name('lapdu.operator.laporan.study');
+        Route::get('laporan/{id}/surat-perintah', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ReportController@warrant')->name('lapdu.operator.laporan.warrant');
 
         Route::resource('klarifikasi', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController', ['as' => 'lapdu.operator']);
         Route::get('klarifikasi/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@action')->name('lapdu.operator.klarifikasi.action');
         Route::get('klarifikasi/{id}/wawancara', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@interview')->name('lapdu.operator.klarifikasi.interview');
+        Route::get('klarifikasi/{id}/surat-perintah', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@warrant')->name('lapdu.operator.klarifikasi.warrant');
     });
 });
