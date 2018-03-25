@@ -17,12 +17,21 @@ class OperatorController extends Controller
             'berhenti' => Report::where('status', 'berhenti')->count(),
             'terlapor' => Report::where('reporteds', '!=', NULL)
                 ->where('reporters', '!=', NULL)
+                ->where('date_warrant', NULL)
+                ->count(),
+            'terklarifikasi' => Report::where('date_warrant', '!=', NULL)
+                ->where('date_warrant_2', NULL)
+                ->count(),
+            'terinspeksi' => Report::where('date_warrant_2', '!=', NULL)
                 ->count(),
             'laporan' => Report::where('reporteds', '!=', NULL)
-                ->where('date_warrant', NULL)
                 ->where('reporters', '!=', NULL)
+                ->where('date_warrant', NULL)
                 ->count(),
             'klarifikasi' => Report::where('date_warrant', '!=', NULL)
+                ->where('date_warrant_2', NULL)
+                ->count(),
+            'inspeksi' => Report::where('date_warrant_2', '!=', NULL)
                 ->count()
         ];
 

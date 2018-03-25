@@ -44,18 +44,20 @@
 
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        {{-- <div class="small-box bg-yellow">
-        <div class="inner">
-            <p></p>
-            <h3>6<sup style="font-size: 20px"> kasus</sup></h3>
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <p></p>
+                <h3>{{ $data['inspeksi'] }}<sup style="font-size: 20px"> kasus</sup></h3>
 
-            <strong>INSPEKSI KASUS</strong>
+                <strong>INSPEKSI KASUS</strong>
+            </div>
+
+            <div class="icon">
+                <i class="fa fa-search-plus"></i>
+            </div>
+
+            <a href="{{ route('lapdu.operator.inspeksi.index') }}" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <div class="icon">
-            <i class="fa fa-search-plus"></i>
-        </div>
-        <a href="inspeksi" class="small-box-footer">Lihat Detil <i class="fa fa-arrow-circle-right"></i></a>
-        </div> --}}
     </div>
     <!-- ./col -->
 
