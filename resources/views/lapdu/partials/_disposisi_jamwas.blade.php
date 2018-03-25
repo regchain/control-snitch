@@ -47,7 +47,7 @@
 
         <div class="col-md-2 col-sm-4 col-xs-6">
             <label>
-                <input type="radio" class="minimal-red" name="to_inspector" value="inspektur i" {{ $data->to_inspector ? ($data->to_inspector == 'inspektur i' ? 'checked' : '') : '' }}
+                <input type="radio" class="minimal-red" name="to_inspector" value="inspektur i" {{ $data->to_inspector ? ($data->to_inspector == 'inspektur i' ? 'checked' : '') : '' }}>
                 Inspektur I
             </label><br>
         </div>
