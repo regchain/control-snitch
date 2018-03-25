@@ -136,9 +136,21 @@ class ClarificationController extends Controller
         return $data ? view('lapdu::surat.sp_was2_create', compact('data')) : redirect()->back();
     }
 
-    public function interview($id)
+    public function interview($id, Request $request)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.ba_was2_qna', compact('data')) : redirect()->back();
+        $item = null;
+
+        if ($request->has('subjek') && $request->has('tanggal')) {
+            foreach ($data->interviews as $i) {
+                if (($i['witness'] == $request->get('subjek')) && ($i['date'] == $request->get('tanggal'))) {
+                    $item = $i;
+                }
+            }
+
+            return $data ? view('lapdu::surat.ba_was2_view', compact('data', 'item')) : redirect()->back();
+        } else {
+            return $data ? view('lapdu::surat.ba_was2_qna', compact('data')) : redirect()->back();
+        }
     }
 }

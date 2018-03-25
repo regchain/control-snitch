@@ -20,7 +20,7 @@
                         <td>{{ $l+1 }}</td>
                         <td>{{ $q['question'] }}</td>
                         <td>{!! $q['answer'] !!}</td>
-                        <td>{{ $i['witness'] }}</td>
+                        <td></td>
                         {{--  <td>
                             <div class="btn-group pull-right" role="group" aria-label="...">
                             <button type="button" class="btn btn-default btn-xs"><i class="fa fa-edit"> </i> Edit</button>
