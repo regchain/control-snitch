@@ -141,8 +141,9 @@ class ReportController extends Controller
     public function warrant($id)
     {
         $data = Report::find($id);
-        $users = User::where('institution', NULL)->get();
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users')) : redirect()->back();
+        $users = User::where('institute', '!=', NULL)->get();
+        $type = 'report';
+        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users', 'type')) : redirect()->back();
     }
 
     public function study($id)

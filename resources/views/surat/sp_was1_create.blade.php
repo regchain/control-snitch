@@ -18,177 +18,177 @@
 @endsection
 
 @section('content')
-<!-- Default box -->
-<div class="box">
-    <div class="box-header with-border">
-        <small class="col-xs-3 pull-right text-justify">Lampiran Petunjuk Pelaksanaan JAMWAS Nomor ; 01/H/Hjw/04//2011 tanggal 01 April 2011 tentang Teknis Penanganan Laporandan Tata Kelola Administrasi Bidang Pengawasan<br><strong class="pull-right">SP.WAS-1</strong></small>
-        <h1 class="box-title">[institusi]</h1>
-    </div>
-
-    <div class="col-sm-3">
-    </div>
-
-    <div class="col-sm-6">
-        <div class="form-group has-success has-feedback">
-            <h4 class="control-label col-sm-4 text-right no-padding" for="inputGroupSuccess2">SURAT PERINTAH</h4>
-
-            <div class="col-sm-8">
-                <h4>
-                    <div class="input-group" style="width: 95%">
-                        <select class="form-control select2 no-border" name="warrant_by" id="warrant_by">
-                            <option selected="selected" value="jaksa agung">JAKSA AGUNG</option>
-                            <option value="jaksa agung muda bidang pengawasan">JAKSA AGUNG MUDA BIDANG PENGAWASAN</option>
-                            <option value="kepala kejaksaan tinggi">KEPALA KEJAKSAAN TINGGI</option>
-                            <option value="kepala kejaksaan negeri">KEPALA KEJAKSAAN NEGERI</option>
-                        </select>
-
-                        <span class="input-group-addon btn-default">
-                            <a href="#"><i class="fa fa-check-square-o"></i> </a>
-                        </span>
-                    </div>
-                </h4>
-            </div>
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <small class="col-xs-3 pull-right text-justify">Lampiran Petunjuk Pelaksanaan JAMWAS Nomor ; 01/H/Hjw/04//2011 tanggal 01 April 2011 tentang Teknis Penanganan Laporandan Tata Kelola Administrasi Bidang Pengawasan<br><strong class="pull-right">SP.WAS-1</strong></small>
+            <h1 class="box-title">[institusi]</h1>
         </div>
-    </div>
-
-    <div class="col-sm-3">
-    </div>
-
-    <div class="box-body">
-        <div class="col-sm-3">
-            <div class="input-group">
-                <span class="input-group-addon">NO :</span>
-
-                <input type="text" class="form-control" placeholder="PRIN -" name="number_warrant" id="number_warrant">
-            </div>
-        </div>
-
-        <div class="col-sm-6"></div>
 
         <div class="col-sm-3">
-            <div class="form-group">
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group has-success has-feedback">
+                <h4 class="control-label col-sm-4 text-right no-padding" for="inputGroupSuccess2">SURAT PERINTAH</h4>
+
+                <div class="col-sm-8">
+                    <h4>
+                        <div class="input-group" style="width: 95%">
+                            <select class="form-control select2 no-border" name="warrant_by" id="warrant_by">
+                                <option selected="selected" value="jaksa agung">JAKSA AGUNG</option>
+                                <option value="jaksa agung muda bidang pengawasan">JAKSA AGUNG MUDA BIDANG PENGAWASAN</option>
+                                <option value="kepala kejaksaan tinggi">KEPALA KEJAKSAAN TINGGI</option>
+                                <option value="kepala kejaksaan negeri">KEPALA KEJAKSAAN NEGERI</option>
+                            </select>
+
+                            <span class="input-group-addon btn-default">
+                                <a href="#"><i class="fa fa-check-square-o"></i> </a>
+                            </span>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+        </div>
+
+        <div class="box-body">
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <span class="input-group-addon">NO :</span>
+
+                    <input type="text" class="form-control" placeholder="PRIN -" name="number_warrant" id="number_warrant">
+                </div>
+            </div>
+
+            <div class="col-sm-6"></div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+
+                        <input type="text" class="form-control pull-right" id="spklarifikasi" name="date_warrant">
+                    </div>
+                    <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+            </div>
+        </div>
+
+        {{--  <span class="description-text">(KLARIFIKASI)</span>  --}}
+
+        <div class="box-body">
+            @include('lapdu::surat.partials._sp_was1_create')
+        </div>
+
+        <div class="box-body">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> I. PERMASALAHAN
+                            </a>
+                        </h4>
                     </div>
 
-                    <input type="text" class="form-control pull-right" id="spklarifikasi" name="date_warrant">
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            @include('lapdu::lapdu.partials.kasus_view')
+                        </div>
+                    </div>
                 </div>
-                <!-- /.input group -->
-            </div>
-            <!-- /.form group -->
-        </div>
-    </div>
 
-    {{--  <span class="description-text">(KLARIFIKASI)</span>  --}}
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> II. DATA
+                            </a>
+                        </h4>
+                    </div>
 
-    <div class="box-body">
-        @include('lapdu::surat.partials._sp_was1_create')
-    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="box-body">
+                                @include('lapdu::lapdu.partials.pelapor_view')
+                            </div>
 
-    <div class="box-body">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="box-body">
+                                @include('lapdu::lapdu.partials.terlapor_view')
+                            </div>
+
+                            <div class="box-body">
+                                @include('lapdu::lapdu.partials.datapenunjang_view')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{--  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> III. HASIL KLARIFIKASI
+                        </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+
+                        @include('lapdu::klarifikasi.partials._spklarifikasi_view')
+
+                        @include('lapdu::klarifikasi.partials._wawancara_view')
+
+                    </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
                     <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> I. PERMASALAHAN
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> IV. NOTA DINAS
                         </a>
                     </h4>
-                </div>
-
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                        @include('lapdu::lapdu.partials.kasus_view')
                     </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> II. DATA
-                        </a>
-                    </h4>
-                </div>
-
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
-                        <div class="box-body">
-                            @include('lapdu::lapdu.partials.pelapor_view')
-                        </div>
 
-                        <div class="box-body">
-                            @include('lapdu::lapdu.partials.terlapor_view')
-                        </div>
+                        @include('lapdu::klarifikasi.partials._notadinas_view')
 
-                        <div class="box-body">
-                            @include('lapdu::lapdu.partials.datapenunjang_view')
-                        </div>
+
                     </div>
-                </div>
-            </div>
-
-            {{--  <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                    <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> III. HASIL KLARIFIKASI
-                    </a>
-                    </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body">
-
-                    @include('lapdu::klarifikasi.partials._spklarifikasi_view')
-
-                    @include('lapdu::klarifikasi.partials._wawancara_view')
-
-                </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingFour">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <span class="pull-right"> <i class="fa fa-angle-double-left"></i></span><i class="fa fa-angle-double-right"> </i> IV. NOTA DINAS
-                    </a>
-                </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                <div class="panel-body">
-
-                    @include('lapdu::klarifikasi.partials._notadinas_view')
-
-
-                </div>
-                </div>
-            </div>  --}}
-        </div>
-    </div>
-
-    <div class="box-footer">
-        <!-- this row will not appear when printing -->
-        <div class="row no-print">
-            <div class="col-xs-12">
-                <a href="javascript:void(0)" class="btn btn-info" id="save-sp"><i class="fa fa-save"></i> Simpan
-                </a>
-
-                <a href="{{ route('lapdu.operator.klarifikasi.index') }}" class="btn btn-success pull-right"><i class="fa fa-check-square-o"></i> Lanjut
-                </a>
-
-                <a href="{{ route('lapdu.operator.laporan.show', ['id' => $data->_id]) }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
-                    <i class="fa fa-exclamation-triangle"></i> Batal
-                </a>
+                    </div>
+                </div>  --}}
             </div>
         </div>
-        <!-- /.content -->
+
+        <div class="box-footer">
+            <!-- this row will not appear when printing -->
+            <div class="row no-print">
+                <div class="col-xs-12">
+                    {{--  <a href="javascript:void(0)" class="btn btn-info" id="save-sp"><i class="fa fa-save"></i> Simpan
+                    </a>  --}}
+
+                    <a href="javascript:void(0)" class="btn btn-success pull-right" id="save-sp"><i class="fa fa-check-square-o"></i> Lanjut
+                    </a>
+
+                    <a href="{{ route('lapdu.operator.laporan.show', ['id' => $data->_id]) }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
+                        <i class="fa fa-exclamation-triangle"></i> Batal
+                    </a>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.box-footer-->
     </div>
-    <!-- /.box-footer-->
-</div>
-<!-- /.box -->
+    <!-- /.box -->
 @endsection
 
 @section('scripts')
@@ -259,7 +259,8 @@
             $('#add-pemeriksa').click(function() {
                 let data = {
                     'id': "{{ $data->_id }}",
-                    'examiner-id': $('#ja').val()
+                    'examiner-id': $('#ja').val(),
+                    'type': 'report'
                 }
 
                 $.post("{{ route('api.lapdu.examiner.store') }}", data, function(res) {
@@ -303,7 +304,8 @@
 
                 $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
                     .done(function(res) {
-                        alert('Data berhasil disimpan!')
+                        window.location.replace("{{ env('APP_URL') }}/lapdu/operator/klarifikasi")
+                        // alert('Data berhasil disimpan!')
                     })
             })
         })
