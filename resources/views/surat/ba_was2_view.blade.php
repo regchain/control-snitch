@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Kartu Disposisi')
 
@@ -8,16 +8,16 @@
 
 @section('stylesheets')
 <!-- UI Tool Tip -->
-<link rel="stylesheet" href="{{ asset('bower_components/jquery-ui/themes/base/jquery-ui.css')}}">
-<link rel="stylesheet" href="{{ asset('bower_components/templates/alpha/assets/css/tooltip.css')}}">
+<link rel="stylesheet" href="{{ asset('vendor/core/jquery-ui/themes/base/jquery-ui.css')}}">
+<link rel="stylesheet" href="{{ asset('vendor/core/templates/alpha/assets/css/tooltip.css')}}">
   <!-- iCheck for checkboxes and radio inputs -->
-        <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/plugins/iCheck/all.css')}}">
+        <link rel="stylesheet" href="{{ asset('/vendor/core/admin-lte/plugins/iCheck/all.css')}}">
         <!-- Select2 -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('/vendor/core/select2/dist/css/select2.min.css')}}">
 @endsection
 
 @section('content')
-  
+
 <!-- Default box -->
 <div class="box">
   <div class="box-header with-border">
@@ -27,15 +27,15 @@
   <div class="box-body">
     <div class="col-sm-6">
       <p><label>Tanggal Wawancara:</label> [dd.mmm.yyyy] </p>
-      <p><label>Pewawancara : </label>[Nama Lengkap]</p> 
+      <p><label>Pewawancara : </label>[Nama Lengkap]</p>
     </div>
     <div class="col-sm-6">
       <p><label>Subyek Wawancara :</label> [Nama Lengkap]</p>
-      <p><label>Status : </label>[Saksi / Pelapor / Terlapor] </p> 
+      <p><label>Status : </label>[Saksi / Pelapor / Terlapor] </p>
     </div>
 
 
-       @include('elapdu.surat.partials._ba_was2_detail')
+       @include('lapdu::surat.partials._ba_was2_detail')
 
      </div>
    <div class="box-footer">
@@ -59,18 +59,18 @@
 
 @section('scripts')
 <!-- Tool Tip -->
-<script src="{{ asset('bower_components/jquery-3.2.1.min')}}"></script>
-<script src="{{ asset('bower_components/jquery-ui/jquery-ui.js')}}"></script>
+<script src="{{ asset('vendor/core/jquery-3.2.1.min')}}"></script>
+<script src="{{ asset('vendor/core/jquery-ui/jquery-ui.js')}}"></script>
   <!-- iCheck 1.0.1 -->
-    <script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+    <script src="{{ asset('/vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
+    <script src="{{ asset('/vendor/core/fastclick/lib/fastclick.js')}}"></script>
     <!-- bootstrap datepicker -->
-    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('/vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-      <script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+      <script src="{{ asset('/vendor/core/ckeditor/ckeditor.js')}}"></script>
 <!-- Select2 -->
-<script src="{{ asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ asset('/vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
 
       <script>
         $(function () {

@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Edit Klarifikasi')
 
@@ -7,12 +7,11 @@
 @section('subjudul', 'Kejaksaan Agung Republik Indonesia')
 
 @section('stylesheets')
-<!-- iCheck for checkboxes and radio inputs -->
-        <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{ asset('vendor/core/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
 @endsection
 
 @section('content')
-  
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -32,7 +31,7 @@
                   <div class="panel-body">
 
                     <div class="box-body">
-                      @include('elapdu.lapdu.partials.kasus_edit')
+                      @include('lapdu::lapdu.partials.kasus_edit')
                     </div>
 
                   </div>
@@ -49,13 +48,13 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="box-body">
-                      @include('elapdu.lapdu.partials.pelapor_edit')
+                      @include('lapdu::lapdu.partials.pelapor_edit')
 
-                      @include('elapdu.lapdu.partials.terlapor_edit')
+                      @include('lapdu::lapdu.partials.terlapor_edit')
 
-                       @include('elapdu.lapdu.partials.datapenunjang_edit')
+                       @include('lapdu::lapdu.partials.datapenunjang_edit')
 
-                       {{-- @include('elapdu.lapdu.partials._telaahan') --}}
+                       {{-- @include('lapdu::lapdu.partials._telaahan') --}}
 
                     </div>
 
@@ -73,12 +72,12 @@
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">
 
-                   @include('elapdu.lapdu.partials._telaahan')
+                   @include('lapdu::lapdu.partials._telaahan')
 
                  </div>
                </div>
              </div> --}}
-             
+
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingEight">
                 <h4 class="panel-title">
@@ -91,8 +90,8 @@
               <div class="panel-body">
 
                 <div class="box-body">
-                  {{-- @include('elapdu.surat.partials._was4_create') --}}
-                  @include('elapdu.surat.partials._ba_was2_list')
+                  {{-- @include('lapdu::surat.partials._was4_create') --}}
+                  @include('lapdu::surat.partials._ba_was2_list')
                 </div>
             </div>
           </div>
@@ -108,7 +107,7 @@
               <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                 <div class="panel-body">
 
-                  @include('elapdu.surat.partials._was5b_view')
+                  @include('lapdu::surat.partials._was5b_view')
 
                 </div>
               </div>
@@ -125,7 +124,7 @@
                 <div class="panel-body">
 
                   <div class="box-body">
-                    @include('elapdu.surat.partials._was5a_view')
+                    @include('lapdu::surat.partials._was5a_view')
                   </div>
               </div>
             </div>
@@ -152,15 +151,15 @@
 
 @endsection
 @section('scripts')
-    
-<!-- iCheck 1.0.1 -->
-    <script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
-    <!-- FastClick -->
-    <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
-    <!-- bootstrap datepicker -->
-    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-      <script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+<!-- iCheck 1.0.1 -->
+    <script src="{{ asset('vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+
+      <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
       <script>

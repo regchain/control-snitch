@@ -88,7 +88,7 @@
                 </textarea>
             </div>
         </div>
-        {{--  @include('elapdu.lapdu.partials._telaahan_view')  --}}
+        {{--  @include('lapdu::lapdu.partials._telaahan_view')  --}}
 
         <div class="box-footer">
             <!-- this row will not appear when printing -->

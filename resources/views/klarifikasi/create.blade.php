@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Klarifikasi')
 
@@ -8,14 +8,14 @@
 
 @section('stylesheets')
   <!-- daterange picker -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/core/bootstrap-daterangepicker/daterangepicker.css')}}">
     <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/core/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
 <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/core/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 
 <!-- Select2 -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/core/select2/dist/css/select2.min.css')}}">
 
 @endsection
 
@@ -29,7 +29,7 @@
 </div>
 
 <div class="col-sm-3">
- 
+
 </div>
 <div class="col-sm-6">
 
@@ -51,7 +51,7 @@
   </div>
 </div>
 <div class="col-sm-3">
-  
+
 </div>
 
 
@@ -81,7 +81,7 @@
 
 
   <div class="box-body">
-    @include('elapdu.klarifikasi.partials._spklarifikasi_create')
+    @include('lapdu::klarifikasi.partials._spklarifikasi_create')
   </div>
 
 
@@ -98,7 +98,7 @@
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
 
-          @include('elapdu.lapdu.partials.kasus_view')
+          @include('lapdu::lapdu.partials.kasus_view')
 
         </div>
       </div>
@@ -116,19 +116,19 @@
 
           <div class="box-body">
 
-            @include('elapdu.lapdu.partials.pelapor_view')
+            @include('lapdu::lapdu.partials.pelapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('elapdu.lapdu.partials.terlapor_view')
+            @include('lapdu::lapdu.partials.terlapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('elapdu.lapdu.partials.datapenunjang_view')
+            @include('lapdu::lapdu.partials.datapenunjang_view')
 
           </div>
 
@@ -146,9 +146,9 @@
       <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
 
-        @include('elapdu.klarifikasi.partials._spklarifikasi_view')
+        @include('lapdu::klarifikasi.partials._spklarifikasi_view')
 
-        @include('elapdu.klarifikasi.partials._wawancara_view')
+        @include('lapdu::klarifikasi.partials._wawancara_view')
 
        </div>
      </div>
@@ -164,9 +164,9 @@
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body">
 
-        @include('elapdu.klarifikasi.partials._notadinas_view')
+        @include('lapdu::klarifikasi.partials._notadinas_view')
 
-        
+
       </div>
     </div>
   </div>
@@ -198,27 +198,27 @@
 
 @section('scripts')
 
-<script src="{{ asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ asset('vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
 <!-- iCheck 1.0.1 -->
-<script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{ asset('vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- FastClick -->
-<script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
 <!-- bootstrap datepicker -->
 <!-- date-range-picker -->
-  <script src="{{ asset('/bower_components/moment/min/moment.min.js')}}"></script>
-  <script src="{{ asset('/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+  <script src="{{ asset('vendor/core/moment/min/moment.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
   <!-- bootstrap datepicker -->
-  <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
 
-<script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+<script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
 <!-- DataTables -->
-  <script src="{{ asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-  <script src="{{ asset('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
   <!-- SlimScroll -->
-  <script src="{{ asset('/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+  <script src="{{ asset('vendor/core/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
   <!-- FastClick -->
-  <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
+  <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
 
 
 <script>
@@ -226,7 +226,7 @@
   $(function () {
  //Initialize Select2 Elements
       $('.select2').select2()
-    
+
     $('#example1').DataTable()
           $('#example2').DataTable({
             'paging'      : true,
@@ -236,7 +236,7 @@
             'info'        : true,
             'autoWidth'   : false
           })
-   
+
 
           //iCheck for checkbox and radio inputs
           $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
@@ -265,7 +265,7 @@
         $('#notadinas').datepicker({
           autoclose: true
         })
-        
+
       //Date picker
       $('#spklarifikasi').datepicker({
         autoclose: true

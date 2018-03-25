@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Klarifikasi')
 
@@ -9,7 +9,7 @@
 @section('stylesheets')
 
 <!-- Select2 -->
-<link rel="stylesheet" href="{{ asset('/bower_components/select2/dist/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ asset('/vendor/core/select2/dist/css/select2.min.css')}}">
 
 @endsection
 
@@ -42,7 +42,7 @@
       <div class="col-md-10 col-sm-9 col-xs-9"><strong>Permintaan Klarifikasi Terhadap Lapdu an [Nama Terlapor] [Jabatan] .</strong><br> </div>
 
     </div><!-- /.LEFT COLUMNT -->
-    
+
 
 
     <div class="col-md-4 col-sm-4  col-xs-12">
@@ -114,7 +114,7 @@
           </li>
           <li>Tindak lanjut point 1 dan atau 2 agar diberitahukan kepada Jaksa Agung Muda
           Pengawasan/KAJA Tl *) dengan menggunakan sarana tercepat (faksimile / email)</li>
-        </ol> 
+        </ol>
 
         <p>Demikian untuk dilaksanakan.</p>
 
@@ -122,12 +122,12 @@
     </div>
 
 
-    
+
 </div>
   </div>
 
 
-  
+
 
 
 <div class="box-footer">
@@ -151,15 +151,15 @@
 
 @section('scripts')
 <!-- Select2 -->
-<script src="{{ asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ asset('/vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
 <!-- iCheck 1.0.1 -->
-<script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{ asset('/vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- FastClick -->
-<script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{ asset('/vendor/core/fastclick/lib/fastclick.js')}}"></script>
 <!-- bootstrap datepicker -->
-<script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ asset('/vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-<script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+<script src="{{ asset('/vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
 <script>

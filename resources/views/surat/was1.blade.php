@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -11,13 +11,13 @@
 @endsection
 
 @section('content')
-  
+
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
           <h1 class="box-title">TELAAHAN</h1>
         </div>
-        
+
         <div class="box-body">
 
          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -34,7 +34,7 @@
 
         <div class="box-body">
 
-          @include('elapdu.lapdu.partials.kasus_view')
+          @include('lapdu::lapdu.partials.kasus_view')
 
         </div>
 
@@ -54,19 +54,19 @@
 
         <div class="box-body">
 
-          @include('elapdu.lapdu.partials.pelapor_view')
-
-        </div>
-        
-        <div class="box-body">
-
-          @include('elapdu.lapdu.partials.terlapor_view')
+          @include('lapdu::lapdu.partials.pelapor_view')
 
         </div>
 
         <div class="box-body">
 
-          @include('elapdu.lapdu.partials.datapenunjang_view')
+          @include('lapdu::lapdu.partials.terlapor_view')
+
+        </div>
+
+        <div class="box-body">
+
+          @include('lapdu::lapdu.partials.datapenunjang_view')
 
         </div>
 
@@ -86,7 +86,7 @@
 
         <div class="row">
 
-          @include('elapdu.surat.partials._was1_view')
+          @include('lapdu::surat.partials._was1_view')
 
         </div>
 
@@ -107,7 +107,7 @@
 
         <div class="row">
 
-          @include('elapdu.lapdu.partials._notadinas_view')
+          @include('lapdu::lapdu.partials._notadinas_view')
 
         </div>
 
@@ -128,7 +128,7 @@
 
         <div class="row">
 
-          @include('elapdu.lapdu.partials._was3_create')
+          @include('lapdu::lapdu.partials._was3_create')
 
         </div>
 

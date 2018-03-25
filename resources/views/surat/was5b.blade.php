@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Nota Dinas')
 
@@ -8,13 +8,13 @@
 
 @section('stylesheets')
 <!-- Select2 -->
-    <link rel="stylesheet" href="{{ asset('/bower_components/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('/vendor/core/select2/dist/css/select2.min.css')}}">
 <!-- iCheck for checkboxes and radio inputs -->
-        <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
+        <link rel="stylesheet" href="{{ asset('/vendor/core/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
 @endsection
 
 @section('content')
-  
+
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -23,13 +23,13 @@
           </div>
 
           <div class="box-body">
-            
-          @include('elapdu.surat.partials._was5b_create')
+
+          @include('lapdu::surat.partials._was5b_create')
 
           </div>
 
          <div class="box-body">
-            {{-- @include('elapdu.klarifikasi.partials._klarifikasi_view') --}}
+            {{-- @include('lapdu::klarifikasi.partials._klarifikasi_view') --}}
          </div>
 
 
@@ -56,16 +56,16 @@
 @section('scripts')
 
 <!-- Select2 -->
-<script src="{{ asset('/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
-    
-<!-- iCheck 1.0.1 -->
-    <script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
-    <!-- FastClick -->
-    <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
-    <!-- bootstrap datepicker -->
-    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ asset('/vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
 
-      <script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+<!-- iCheck 1.0.1 -->
+    <script src="{{ asset('/vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('/vendor/core/fastclick/lib/fastclick.js')}}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('/vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+
+      <script src="{{ asset('/vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
       <script>

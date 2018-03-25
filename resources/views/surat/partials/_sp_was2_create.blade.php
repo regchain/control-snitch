@@ -22,7 +22,7 @@
                     <li>bahwa sebagai perwujudannya perlu dikeluarkan Surat Perintah <i>[Jaksa Agung R.I.] / [Jaksa Agung Muda Pengawasan] / [KAJATI] / [KAJARI]</i></li>
                   </ol>
                 </dd>
-              
+
               </dl>
 
 
@@ -35,7 +35,7 @@
                   <dl class="dl-horizontal">
                     <dt>Kepada</dt>
                     <dd>
-                       @include('elapdu.klarifikasi.partials._jaksapengawas_create')
+                       @include('lapdu::klarifikasi.partials._jaksapengawas_create')
                 </dd>
                 <dt>Untuk</dt>
                 <dd>

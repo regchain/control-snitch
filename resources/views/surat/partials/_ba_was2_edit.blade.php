@@ -4,7 +4,7 @@
           <!-- Sidebar user panel (optional) -->
                <div class="user-panel">
                  <div class="pull-left image">
-                   <img src="{{ asset('bower_components/admin-lte/dist/img/user.png')}}" class="img-circle" alt="User Image">
+                   <img src="{{ asset('vendor/core/admin-lte/dist/img/user.png')}}" class="img-circle" alt="User Image">
                  </div>
                  <div class="pull-left info">
                    <p>{{ Auth::user()->name }}</p>
@@ -34,7 +34,7 @@
               <input type="text" class="form-control" placeholder="Tgl Wawancara" id="datepicker">
             </div>
             <!-- /.input group -->
-          </div><!-- /date --> 
+          </div><!-- /date -->
         </div>
       </div>
 
@@ -49,7 +49,7 @@
                 <label for="">Jawaban: </label>
                 <form>
                       <textarea id="editor1" name="editor1" rows="10" cols="80">
-                                              
+
                       </textarea>
 
                 </form>

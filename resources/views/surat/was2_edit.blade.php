@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Nota Dinas')
 
@@ -8,11 +8,11 @@
 
 @section('stylesheets')
 <!-- iCheck for checkboxes and radio inputs -->
-        <link rel="stylesheet" href="{{ asset('/bower_components/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
+        <link rel="stylesheet" href="{{ asset('/vendor/core/admin-lte/plugins/iCheck/all.css')}}"> {{-- expr --}}
 @endsection
 
 @section('content')
-  
+
       <!-- Default box -->
       <div class="box">
           <div class="box-header with-border">
@@ -116,7 +116,7 @@
               <div class="col-xs-12">
                 <a href='#' class="btn btn-flat btn-info pull-right"><i class="fa fa-save"></i> Simpan
                 </a>
-                
+
                 <a href='laporan_disposisi' class="btn btn-flat btn-danger pull-right" style="margin-right: 5px;">
                   <i class="fa fa-exclamation-triangle"></i> Batal
                 </a>
@@ -132,15 +132,15 @@
 @endsection
 
 @section('scripts')
-    
-<!-- iCheck 1.0.1 -->
-    <script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
-    <!-- FastClick -->
-    <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
-    <!-- bootstrap datepicker -->
-    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-      <script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+<!-- iCheck 1.0.1 -->
+    <script src="{{ asset('/vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('/vendor/core/fastclick/lib/fastclick.js')}}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('/vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+
+      <script src="{{ asset('/vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
       <script>

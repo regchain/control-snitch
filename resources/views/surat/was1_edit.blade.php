@@ -1,4 +1,4 @@
-@extends('elapdu.operator.template')
+@extends('lapdu::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-  
+
 <!-- Default box -->
 <div class="box">
   <div class="box-header with-border">
@@ -29,17 +29,17 @@
       <div class="col-xs-12">
 
         <h4>I. PERMASALAHAN</h4>
-        @include('elapdu.lapdu.partials.kasus_view')
+        @include('lapdu::lapdu.partials.kasus_view')
 
         <h4>II. DATA</h4>
         <h4>1. Data Pelapor</h4>
-        @include('elapdu.lapdu.partials.pelapor_view')
+        @include('lapdu::lapdu.partials.pelapor_view')
 
         <h4>2. Data Terlapor</h4>
-        @include('elapdu.lapdu.partials.terlapor_view')
+        @include('lapdu::lapdu.partials.terlapor_view')
 
         <h4>3. Data Penunjang</h4>
-        @include('elapdu.lapdu.partials.datapenunjang_view')
+        @include('lapdu::lapdu.partials.datapenunjang_view')
       </div>
     </div>
         <div class="box-footer">
@@ -56,10 +56,10 @@
     <div class="box-header with-border">
       <div class="col-xs-12">
 
-         @include('elapdu.surat.partials._was1_edit')
+         @include('lapdu::surat.partials._was1_edit')
     </div>
 
-    {{-- @include('elapdu.lapdu.partials._telaahan_view') --}}
+    {{-- @include('lapdu::lapdu.partials._telaahan_view') --}}
 
 
     <div class="box-footer">
@@ -82,15 +82,15 @@
 @endsection
 
 @section('scripts')
-  
-  <!-- iCheck 1.0.1 -->
-    <script src="{{ asset('/bower_components/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
-    <!-- FastClick -->
-    <script src="{{ asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
-    <!-- bootstrap datepicker -->
-    <script src="{{ asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 
-      <script src="{{ asset('/bower_components/ckeditor/ckeditor.js')}}"></script>
+  <!-- iCheck 1.0.1 -->
+    <script src="{{ asset('/vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('/vendor/core/fastclick/lib/fastclick.js')}}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{{ asset('/vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+
+      <script src="{{ asset('/vendor/core/ckeditor/ckeditor.js')}}"></script>
 
 
       <script>

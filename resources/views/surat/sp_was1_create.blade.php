@@ -141,9 +141,9 @@
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
 
-                    @include('elapdu.klarifikasi.partials._spklarifikasi_view')
+                    @include('lapdu::klarifikasi.partials._spklarifikasi_view')
 
-                    @include('elapdu.klarifikasi.partials._wawancara_view')
+                    @include('lapdu::klarifikasi.partials._wawancara_view')
 
                 </div>
                 </div>
@@ -160,7 +160,7 @@
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                 <div class="panel-body">
 
-                    @include('elapdu.klarifikasi.partials._notadinas_view')
+                    @include('lapdu::klarifikasi.partials._notadinas_view')
 
 
                 </div>
