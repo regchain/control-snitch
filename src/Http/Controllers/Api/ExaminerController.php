@@ -47,13 +47,34 @@ class ExaminerController extends Controller
             'unit' => $user->unit,
         ];
 
-        if (!$data->examiners) {
-            $data->examiners = [];
+        $type = $request->get('type');
+
+        switch ($type) {
+            case 'report':
+                if (!$data->examiners) {
+                    $data->examiners = [];
+                }
+
+                $examiners = $data->examiners;
+                array_push($examiners, $examiner);
+                $data->examiners = $examiners;
+                break;
+
+            case 'clarification':
+                if (!$data->examiners_2) {
+                    $data->examiners_2 = [];
+                }
+
+                $examiners = $data->examiners_2;
+                array_push($examiners, $examiner);
+                $data->examiners_2 = $examiners;
+                break;
+
+            default:
+                # code...
+                break;
         }
 
-        $examiners = $data->examiners;
-        array_push($examiners, $examiner);
-        $data->examiners = $examiners;
         $data->update();
 
         return $examiner;
