@@ -23,6 +23,7 @@ class ReportController extends Controller
             ->get();
 
         $advanced = Report::where('analysis', '!=', NULL)
+            ->where('date_warrant', NULL)
             ->where('reporteds', '!=', NULL)
             ->where('reporters', '!=', NULL)
             ->get();
