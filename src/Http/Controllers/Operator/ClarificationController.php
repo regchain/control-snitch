@@ -66,7 +66,7 @@ class ClarificationController extends Controller
     public function edit($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.edit', compact('data')) : redirect()->back();
+        return $data ? view('lapdu::klarifikasi.edit', compact('data')) : redirect()->back();
     }
 
     /**
@@ -104,12 +104,12 @@ class ClarificationController extends Controller
                 $files = array_merge($files, $items);
                 $data->files = $files;
                 $data->update();
-                return redirect()->route('lapdu.operator.laporan.edit', ['id' => $id]);
+                return redirect()->route('lapdu.operator.klarifikasi.edit', ['id' => $id]);
             }
         }
 
         $data->save();
-        return redirect()->route('lapdu.operator.laporan.index');
+        return redirect()->route('lapdu.operator.klarifikasi.index');
     }
 
     /**
@@ -127,18 +127,18 @@ class ClarificationController extends Controller
     {
         $data = Report::find($id);
         $institutions = Institution::get();
-        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions')) : redirect()->back();
+        return $data ? view('lapdu::klarifikasi.proses', compact('data', 'institutions')) : redirect()->back();
     }
 
     public function warrant($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data')) : redirect()->back();
+        return $data ? view('lapdu::surat.sp_was2_create', compact('data')) : redirect()->back();
     }
 
-    public function study($id)
+    public function interview($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.was1_create', compact('data')) : redirect()->back();
+        return $data ? view('lapdu::surat.ba_was2_qna', compact('data')) : redirect()->back();
     }
 }
