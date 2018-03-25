@@ -247,7 +247,7 @@
             $('#btn-lanjut').click(function() {
                 let data = {
                     '_method': 'PUT',
-                    'title': $('#name').val(),
+                    'title': $('#title').val(),
                     'description': CKEDITOR.instances.editor1.getData()
                 }
 
