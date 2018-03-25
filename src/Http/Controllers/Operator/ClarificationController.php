@@ -134,7 +134,9 @@ class ClarificationController extends Controller
     public function warrant($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.sp_was2_create', compact('data')) : redirect()->back();
+        $users = User::where('institute', '!=', NULL)->get();
+        $type = 'clarification';
+        return $data ? view('lapdu::surat.sp_was2_create', compact('data', 'users', 'type')) : redirect()->back();
     }
 
     public function interview($id, Request $request)
