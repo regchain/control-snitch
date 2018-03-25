@@ -120,7 +120,49 @@ class QnaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cond = false;
+        $data = Report::find($id);
+        $witness = $request->get('witness');
+        $interviewDate = $request->get('interview_date');
+        $summary = $request->get('summary');
+
+        if (!$data->interviews) {
+            $data->interviews = [
+                [
+                    'witness' => $witness,
+                    'interviewer' => $interviewer,
+                    'date' => $interviewDate,
+                    'qna' => [],
+                    'summary' => $summary
+                ]
+            ];
+        } else {
+            foreach ($data->interviews as $k => $i) {
+                if (($i['date'] == $interviewDate) && ($i['witness'] == $witness)) {
+                    $interviews = $data->interviews;
+                    $interviews[$k]['summary'] = $summary;
+                    $data->interviews = $interviews;
+                    $cond = true;
+                }
+            }
+
+            if (!$cond) {
+                $interviews = $data->interviews;
+                array_push($interviews, [
+                    'witness' => $witness,
+                    'interviewer' => $interviewer,
+                    'date' => $interviewDate,
+                    'qna' => [],
+                    'summary' => $summary
+                ]);
+
+                $data->interviews = $interviews;
+            }
+        }
+
+        $data->update();
+
+        return [];
     }
 
     /**

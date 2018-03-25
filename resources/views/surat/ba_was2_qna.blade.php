@@ -129,10 +129,13 @@
             $('#save-btn').click(function() {
                 let data = {
                     '_method': 'PUT',
-                    'interview_summary': CKEDITOR.instances.kesimpulan.getData()
+                    'witness': $('#witness').val(),
+                    'interview_date': $('#interview_date').val(),
+                    'summary': CKEDITOR.instances.kesimpulan.getData(),
+                    'interviewer': "{{ Auth::user()->name }}"
                 }
 
-                $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
+                $.post("{{ route('api.lapdu.qna.update', ['id' => $data->_id]) }}", data)
                     .done(function(res) {
                         alert('Data berhasil disimpan!')
                     })
