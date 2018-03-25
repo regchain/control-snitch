@@ -19,5 +19,6 @@ Route::prefix('lapdu')->group(function () {
 
         Route::resource('klarifikasi', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController', ['as' => 'lapdu.operator']);
         Route::get('klarifikasi/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@action')->name('lapdu.operator.klarifikasi.action');
+        Route::get('klarifikasi/{id}/wawancara', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@interview')->name('lapdu.operator.klarifikasi.interview');
     });
 });
