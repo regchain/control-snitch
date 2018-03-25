@@ -22,6 +22,7 @@ class ClarificationController extends Controller
             ->get();
 
         $advanced = Report::where('interviews', '!=', NULL)
+            ->where('date_warrant_2', NULL)
             ->get();
 
         return view('lapdu::klarifikasi.list', compact('new', 'advanced'));
