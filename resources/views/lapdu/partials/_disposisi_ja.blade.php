@@ -47,44 +47,44 @@
 
         <div class="col-sm-3 col-xs-6">
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="telaahan">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="telaahan" {{ $data['information/instruction'] ? (in_array('telaahan', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Telaahan
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="monitor & evaluasi">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="monitor & evaluasi" {{ $data['information/instruction'] ? (in_array('monitor & evaluasi', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Monitor & Evaluasi
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="setuju, saran">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="setuju, saran" {{ $data['information/instruction'] ? (in_array('setuju, saran', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Setuju, Saran
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="teliti/cermati">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="teliti/cermati" {{ $data['information/instruction'] ? (in_array('teliti/cermati', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Teliti / Cermati
             </label><br>
         </div>
 
         <div class="col-sm-3 col-xs-6">
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="pendapat">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="pendapat" {{ $data['information/instruction'] ? (in_array('pendapat', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Pendapat
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="usp/udk">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="usp/udk" {{ $data['information/instruction'] ? (in_array('usp/udk', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 USP /UDK
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="tindak lanjut">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="tindak lanjut" {{ $data['information/instruction'] ? (in_array('tindak lanjut', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Tindak lanjut
             </label><br>
 
             <label>
-                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="temui jamwas">
+                <input type="checkbox" class="minimal-red" name="information/instruction[]" value="temui jamwas" {{ $data['information/instruction'] ? (in_array('temui jamwas', $data['information/instruction']) ? 'checked' : '') : '' }}>
                 Temui JAM WAS
             </label><br>
         </div>
