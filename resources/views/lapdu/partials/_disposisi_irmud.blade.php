@@ -11,15 +11,13 @@
         </p>
         @else
         <div class="box-footer">
-            <form action="#" method="post">
-                <div class="input-group">
-                    <input type="text" name="disposition_young_inspector" placeholder="Disposisi ..." class="form-control">
+            <div class="input-group">
+                <input type="text" name="disposition_young_inspector" placeholder="Disposisi ..." class="form-control">
 
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default btn-flat">Kirim</button>
-                    </span>
-                </div>
-            </form>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default btn-flat">Kirim</button>
+                </span>
+            </div>
         </div>
         @endif
     </div>
