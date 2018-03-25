@@ -3,6 +3,7 @@
 namespace EKejaksaan\Lapdu\Http\Controllers\Operator;
 
 use EKejaksaan\Core\Models\Institution;
+use EKejaksaan\Core\Models\User;
 use EKejaksaan\Lapdu\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,11 +17,17 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $new = Report::where('putusan', NULL)
+        $new = Report::where('analysis', NULL)
             ->where('reporteds', '!=', NULL)
             ->where('reporters', '!=', NULL)
             ->get();
-        return view('lapdu::lapdu.list', compact('new'));
+
+        $advanced = Report::where('analysis', '!=', NULL)
+            ->where('reporteds', '!=', NULL)
+            ->where('reporters', '!=', NULL)
+            ->get();
+
+        return view('lapdu::lapdu.list', compact('new', 'advanced'));
     }
 
     /**
@@ -133,7 +140,8 @@ class ReportController extends Controller
     public function warrant($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data')) : redirect()->back();
+        $users = User::where('institution', NULL)->get();
+        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users')) : redirect()->back();
     }
 
     public function study($id)
