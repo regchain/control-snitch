@@ -56,7 +56,7 @@
                                     <tr>
                                         <td>
                                             @foreach ($d->reporteds as $r)
-                                                @if ($r['status'] == 'terlapor')
+                                                @if ($r['status'] == 'terlapor' && $r['nip'] && $r['nrp'])
                                                 {{ $r['name'] }}<br>
                                                 {{--  [Pangkat] [Golongan]<br>  --}}
                                                 {{ $r['nip'] . ' | ' . $r['nrp'] }}<br>
@@ -65,7 +65,7 @@
                                         </td>
                                         <td>
                                             @foreach ($d->reporteds as $r)
-                                                @if ($r['status'] == 'terlapor')
+                                                @if ($r['status'] == 'terlapor' && $r['jobtitle'] && $r['institute'])
                                                 {{ $r['jobtitle'] . ' | '. $r['institute'] }}
                                                 @endif
                                             @endforeach
