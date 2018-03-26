@@ -15,7 +15,7 @@
                     @if ($data)
                         @foreach ($data as $d)
                             @foreach ($d->reporteds as $r)
-                                @if ($r['status'] == 'terlapor')
+                                @if ($r['status'] == 'terlapor' && array_key_exists('nip', $r) && array_key_exists('nrp', $r) && array_key_exists('jobtitle', $r) && array_key_exists('institute', $r))
                                 <tr>
                                     <td>
                                         <span class="label bg-green pull-right">Jaksa</span>
