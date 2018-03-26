@@ -16,8 +16,9 @@
         </thead>
 
         <tbody>
-            @if (isset($data) && $data->reporters)
+            @if (isset($data) && $data->reporteds)
             @foreach ($data->reporteds as $k => $r)
+            @if (array_key_exists('institute', $r) && array_key_exists('jobtitle', $r) && array_key_exists('position', $r))
             <tr>
                 <td>{{ $k+1 }}.</td>
                 <td>{{ $r['name'] }}</td>
@@ -31,6 +32,7 @@
                     </div>
                 </td>  --}}
             </tr>
+            @endif
             @endforeach
             @endif
         </tbody>

@@ -18,6 +18,7 @@
         <tbody>
             @if (isset($data) && $data->reporters)
             @foreach ($data->reporters as $k => $r)
+            @if (array_key_exists('status', $r))
             <tr>
                 <td>{{ $k+1 }}.</td>
                 <td>{{ $r['name'] }}</td>
@@ -31,6 +32,7 @@
                     </div>
                 </td>  --}}
             </tr>
+            @endif
             @endforeach
             @endif
         </tbody>
