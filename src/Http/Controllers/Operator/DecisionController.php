@@ -33,6 +33,9 @@ class DecisionController extends Controller
             case 'sedang':
                 $data = Punishment::where('status', 'SEDANG');
                 break;
+            case '-semua-':
+                $data = Punishment::where('status', 'LIKE', '%');
+                break;
         }
 
         $data = $data->get();

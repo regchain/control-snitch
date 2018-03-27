@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="box-header">
-        <a href="{{ url('subyek_putusan') }}" class="btn btn-default pull-right"><i class="fa fa-list"> </i>&nbsp;Lihat Semua</a>
+        <a href="{{ route('lapdu.operator.putusan.index', ['status' => '-semua-']) }}" class="btn btn-default pull-right"><i class="fa fa-list"> </i>&nbsp;Lihat Semua</a>
         <h2 class="box-title"><strong>TERHUKUM</strong></h2>
     </div>
 
