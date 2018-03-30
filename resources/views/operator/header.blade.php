@@ -151,13 +151,13 @@
                             <li class="user-header">
                                 <img src="{{ asset('vendor/core/admin-lte/dist/img/user.png')}}" class="img-circle" alt="User Image">
 
-                                {{ Auth::user()->name }}
-                                <br>
-                                <small>
-                                    KEPALA KEJAKSAAN TINGGI
+                                <p>
+                                    {{ Auth::user()->name }}
                                     <br>
-                                    SULAWESI UTARA
-                                </small>
+                                    <small>
+                                        {{ Auth::user()->jobtitle }}
+                                    </small>
+                                </p>
                             </li>
 
                             <!-- Menu Body -->
@@ -171,7 +171,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="pengguna" class="btn btn-default btn-flat">Kelola Akun</a>
+                                    <a href="{{ route('pengguna.index') }}" class="btn btn-default btn-flat">Kelola Akun</a>
                                 </div>
 
                                 <div class="pull-right">
