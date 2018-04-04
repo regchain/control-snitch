@@ -6,6 +6,10 @@
 
 @section('subjudul', 'Republik Indonesia')
 
+@section('stylesheets')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+@endsection
+
 @section('content')
 <!-- Default box -->
 <form action="{{ route('lapdu.operator.laporan.update', ['id' => $data->_id]) }}" method="post" id="analisa-form">
@@ -58,37 +62,100 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                III. ANALISA
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <textarea id="analisa" rows="10" cols="80" placeholder="Uraikan analisa yang singkat dan lengkap">
+                                {{ $data->analysis ? $data->analysis : '' }}
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                IV. KESIMPULAN
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <textarea id="kesimpulan" rows="10" cols="80" placeholder="Uraikan kesimpulan yang singkat dan lengkap">
+                                {{ $data->conclusion ? $data->conclusion : '' }}
+                            </textarea>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conclusion_point" value="Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" {{ $data->conclusion_point == "Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" ? 'selected' : '' }}>
+                                    Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conclusion_point" value="Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat">
+                                    Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="conclusion_point" value="Substansi permasalahannnya merupakan kewenangan bidang teknis">
+                                    Substansi permasalahannnya merupakan kewenangan bidang teknis
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFour">
+                                V. SARAN
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="suggestion" value="Tidak perlu ditindak lanjuti">
+                                    Tidak perlu ditindak lanjuti
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="suggestion" value="Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa">
+                                    Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa
+                                </label>
+                            </div>
+
+                            <div class="radio disabled">
+                                <label>
+                                    <input type="radio" name="suggestion" value="Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait">
+                                    Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="box-body">
-            <h4>ANALISA</h4>
-
-            <textarea id="analisa" rows="10" cols="80" placeholder="Uraikan analisa yang singkat dan lengkap">
-                {{ $data->analysis ? $data->analysis : '' }}
-            </textarea>
-
-            <h4>KESIMPULAN</h4>
-
-            <textarea id="kesimpulan" rows="10" cols="80" placeholder="Uraikan kesimpulan yang singkat dan lengkap">
-                {{ $data->conclusion ? $data->conclusion : '' }}
-            </textarea>
-
-            <div class="col-md-11 col-md-offset-1">
-                <label>Pendapat:</label>
-
-                <textarea id="pendapat" rows="10" cols="80" placeholder="Uraikan pendapat yang singkat dan lengkap">
-                    {{ $data->opinion ? $data->opinion : '' }}
-                </textarea>
-
-                <label>Saran:</label>
-
-                <textarea id="saran" rows="10" cols="80" placeholder="Uraikan saran yang singkat dan lengkap">
-                    {{ $data->suggestion ? $data->suggestion : '' }}
-                </textarea>
-            </div>
-        </div>
-        {{--  @include('lapdu::lapdu.partials._telaahan_view')  --}}
 
         <div class="box-footer">
             <!-- this row will not appear when printing -->
@@ -116,6 +183,8 @@
 @endsection
 
 @section('scripts')
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!-- iCheck 1.0.1 -->
 <script src="{{ asset('vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
@@ -128,55 +197,21 @@
 
 
 <script>
-  $(function () {
-          //iCheck for checkbox and radio inputs
-          $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-            checkboxClass: 'icheckbox_minimal-blue',
-            radioClass   : 'iradio_minimal-blue'
-          })
-          //Red color scheme for iCheck
-          $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass   : 'iradio_minimal-red'
-          })
-          //Flat red color scheme for iCheck
-          $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass   : 'iradio_flat-green'
-          })
-          //Date picker
-          $('#datepicker').datepicker({
-            autoclose: true
-          })
-          //Date picker
-          $('#datepicker2').datepicker({
-            autoclose: true
-          })
-        //Date picker
-        $('#notadinas').datepicker({
-          autoclose: true
-        })
-        //Date picker
-        $('#klarifikasi').datepicker({
-          autoclose: true
-        })
+    $(function () {
+        $("input[type='radio']" ).checkboxradio()
 
-         // Replace the <textarea id="editor1"> with a CKEditor
+        // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
         CKEDITOR.replace('analisa')
         CKEDITOR.replace('kesimpulan')
-        CKEDITOR.replace('pendapat')
-        CKEDITOR.replace('saran')
-        //bootstrap WYSIHTML5 - text editor
-        // $('.textarea').wysihtml5()
 
         $('#submit-was').click(function() {
             let data = {
                 '_method': 'PUT',
                 'analysis': CKEDITOR.instances.analisa.getData(),
                 'conclusion': CKEDITOR.instances.kesimpulan.getData(),
-                'opinion': CKEDITOR.instances.pendapat.getData(),
-                'suggestion': CKEDITOR.instances.saran.getData()
+                'conclusion_point': $("input[name='conclusion_point']").val(),
+                'suggestion': $("input[name='suggestion']").val(),
             }
 
             $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
@@ -185,7 +220,6 @@
                     // window.location.replace("{{ env('APP_URL') }}/lapdu/operator/laporan")
                 })
         })
-
-      })
-    </script>
-    @endsection
+    })
+</script>
+@endsection
