@@ -1,5 +1,5 @@
 <div class="panel-group" id="pengaduan" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
+    {{-- <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#pengaduan" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -19,9 +19,8 @@
                 @endif
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    @if ($data->disposition_ja || $data->disposition_waja)
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title">
@@ -35,17 +34,16 @@
             <div class="panel-body">
                 @include('lapdu::lapdu.partials._disposisi_jamwas')
 
-                @if ($data->analysis)
+                {{-- @if ($data->$type['analysis'])
                 <div class="box-footer">
                     <a href="{{ route('lapdu.operator.laporan.warrant', ['id' => $data->_id]) }}" for="spwas1" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH KLARIFIKASI" style="margin-right: 5px;"><i class="fa fa-plus"></i> SP.WAS-1</a>
                 </div>
-                @endif
+                @endif --}}
             </div>
         </div>
     </div>
-    @endif
 
-    @if ($data->disposition_jamwas || $data->disposition_sesjamwas)
+    @if ($data->$type && (array_key_exists('disposition_jamwas', $data->$type) || array_key_exists('disposition_sesjamwas', $data->$type)))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingFive">
             <h4 class="panel-title">
@@ -63,7 +61,7 @@
     </div>
     @endif
 
-    @if ($data->disposition_inspector)
+    @if ($data->$type && array_key_exists('disposition_inspector', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSix">
             <h4 class="panel-title">
@@ -81,7 +79,7 @@
     </div>
     @endif
 
-    @if ($data->disposition_young_inspector)
+    @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSeven">
             <h4 class="panel-title">

@@ -7,6 +7,8 @@
 @section('subjudul', 'Republik Indonesia')
 
 @section('stylesheets')
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{ asset('vendor/core/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')}}">
     <!-- UI Tool Tip -->
     <link rel="stylesheet" href="{{ asset('vendor/core/jquery-ui/themes/base/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{ asset('vendor/lapdu/templates/alpha/assets/css/tooltip.css')}}">
@@ -33,25 +35,46 @@
             </div>
 
             <div class="box-body">
+                @include('lapdu::lapdu.partials._lanjutan_inspektur')
+            </div>
+        </form>
+    </div>
+
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <p class="pull-right"><strong>WAS-1</strong></p>
+            <p><small class="col-xs-3 pull-right text-justify">Lampiran Petunjuk Pelaksanaan JAMWAS Nomor ; 01/H/Hjw/04//2011 tanggal 01 April 2011 tentang Teknis Penanganan Laporan dan Tata Kelola Administrasi Bidang Pengawasan<br></small></p>
+            <h1 class="box-title"><pre>table:users:institute</pre></h1>
+        </div>
+
+        <h3 class="description-block" for="inputGroupSuccess2"><u>T E L A A H A N</u></h3>
+
+        <div class="box-body">
+        </div>
+
+        <!-- /.row -->
+        <div class="box-body">
+            <div class="col-md-12">
                 @include('lapdu::lapdu.partials._pengaduan')
             </div>
+        </div>
 
-            <div class="box-footer">
-                <!-- this row will not appear when printing -->
-                <div class="row no-print">
-                    <div class="col-xs-12">
-                        {{--  <a href="javascript:void(0)" class="btn btn-success pull-right" style="margin-right: 5px;">
-                            <i class="fa fa-check-square-o"></i> Lanjut
-                        </a>  --}}
-                        <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-default pull-right" style="margin-right: 5px;">
-                            <i class="fa fa-mail-reply"></i> Daftar Lapdu
-                        </a>
-                    </div>
+        <div class="box-footer">
+            <!-- this row will not appear when printing -->
+            <div class="row no-print">
+                <div class="col-xs-12">
+                    {{--  <a href="javascript:void(0)" class="btn btn-success pull-right" style="margin-right: 5px;">
+                        <i class="fa fa-check-square-o"></i> Lanjut
+                    </a>  --}}
+                    <a href="{{ route('lapdu.operator.laporan.index') }}" class="btn btn-default pull-right" style="margin-right: 5px;">
+                        <i class="fa fa-mail-reply"></i> Daftar Lapdu
+                    </a>
                 </div>
-                <!-- /.content -->
             </div>
-            <!-- /.box-footer-->
-        </form>
+            <!-- /.content -->
+        </div>
+        <!-- /.box-footer-->
     </div>
     <!-- /.box -->
 @endsection
@@ -66,6 +89,7 @@
     <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
     <!-- bootstrap datepicker -->
     <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js')}}"></script>
 
     <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
     <!-- Select2 -->
@@ -89,47 +113,24 @@
                 }
             })
 
-            //iCheck for checkbox and radio inputs
-            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-                checkboxClass: 'icheckbox_minimal-blue',
-                radioClass   : 'iradio_minimal-blue'
-            })
-
-            //Red color scheme for iCheck
-            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-                checkboxClass: 'icheckbox_minimal-red',
-                radioClass   : 'iradio_minimal-red'
-            })
-
             //Flat red color scheme for iCheck
             $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-                checkboxClass: 'icheckbox_flat-green',
-                radioClass   : 'iradio_flat-green'
+                checkboxClass: 'icheckbox_flat-red',
+                radioClass   : 'iradio_flat-red'
             })
 
             //Date picker
-            $('#datepicker').datepicker({
-                autoclose: true
-            })
-
-            //Date picker
-            $('#datepicker2').datepicker({
-                autoclose: true
-            })
-
-            //Date picker
-            $('#was3').datepicker({
-                autoclose: true
-            })
-
-            //Date picker
-            $('#notadinas').datepicker({
-                autoclose: true
-            })
-
-            //Date picker
-            $('#klarifikasi').datepicker({
-                autoclose: true
+            $('.datepicker').datepicker({
+                format: "dd MM yyyy",
+                weekStart: 1,
+                todayBtn: true,
+                language: "id-ID",
+                multidate: true,
+                multidateSeparator: "-",
+                forceParse: false,
+                daysOfWeekHighlighted: "0",
+                autoclose: true,
+                todayHighlight: true
             })
 
             //Initialize Select2 Elements
