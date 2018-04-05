@@ -75,7 +75,7 @@
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
                             <textarea id="analisa" rows="10" cols="80" placeholder="Uraikan analisa yang singkat dan lengkap">
-                                {{ $data->analysis ? $data->analysis : '' }}
+                                {{ array_key_exists('analysis', $data->$type) ? $data->$type['analysis'] : '' }}
                             </textarea>
                         </div>
                     </div>
@@ -93,26 +93,26 @@
                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                         <div class="panel-body">
                             <textarea id="kesimpulan" rows="10" cols="80" placeholder="Uraikan kesimpulan yang singkat dan lengkap">
-                                {{ $data->conclusion ? $data->conclusion : '' }}
+                                {{ array_key_exists('conclusion', $data->$type) ? $data->$type['conclusion'] : '' }}
                             </textarea>
 
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="conclusion_point" value="Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" {{ $data->conclusion_point == "Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" ? 'selected' : '' }}>
+                                    <input type="radio" name="opinion" value="Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" {{ array_key_exists('opinion', $data->$type) ? ($data->$type['opinion'] == "Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin" ? 'checked' : '') : '' }}>
                                     Belum ditemukan bukti awal adanya dugaan pelanggaran disiplin
                                 </label>
                             </div>
 
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="conclusion_point" value="Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat">
+                                    <input type="radio" name="opinion" value="Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat" {{ array_key_exists('opinion', $data->$type) ? ($data->$type['opinion'] == "Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat" ? 'checked' : '') : '' }}>
                                     Ditemukan bukti awal adanya dugaan pelanggaran disiplin ringan atau sedang atau berat
                                 </label>
                             </div>
 
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="conclusion_point" value="Substansi permasalahannnya merupakan kewenangan bidang teknis">
+                                    <input type="radio" name="opinion" value="Substansi permasalahannnya merupakan kewenangan bidang teknis" {{ array_key_exists('opinion', $data->$type) ? ($data->$type['opinion'] == "Substansi permasalahannnya merupakan kewenangan bidang teknis" ? 'checked' : '') : '' }}>
                                     Substansi permasalahannnya merupakan kewenangan bidang teknis
                                 </label>
                             </div>
@@ -133,21 +133,21 @@
                         <div class="panel-body">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="suggestion" value="Tidak perlu ditindak lanjuti">
+                                    <input type="radio" name="suggestion" value="Tidak perlu ditindak lanjuti" {{ array_key_exists('suggestion', $data->$type) ? ($data->$type['suggestion'] == "Tidak perlu ditindak lanjuti" ? 'checked' : '') : '' }}>
                                     Tidak perlu ditindak lanjuti
                                 </label>
                             </div>
 
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="suggestion" value="Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa">
+                                    <input type="radio" name="suggestion" value="Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa" {{ array_key_exists('suggestion', $data->$type) ? ($data->$type['suggestion'] == "Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa" ? 'checked' : '') : '' }}>
                                     Perlu ditindak lanjuti dengan melakukan Klarifikasi atau Inspeksi Kasus oleh atasan langsung atau tim pemeriksa
                                 </label>
                             </div>
 
                             <div class="radio disabled">
                                 <label>
-                                    <input type="radio" name="suggestion" value="Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait">
+                                    <input type="radio" name="suggestion" value="Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait" {{ array_key_exists('suggestion', $data->$type) ? ($data->$type['suggestion'] == "Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait" ? 'checked' : '') : '' }}>
                                     Perlu ditindaklanjuti dengan meneruskan laporan pengaduan tersebut kepada bidang teknis terkait
                                 </label>
                             </div>
@@ -208,10 +208,12 @@
         $('#submit-was').click(function() {
             let data = {
                 '_method': 'PUT',
-                'analysis': CKEDITOR.instances.analisa.getData(),
-                'conclusion': CKEDITOR.instances.kesimpulan.getData(),
-                'conclusion_point': $("input[name='conclusion_point']").val(),
-                'suggestion': $("input[name='suggestion']").val(),
+                'lapdu': {
+                    'analysis': CKEDITOR.instances.analisa.getData(),
+                    'conclusion': CKEDITOR.instances.kesimpulan.getData(),
+                    'opinion': $("input[name='opinion']:checked").val(),
+                    'suggestion': $("input[name='suggestion']:checked").val(),
+                }
             }
 
             $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
