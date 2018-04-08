@@ -66,7 +66,8 @@ class ReportController extends Controller
     {
         $data = Report::find($id);
         $type = 'lapdu';
-        return $data ? view('lapdu::lapdu.view', compact('data', 'type')) : redirect()->back();
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::lapdu.view', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 
     /**
@@ -92,10 +93,25 @@ class ReportController extends Controller
     {
         $data = Report::find($id);
         $input = $request->except(['_method', '_token']);
+        $redirect = '';
 
         foreach ($input as $k => $i) {
             if ($k != 'files') {
-                if ($k == 'lapdu') {
+                if (in_array($k, ['lapdu', 'klarifikasi'])) {
+                    switch ($k) {
+                        case 'lapdu':
+                            $redirect = 'laporan';
+                            break;
+
+                        case 'klarifikasi':
+                            $redirect = 'klarifikasi';
+                            break;
+
+                        default:
+                            # code...
+                            break;
+                    }
+
                     foreach ($i as $ki => $item) {
                         if (str_contains($ki, 'date')) {
                             $i[$ki] = Carbon::parse($item)->setTimezone('Asia/Jakarta');
@@ -135,7 +151,7 @@ class ReportController extends Controller
         }
 
         $data->save();
-        return redirect()->route('lapdu.operator.laporan.index');
+        return redirect()->route('lapdu.operator.'.$redirect.'.index');
     }
 
     /**
@@ -154,7 +170,8 @@ class ReportController extends Controller
         $data = Report::find($id);
         $institutions = Institution::get();
         $type = 'lapdu';
-        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions', 'type')) : redirect()->back();
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
     }
 
     public function warrant($id)
@@ -164,13 +181,15 @@ class ReportController extends Controller
             ->where('unit', 'PENGAWASAN')
             ->get();
         $type = 'lapdu';
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users', 'type')) : redirect()->back();
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
     }
 
     public function study($id)
     {
         $data = Report::find($id);
         $type = 'lapdu';
-        return $data ? view('lapdu::surat.was1_create', compact('data', 'type')) : redirect()->back();
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::surat.was1_create', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 }
