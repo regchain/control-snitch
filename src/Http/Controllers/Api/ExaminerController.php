@@ -49,32 +49,14 @@ class ExaminerController extends Controller
 
         $type = $request->get('type');
 
-        switch ($type) {
-            case 'report':
-                if (!$data->examiners) {
-                    $data->examiners = [];
-                }
-
-                $examiners = $data->examiners;
-                array_push($examiners, $examiner);
-                $data->examiners = $examiners;
-                break;
-
-            case 'clarification':
-                if (!$data->examiners_2) {
-                    $data->examiners_2 = [];
-                }
-
-                $examiners = $data->examiners_2;
-                array_push($examiners, $examiner);
-                $data->examiners_2 = $examiners;
-                break;
-
-            default:
-                # code...
-                break;
+        if (!array_key_exists('examiners', $data->$type)) {
+            $temp = ['examiners' => []];
+            $data->$type = array_merge($data->$type, $temp);
         }
 
+        $examiners = ['examiners' => $data->$type['examiners']];
+        array_push($examiners['examiners'], $examiner);
+        $data->$type = array_merge($data->$type, $examiners);
         $data->update();
 
         return $examiner;
