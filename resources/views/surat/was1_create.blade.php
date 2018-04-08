@@ -195,6 +195,7 @@
 
 <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
 
+<script src="{{ asset('vendor/core/moment/min/moment.min.js')}}"></script>
 
 <script>
     $(function () {
@@ -213,8 +214,21 @@
                     'conclusion': CKEDITOR.instances.kesimpulan.getData(),
                     'opinion': $("input[name='opinion']:checked").val(),
                     'suggestion': $("input[name='suggestion']:checked").val(),
+                    'riksa_by': {
+                        'name': "{{ Auth::user()->name }}",
+                        'institute': "{{ Auth::user()->institute }}",
+                        'jobtitle': "{{ Auth::user()->jobtitle }}",
+                        'nip': "{{ Auth::user()->nip }}",
+                        'nrp': "{{ Auth::user()->nrp }}",
+                        'unit': "{{ Auth::user()->unit }}"
+                    },
+                    'date_riksa': moment().format('DD-MM-YYYY'),
+                    'instruction_young_inspector': null,
+                    'instruction_inspector': null
                 }
             }
+
+            console.log(data)
 
             $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)
                 .done(function(res) {
