@@ -13,8 +13,8 @@
         </thead>
 
         <tbody>
-            @if ($data->interviews)
-                @foreach ($data->interviews as $i)
+            @if (array_key_exists('interviews', $data->$type))
+                @foreach ($data->$type['interviews'] as $i)
                     @foreach ($i['qna'] as $l => $q)
                     <tr>
                         <td>{{ $l+1 }}</td>

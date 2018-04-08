@@ -34,7 +34,7 @@
             <br>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input type="text" class="form-control" placeholder="Tgl Wawancara" id="interview_date">
+                <input type="text" class="form-control datepicker" placeholder="Tgl Wawancara" id="interview_date">
             </div>
             <!-- /.input group -->
         </div><!-- /date -->

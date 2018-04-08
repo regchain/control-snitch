@@ -66,6 +66,7 @@
     <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
     <!-- bootstrap datepicker -->
     <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js')}}"></script>
 
     <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
     <!-- Select2 -->
@@ -108,14 +109,21 @@
                 checkboxClass: 'icheckbox_flat-green',
                 radioClass   : 'iradio_flat-green'
             })
+
             //Date picker
-            $('#interview_date').datepicker({
-                autoclose: true
+            $('.datepicker').datepicker({
+                format: "dd MM yyyy",
+                weekStart: 1,
+                todayBtn: true,
+                language: "id-ID",
+                // multidate: true,
+                // multidateSeparator: "-",
+                forceParse: false,
+                daysOfWeekHighlighted: "0",
+                autoclose: true,
+                todayHighlight: true
             })
-            //Date picker
-            $('#klarifikasi').datepicker({
-                autoclose: true
-            })
+
             //Initialize Select2 Elements
             $('.select2').select2()
 

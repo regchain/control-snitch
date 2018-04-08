@@ -45,39 +45,38 @@ class QnaController extends Controller
             'answer' => $request->get('answer'),
         ];
 
-        if (!$data->interviews) {
-            $data->interviews = [
+        if (!array_key_exists('interviews', $data->klarifikasi)) {
+            $temp = ['interviews' => [
                 [
                     'witness' => $witness,
                     'interviewer' => $interviewer,
                     'date' => $interviewDate,
                     'qna' => [$qna]
                 ]
-            ];
+            ]];
+            $data->klarifikasi = array_merge($data->klarifikasi, $temp);
         } else {
-            foreach ($data->interviews as $k => $i) {
+            foreach ($data->klarifikasi['interviews'] as $k => $i) {
                 if (($i['date'] == $interviewDate) && ($i['witness'] == $witness)) {
-                    $interviews = $data->interviews;
+                    $interviews = ['interviews' => $data->klarifikasi['interviews']];
                     $qnas = $i['qna'];
                     array_push($qnas, $qna);
-                    $interviews[$k]['qna'] = $qnas;
-                    $data->interviews = $interviews;
+                    $interviews['interviews'][$k]['qna'] = $qnas;
+                    $data->klarifikasi = array_merge($data->klarifikasi, $interviews);
                     $cond = true;
                 }
             }
 
             if (!$cond) {
-                $interviews = $data->interviews;
-                array_push($interviews, [
+                $interviews = ['interviews' => $data->klarifikasi['interviews']];
+                array_push($interviews['interviews'], [
                     'witness' => $witness,
                     'interviewer' => $interviewer,
                     'date' => $interviewDate,
                     'qna' => [$qna]
                 ]);
-
-                $data->interviews = $interviews;
+                $data->klarifikasi = array_merge($data->klarifikasi, $interviews);
             }
-
         }
 
         $data->update();
@@ -126,8 +125,8 @@ class QnaController extends Controller
         $interviewDate = $request->get('interview_date');
         $summary = $request->get('summary');
 
-        if (!$data->interviews) {
-            $data->interviews = [
+        if (!array_key_exists('interviews', $data->klarifikasi)) {
+            $temp = ['interviews' => [
                 [
                     'witness' => $witness,
                     'interviewer' => $interviewer,
@@ -135,28 +134,27 @@ class QnaController extends Controller
                     'qna' => [],
                     'summary' => $summary
                 ]
-            ];
+            ]];
+            $data->klarifikasi = array_merge($data->klarifikasi, $temp);
         } else {
-            foreach ($data->interviews as $k => $i) {
+            foreach ($data->klarifikasi['interviews'] as $k => $i) {
                 if (($i['date'] == $interviewDate) && ($i['witness'] == $witness)) {
-                    $interviews = $data->interviews;
-                    $interviews[$k]['summary'] = $summary;
-                    $data->interviews = $interviews;
+                    $interviews = ['interviews' => $data->klarifikasi['interviews']];
+                    $interviews['interviews'][$k]['summary'] = $summary;
+                    $data->klarifikasi = array_merge($data->klarifikasi, $interviews);
                     $cond = true;
                 }
             }
 
             if (!$cond) {
-                $interviews = $data->interviews;
-                array_push($interviews, [
+                $interviews = ['interviews' => $data->klarifikasi['interviews']];
+                array_push($interviews['interviews'], [
                     'witness' => $witness,
                     'interviewer' => $interviewer,
                     'date' => $interviewDate,
-                    'qna' => [],
-                    'summary' => $summary
+                    'qna' => [$qna]
                 ]);
-
-                $data->interviews = $interviews;
+                $data->klarifikasi = array_merge($data->klarifikasi, $interviews);
             }
         }
 
