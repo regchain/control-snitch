@@ -83,15 +83,13 @@
                                             <br><strong>Perihal: </strong>{{ $d->title }}
                                         </td>
                                         <td>
-                                            @if (!$d->disposition_ja && !$d->disposition_waja)
-                                            JAKSA AGUNG
-                                            @elseif (!$d->disposition_jamwas && !$d->disposition_sesjamwas)
+                                            @if (!$d->$type || ((!array_key_exists('disposition_jamwas', $d->$type) && !array_key_exists('disposition_sesjamwas', $d->$type)) || !array_key_exists('to_inspector', $d->$type)))
                                             JAMWAS
-                                            @elseif (!$d->disposition_inspector)
-                                            {{ strtoupper($d->to_inspector) }}
-                                            @elseif (!$d->disposition_young_inspector)
-                                            {{ strtoupper($d->to_young_inspector) }}
-                                            @elseif ($d->disposition_young_inspector)
+                                            @elseif ((!array_key_exists('disposition_inspector', $d->$type) && array_key_exists('to_inspector', $d->$type)) || !array_key_exists('to_young_inspector', $d->$type))
+                                            {{ strtoupper($d->$type['to_inspector']) }}
+                                            @elseif ((!array_key_exists('disposition_young_inspector', $d->$type) && array_key_exists('to_young_inspector', $d->$type)) || array_key_exists('analysis', $d->$type) || !array_key_exists('to_riksa', $d->$type))
+                                            {{ strtoupper($d->$type['to_young_inspector']) }}
+                                            @elseif (array_key_exists('disposition_young_inspector', $d->$type) && !array_key_exists('analysis', $d->$type))
                                             RIKSA
                                             @endif
                                         </td>
@@ -192,16 +190,16 @@
                                             <br><strong>Perihal: </strong>{{ $d->title }}
                                         </td>
                                         <td>
-                                            @if (!$d->disposition_ja && !$d->disposition_waja)
-                                            JAKSA AGUNG
-                                            @elseif (!$d->disposition_jamwas && !$d->disposition_sesjamwas)
+                                            @if (array_key_exists('analysis', $d->$type) && !$d->$type['instruction_young_inspector'] && !array_key_exists('opinion_young_inspector', $d->$type))
+                                            {{ strtoupper($d->$type['to_young_inspector']) }}
+                                            @elseif (array_key_exists('opinion_young_inspector', $d->$type) && !$d->$type['instruction_inspector'] && !array_key_exists('opinion_inspector', $d->$type))
+                                            {{ strtoupper($d->$type['to_inspector']) }}
+                                            @elseif (array_key_exists('opinion_inspector', $d->$type) && !array_key_exists('opinion_jamwas', $d->$type))
                                             JAMWAS
-                                            @elseif (!$d->disposition_inspector)
-                                            {{ strtoupper($d->to_inspector) }}
-                                            @elseif (!$d->disposition_young_inspector)
-                                            {{ strtoupper($d->to_young_inspector) }}
-                                            @elseif ($d->disposition_young_inspector)
-                                            RIKSA
+                                            @elseif (array_key_exists('opinion_jamwas', $d->$type) && !array_key_exists('opinion_ja', $d->$type))
+                                            JAKSA AGUNG
+                                            @elseif (array_key_exists('opinion_ja', $d->$type))
+                                            SESJAMWAS
                                             @endif
                                         </td>
                                         <td>
