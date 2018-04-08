@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    @if ($data->analysis)
+    @if (array_key_exists('analysis', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingTelaahan">
             <h4 class="panel-title">
@@ -63,7 +63,7 @@
     </div>
     @endif
 
-    @if ($data->memo)
+    @if (array_key_exists('memo', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingNotadinas">
             <h4 class="panel-title">
@@ -83,7 +83,7 @@
     </div>
     @endif
 
-    @if ($data->clarification)
+    @if (array_key_exists('clarification', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingKlarifikasi">
             <h4 class="panel-title">
