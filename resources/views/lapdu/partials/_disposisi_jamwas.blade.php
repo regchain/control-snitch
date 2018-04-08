@@ -105,7 +105,7 @@
     </div>
 
     <div class="col-xs-6">
-        @if ($data->$type && array_key_exists('disposition_jamwas', $data->$type))
+        @if ($data->$type && array_key_exists('disposition_jamwas', $data->$type) && array_key_exists('to_inspector', $data->$type))
         <p>
             <strong class="text-blue">JAMWAS : </strong>
             {{ $data->$type['disposition_jamwas'] }}
@@ -113,7 +113,7 @@
         @else
         <div class="box-footer">
             <div class="input-group">
-                <input type="text" name="{{ $type }}[disposition_jamwas]" placeholder="Disposisi ..." class="form-control">
+                <input type="text" name="{{ $type }}[disposition_jamwas]" placeholder="Disposisi ..." class="form-control" value="{{ ($data->$type && array_key_exists('disposition_jamwas', $data->$type)) ? $data->$type['disposition_jamwas'] : ''}}">
 
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-default btn-flat">Kirim</button>
@@ -132,7 +132,7 @@
         @else
         <div class="box-footer">
             <div class="input-group">
-                <input type="text" name="{{ $type }}[disposition_sesjamwas]" placeholder="Disposisi ..." class="form-control">
+                <input type="text" name="{{ $type }}[disposition_sesjamwas]" placeholder="Disposisi ..." class="form-control" value="{{ ($data->$type && array_key_exists('disposition_sesjamwas', $data->$type)) ? $data->$type['disposition_sesjamwas'] : ''}}">
 
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-default btn-flat">Kirim</button>

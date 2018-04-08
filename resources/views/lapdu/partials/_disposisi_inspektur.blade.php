@@ -4,7 +4,7 @@
 
     <div class="row">    <!-- INFORMASI / INSTRUKSI -->
         <div class="col-sm-6 col-xs-5">
-            @if ($data->$type && array_key_exists('disposition_inspector', $data->$type))
+            @if ($data->$type && array_key_exists('disposition_inspector', $data->$type) && array_key_exists('to_young_inspector', $data->$type))
             <p>
                 <strong class="text-blue">{{ strtoupper($data->$type['to_inspector']) }}: </strong>
                 {{ $data->$type['disposition_inspector'] }}
@@ -12,7 +12,7 @@
             @else
             <div class="box-footer">
                 <div class="input-group">
-                    <input type="text" name="{{ $type }}[disposition_inspector]" placeholder="Disposisi ..." class="form-control">
+                    <input type="text" name="{{ $type }}[disposition_inspector]" placeholder="Disposisi ..." class="form-control" value="{{ ($data->$type && array_key_exists('disposition_inspector', $data->$type)) ? $data->$type['disposition_inspector'] : ''}}">
 
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default btn-flat">Kirim</button>

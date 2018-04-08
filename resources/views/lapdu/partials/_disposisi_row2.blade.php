@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    @if ($data->$type && (array_key_exists('disposition_jamwas', $data->$type) || array_key_exists('disposition_sesjamwas', $data->$type)))
+    @if ($data->$type && ((array_key_exists('disposition_jamwas', $data->$type) || array_key_exists('disposition_sesjamwas', $data->$type)) && array_key_exists('to_inspector', $data->$type)))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingFive">
             <h4 class="panel-title">
@@ -61,7 +61,7 @@
     </div>
     @endif
 
-    @if ($data->$type && array_key_exists('disposition_inspector', $data->$type))
+    @if ($data->$type && array_key_exists('disposition_inspector', $data->$type) && array_key_exists('to_young_inspector', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSix">
             <h4 class="panel-title">
@@ -79,7 +79,7 @@
     </div>
     @endif
 
-    @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type))
+    @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type) && array_key_exists('to_riksa', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSeven">
             <h4 class="panel-title">

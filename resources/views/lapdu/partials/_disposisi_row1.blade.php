@@ -12,7 +12,7 @@
     <div class="form-group">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-            <input type="text" class="form-control datepicker" placeholder="Tgl Penyelesaian" name="{{ $type }}[date_done]" value="{{ $data->$type ? (array_key_exists('date_done', $data->$type) ? $data->$type['date_done'] : '') : '' }}">
+            <input type="text" class="form-control datepicker" id="tgl_selesai" placeholder="Tgl Penyelesaian" name="{{ $type }}[date_done]" value="">
         </div>
         <!-- /.input group -->
     </div>
@@ -31,7 +31,7 @@
     <div class="form-group">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-            <input type="text" class="form-control datepicker" placeholder="Tanggal Surat" name="{{ $type }}[date_letter]" value="{{ $data->$type ? (array_key_exists('date_letter', $data->$type) ? $data->$type['date_letter'] : '') : '' }}">
+            <input type="text" class="form-control datepicker" id="tgl_surat" placeholder="Tanggal Surat" name="{{ $type }}[date_letter]" >
         </div>
         <!-- /.input group -->
     </div>

@@ -4,7 +4,7 @@
 
     <!-- INFORMASI / INSTRUKSI -->
     <div class="col-xs-12">
-        @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type))
+        @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type) && array_key_exists('to_riksa', $data->$type))
         <p>
             <strong class="text-blue">Irmud {{ ucwords($data->$type['to_young_inspector']) }}: </strong>
             {{ $data->$type['disposition_young_inspector'] }}
@@ -12,7 +12,7 @@
         @else
         <div class="box-footer">
             <div class="input-group">
-                <input type="text" name="{{ $type }}[disposition_young_inspector]" placeholder="Disposisi ..." class="form-control">
+                <input type="text" name="{{ $type }}[disposition_young_inspector]" placeholder="Disposisi ..." class="form-control" value="{{ ($data->$type && array_key_exists('disposition_young_inspector', $data->$type)) ? $data->$type['disposition_young_inspector'] : ''}}">
 
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-default btn-flat">Kirim</button>
@@ -42,7 +42,7 @@
                     RIKSA KEPBANG
                 </label><br>
             </div>
-            @elseif ($data['to_young_inspector'] == 'pidum & datun')
+            @elseif ($data->$type && array_key_exists('to_young_inspector', $data->$type) && $data->$type['to_young_inspector'] == 'pidum & datun')
             <div class="col-md-2 col-sm-3 col-xs-6">
                 <label>
                     <input type="radio" class="flat-red" name="{{ $type }}[to_riksa]" value="riksa pidum" {{ $data->$type ? (array_key_exists('to_riksa', $data->$type) ? ($data->$type['to_riksa'] == 'riksa pidum' ? 'checked' : '') : '') : '' }}>
@@ -54,7 +54,7 @@
                     RIKSA DATUN
                 </label><br>
             </div>
-            @elseif ($data['to_young_inspector'] == 'intel & pidsus')
+            @elseif ($data->$type && array_key_exists('to_young_inspector', $data->$type) && $data->$type['to_young_inspector'] == 'intel & pidsus')
             <div class="col-md-2 col-sm-3 col-xs-6">
                 <label>
                     <input type="radio" class="flat-red" name="{{ $type }}[to_riksa]" value="riksa intel" {{ $data->$type ? (array_key_exists('to_riksa', $data->$type) ? ($data->$type['to_riksa'] == 'riksa intel' ? 'checked' : '') : '') : '' }}>
