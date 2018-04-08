@@ -71,7 +71,7 @@ class ReportController extends Controller
 
         foreach ($input as $k => $i) {
             if ($k != 'files') {
-                if ($k == 'lapdu') {
+                if (in_array($k, ['lapdu', 'klarifikasi'])) {
                     foreach ($i as $ki => $item) {
                         if (str_contains($ki, 'date')) {
                             $i[$ki] = Carbon::parse($item)->setTimezone('Asia/Jakarta');
