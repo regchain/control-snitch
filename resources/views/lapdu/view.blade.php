@@ -9,6 +9,8 @@
 @section('stylesheets')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('vendor/core/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{ asset('vendor/core/admin-lte/plugins/iCheck/all.css')}}">
 @endsection
 
 @section('content')
@@ -45,4 +47,16 @@
     <script src="{{ asset('vendor/core/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
     <!-- FastClick -->
     <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="{{ asset('vendor/core/admin-lte/plugins/iCheck/icheck.min.js')}}"></script>
+
+    <script>
+        $(function () {
+            //Flat red color scheme for iCheck
+            $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+                checkboxClass: 'icheckbox_flat-red',
+                radioClass   : 'iradio_flat-red'
+            })
+        })
+    </script>
 @endsection
