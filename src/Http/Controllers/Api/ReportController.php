@@ -5,6 +5,7 @@ namespace EKejaksaan\Lapdu\Http\Controllers\Api;
 use EKejaksaan\Lapdu\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -70,7 +71,21 @@ class ReportController extends Controller
 
         foreach ($input as $k => $i) {
             if ($k != 'files') {
-                $data->$k = $i;
+                if ($k == 'lapdu') {
+                    foreach ($i as $ki => $item) {
+                        if (str_contains($ki, 'date')) {
+                            $i[$ki] = Carbon::parse($item)->setTimezone('Asia/Jakarta');
+                        }
+                    }
+
+                    if (!$data->$k) {
+                        $data->$k = [];
+                    }
+
+                    $data->$k = array_merge($data->$k, $i);
+                } else {
+                    $data->$k = $i;
+                }
             } else {
                 $paths = [];
 
