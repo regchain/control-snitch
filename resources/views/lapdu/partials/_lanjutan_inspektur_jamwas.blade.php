@@ -4,13 +4,13 @@
 
     <div class="col-xs-6">
         <div class="form-group">
-            <input type="radio" name="forwarded" class="flat-red" value="true">
+            <input type="radio" name="{{ $type }}[forwarded]" class="flat-red" value="true">
 
             <label>
                 &nbsp;
             </label>
 
-            <select class="form-control select2" style="width: 90%" name="forwarded_to">
+            <select class="form-control select2" style="width: 90%" name="{{ $type }}[forwarded_to]">
                 <option selected disabled>Diteruskan ke Kejaksaan Tinggi : </option>
                 @foreach ($data->reporteds as $reported)
                 <option value="{{ $reported['institute'] }}">{{ $reported['institute'] }}</option>
@@ -19,13 +19,13 @@
         </div>
 
         <div class="form-group">
-            <input type="radio" class="flat-red" name="diverted" value="true">
+            <input type="radio" class="flat-red" name="{{ $type }}[diverted]" value="true">
 
             <label>
                 &nbsp;
             </label>
 
-            <select class="form-control select2" style="width: 90%;" name="diverted_to">
+            <select class="form-control select2" style="width: 90%;" name="{{ $type }}[diverted_to]">
                 <option selected disabled>Dialihkan ke Bidang Lain : </option>
                 <option value="J.A.M Bidang Pembinaan">J.A.M Bidang Pembinaan</option>
                 <option value="J.A.M Bidang Intelijen">J.A.M Bidang Intelijen</option>
@@ -36,13 +36,13 @@
         </div>
 
         <div class="form-group">
-            <input type="radio" class="flat-red" name="stopped" value="true">
+            <input type="radio" class="flat-red" name="{{ $type }}[stopped]" value="true">
 
             <label>
                 &nbsp;
             </label>
 
-            <select class="form-control select2" style="width: 90%;" name="stopped_reason">
+            <select class="form-control select2" style="width: 90%;" name="{{ $type }}[stopped_reason]">
                     <option selected disabled>Dihentikan karena :</option>
                     <option value="Belum ada Bukti Awal">Belum ada Bukti Awal</option>
                     <option value="Meninggal Dunia">Meninggal Dunia</option>

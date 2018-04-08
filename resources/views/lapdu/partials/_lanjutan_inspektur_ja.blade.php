@@ -50,11 +50,11 @@
         <div class="col-sm-6 col-xs-8">
             <div class="form-group">
                 <label>
-                    <input type="checkbox" class="flat-red">
+                    <input type="checkbox" class="flat-red" name="{{ $type }}[forwarded_ja]" value="true">
                     &nbsp;
                 </label>
 
-                <select class="form-control select2" style="width: 90%;">
+                <select class="form-control select2" style="width: 90%;" name="{{ $type }}[forwarded_ja_to]">
                     <option selected disabled>Dialihkan ke KEJATI : </option>
                     @foreach ($institutions as $i)
                     <option value="{{ $i->name }}">{{ $i->name }}</option>
@@ -64,11 +64,11 @@
 
             <div class="form-group">
                 <label>
-                    <input type="checkbox" class="flat-red">
+                    <input type="checkbox" class="flat-red" name="{{ $type }}[diverted_ja]">
                     &nbsp;
                 </label>
 
-                <select class="form-control select2" style="width: 90%;">
+                <select class="form-control select2" style="width: 90%;" name="{{ $type }}[diverted_ja_to]">
                     <option selected disabled>Dialihkan ke Bidang Lain : </option>
                     <option value="J.A.M Bidang Pembinaan">J.A.M Bidang Pembinaan</option>
                     <option value="J.A.M Bidang Intelijen">J.A.M Bidang Intelijen</option>
@@ -80,11 +80,11 @@
 
             <div class="form-group">
                 <label>
-                    <input type="checkbox" class="flat-red">
+                    <input type="checkbox" class="flat-red" name="{{ $type }}[stopped_ja]">
                     &nbsp;
                 </label>
 
-                <select class="form-control select2" style="width: 90%;">
+                <select class="form-control select2" style="width: 90%;" name="{{ $type }}[stopped_ja_reason]">
                     <option selected disabled>Dihentikan karena :</option>
                     <option value="Belum ada Bukti Awal">Belum ada Bukti Awal</option>
                     <option value="Meninggal Dunia">Meninggal Dunia</option>
