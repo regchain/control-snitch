@@ -50,8 +50,8 @@
 
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="{{ route('lapdu.operator.laporan.index') }}"><i class="fa fa-commenting"></i> Laporan Pengaduan<span class="sr-only">(current)</span></a></li>
-                        <li><a href="klarifikasi"><i class="fa fa-comments-o"></i> Klarifikasi</a></li>
-                        <li><a href="inspeksi"><i class="fa fa-search-plus"></i> Inspeksi Kasus</a></li>
+                        <li><a href="{{ route('lapdu.operator.klarifikasi.index') }}"><i class="fa fa-comments-o"></i> Klarifikasi</a></li>
+                        <li><a href="{{ route('lapdu.operator.inspeksi.index') }}"><i class="fa fa-search-plus"></i> Inspeksi Kasus</a></li>
                         <li><a href="usulan"><i class="fa fa-balance-scale"></i> Usulan Hukum</a></li>
                         <li><a href="putusan"><i class="fa fa-gavel"></i> Putusan Hukum</a></li>
                         {{-- <li class="divider"></li>
@@ -66,9 +66,9 @@
                         <i class="fa fa-user"></i> Terlapor <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="subyek_terlapor"><i class="fa fa-angle-right"></i> Terlapor Baru</a></li>
-                        <li><a href="subyek_klarifikasi"><i class="fa fa-angle-right"></i> Tahap Klarifikasi</a></li>
-                        <li><a href="subyek_inspeksi"><i class="fa fa-angle-right"></i> Inspeksi Kasus</a></li>
+                        <li><a href="{{ route('lapdu.operator.subject', ['type' => 'terlapor']) }}"><i class="fa fa-angle-right"></i> Terlapor Baru</a></li>
+                        <li><a href="{{ route('lapdu.operator.subject', ['type' => 'klarifikasi']) }}"><i class="fa fa-angle-right"></i> Tahap Klarifikasi</a></li>
+                        <li><a href="{{ route('lapdu.operator.subject', ['type' => 'inspeksi']) }}"><i class="fa fa-angle-right"></i> Inspeksi Kasus</a></li>
                         <li><a href="subyek_usulan"><i class="fa fa-angle-right"></i> Jelang Putusan</a></li>
                         <li><a href="subyek_putusan"><i class="fa fa-angle-right"></i> Terhukum</a></li>
                             {{-- <li class="divider"></li>
@@ -77,13 +77,10 @@
                             <li><a href="#">One more separated link</a></li> --}}
                     </ul>
                 </li>
-
             </ul>
 
             <ul class="nav navbar-nav">
-                <!-- Notifications Menu -->
-                <li class="dropdown notifications-menu">
-                    <!-- Menu toggle button -->
+                {{-- <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning">10</span>
@@ -92,44 +89,41 @@
                     <ul class="dropdown-menu">
                         <li class="header">Anda memiliki 10 tugas baru</li>
                         <li>
-                            <!-- Inner Menu: contains the notifications -->
                             <ul class="menu">
-                                <li><!-- start notification -->
+                                <li>
                                     <a href="{{ route('lapdu.operator.laporan.index') }}">
                                     <i class="fa fa-bullhorn text-grey fa-lg"></i>
                                     <span class="label label-warning">2</span>&nbsp; Laporan Pengaduan
                                     </a>
                                 </li>
-                                <li><!-- start notification -->
+                                <li>
                                     <a href="klarifikasi">
                                     <i class="fa fa-comments-o text-grey fa-lg"></i>
                                     <span class="label label-warning">2</span>&nbsp; Klarifikasi
                                     </a>
                                 </li>
-                                <li><!-- start notification -->
+                                <li>
                                     <a href="inspeksi">
                                     <i class="fa fa-search-plus text-grey fa-lg"></i>
                                     <span class="label label-warning">2</span>&nbsp; Inspeksi Kasus
                                     </a>
                                 </li>
-                                <li><!-- start notification -->
+                                <li>
                                     <a href="usulan">
                                     <i class="fa fa-balance-scale text-grey fa-lg"></i>
                                     <span class="label label-warning">2</span>&nbsp; Usulan Hukum
                                     </a>
                                 </li>
-                                <li><!-- start notification -->
+                                <li>
                                     <a href="putusan">
                                     <i class="fa fa-gavel text-grey fa-lg"></i>
                                     <span class="label label-warning">2</span>&nbsp; Putusan Hukum
                                     </a>
                                 </li>
-                                <!-- end notification -->
                             </ul>
                         </li>
-                        {{-- <li class="footer"><a href="#">View all</a></li> --}}
                     </ul>
-                </li>
+                </li> --}}
 
                 <!-- User Account Menu -->
                 <!-- Authentication Links -->
