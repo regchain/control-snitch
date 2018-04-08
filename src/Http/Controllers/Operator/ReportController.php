@@ -24,7 +24,7 @@ class ReportController extends Controller
             ->get();
 
         $advanced = Report::where('lapdu.analysis', '!=', NULL)
-            ->where('date_warrant', NULL)
+            ->where('lapdu.date_warrant', NULL)
             ->where('reporteds', '!=', NULL)
             ->where('reporters', '!=', NULL)
             ->get();
@@ -65,7 +65,8 @@ class ReportController extends Controller
     public function show($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.view', compact('data')) : redirect()->back();
+        $type = 'lapdu';
+        return $data ? view('lapdu::lapdu.view', compact('data', 'type')) : redirect()->back();
     }
 
     /**
@@ -159,8 +160,10 @@ class ReportController extends Controller
     public function warrant($id)
     {
         $data = Report::find($id);
-        $users = User::where('institute', '!=', NULL)->get();
-        $type = 'report';
+        $users = User::where('institute', '!=', NULL)
+            ->where('unit', 'PENGAWASAN')
+            ->get();
+        $type = 'lapdu';
         return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users', 'type')) : redirect()->back();
     }
 
