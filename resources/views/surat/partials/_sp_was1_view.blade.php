@@ -5,16 +5,16 @@
 
 <div class="box-body">
     <div class="description-block">
-        <h2 class="widget-user-name">SURAT PERINTAH {{ strtoupper($data->warrant_by) }}</h2>
+        <h2 class="widget-user-name">SURAT PERINTAH {{ strtoupper($data->$previousType['warrant_by']) }}</h2>
         {{-- <span class="description-text">(KLARIFIKASI)</span> --}}
     </div>
 
     <div class="col-sm-6 text-right">
-        <p>NOMOR : PRIN-{{ $data->number_warrant }}</p>
+        <p>NOMOR : PRIN-{{ $data->$previousType['number_warrant'] }}</p>
     </div>
 
     <div class="col-sm-6">
-        <p>Tanggal : {{ $data->date_warrant }} </p>
+        <p>Tanggal : {{ \Carbon\Carbon::parse($data->$previousType['date_warrant']['date'])->format('d F Y') }} </p>
     </div>
 
     <div class="description-block">
@@ -29,7 +29,7 @@
 
         <!-- List group -->
         <ul class="list-group">
-            @foreach ($data->examiners as $k => $e)
+            @foreach ($data->$previousType['examiners'] as $k => $e)
             <li class="list-group-item">
                 <div class="box-body table-responsive no-padding">
                     <table id="example2" class="table table-bordered table-striped">
