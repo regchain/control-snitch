@@ -40,12 +40,19 @@
         </form>
     </div>
 
+    @if ($data->$type && array_key_exists('analysis', $data->$type))
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
             <p class="pull-right"><strong>WAS-1</strong></p>
             <p><small class="col-xs-3 pull-right text-justify">Lampiran Petunjuk Pelaksanaan JAMWAS Nomor ; 01/H/Hjw/04//2011 tanggal 01 April 2011 tentang Teknis Penanganan Laporan dan Tata Kelola Administrasi Bidang Pengawasan<br></small></p>
-            <h1 class="box-title"><pre>table:users:institute</pre></h1>
+            @foreach ($data->reporteds as $d)
+                @if ($d['status'] == 'terlapor')
+                    <h1 class="box-title">
+                        {{ $d['institute'] }}
+                    </h1>
+                @endif
+            @endforeach
         </div>
 
         <h3 class="description-block" for="inputGroupSuccess2"><u>T E L A A H A N</u></h3>
@@ -77,6 +84,7 @@
         <!-- /.box-footer-->
     </div>
     <!-- /.box -->
+    @endif
 @endsection
 
 @section('scripts')
@@ -94,6 +102,8 @@
     <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
     <!-- Select2 -->
     <script src="{{ asset('vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
+
+    <script src="{{ asset('vendor/core/moment/min/moment.min.js')}}"></script>
 
     <script>
         $(function () {
@@ -119,14 +129,17 @@
                 radioClass   : 'iradio_flat-red'
             })
 
+            $('#tgl_selesai').val(moment("{{ $data->$type['date_done']['date'] }}").format('DD MMMM YYYY'))
+            $('#tgl_surat').val(moment("{{ $data->$type['date_letter']['date'] }}").format('DD MMMM YYYY'))
+
             //Date picker
             $('.datepicker').datepicker({
                 format: "dd MM yyyy",
                 weekStart: 1,
                 todayBtn: true,
                 language: "id-ID",
-                multidate: true,
-                multidateSeparator: "-",
+                // multidate: true,
+                // multidateSeparator: "-",
                 forceParse: false,
                 daysOfWeekHighlighted: "0",
                 autoclose: true,
