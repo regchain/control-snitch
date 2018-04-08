@@ -21,7 +21,7 @@
         </div>
 
         <div class="box-body">
-            @include('lapdu::lapdu.partials._pengaduan', $data)
+            @include('lapdu::lapdu.partials._pengaduan')
         </div>
 
         <div class="box-footer">

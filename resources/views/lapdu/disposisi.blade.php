@@ -129,8 +129,13 @@
                 radioClass   : 'iradio_flat-red'
             })
 
+            @if ($data->$type && array_key_exists('date_done', $data->$type))
             $('#tgl_selesai').val(moment("{{ $data->$type['date_done']['date'] }}").format('DD MMMM YYYY'))
+            @endif
+
+            @if ($data->$type && array_key_exists('date_letter', $data->$type))
             $('#tgl_surat').val(moment("{{ $data->$type['date_letter']['date'] }}").format('DD MMMM YYYY'))
+            @endif
 
             //Date picker
             $('.datepicker').datepicker({
