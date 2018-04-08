@@ -20,94 +20,44 @@
     <!-- List group -->
 
     <ul class="list-group" id="list-pemeriksa">
-        @switch ($type)
-            @case('report')
-                @if ($data->examiners)
-                    @foreach ($data->examiners as $k => $e)
-                    <li class="list-group-item">
-                        <div class="box-body table-responsive no-padding">
-                            <table id="example2" class="table table-bordered table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td width="5%">{{ $k+1 }}. </td>
-                                        <td width="15%"><strong>Nama</strong></td>
-                                        <td>: {{ $e['name'] }}</td>
-                                        <td width="10%">
-                                            {{--  <a href="#" class="btn btn-flat btn-xs btn-default"><i class="fa fa-remove"></i></a>  --}}
-                                        </td>
-                                    </tr>
+        @foreach ($data->$type['examiners'] as $k => $e)
+        <li class="list-group-item">
+            <div class="box-body table-responsive no-padding">
+                <table id="example2" class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td width="5%">{{ $k+1 }}. </td>
+                            <td width="15%"><strong>Nama</strong></td>
+                            <td>: {{ $e['name'] }}</td>
+                            <td width="10%">
+                                {{--  <a href="#" class="btn btn-flat btn-xs btn-default"><i class="fa fa-remove"></i></a>  --}}
+                            </td>
+                        </tr>
 
-                                    {{--  <tr>
-                                        <td></td>
-                                        <td><strong>Pangkat</strong></td>
-                                        <td>: [Pangkat], [Golongan] </td>
-                                        <td></td>
-                                    </tr>  --}}
+                        {{--  <tr>
+                            <td></td>
+                            <td><strong>Pangkat</strong></td>
+                            <td>: [Pangkat], [Golongan] </td>
+                            <td></td>
+                        </tr>  --}}
 
-                                    <tr>
-                                        <td></td>
-                                        <td><strong>NIP / NRP</strong></td>
-                                        <td>: {{ $e['nip'] }} | {{ $e['nrp'] }} </td>
-                                        <td></td>
-                                    </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>NIP / NRP</strong></td>
+                            <td>: {{ $e['nip'] }} | {{ $e['nrp'] }} </td>
+                            <td></td>
+                        </tr>
 
-                                    <tr>
-                                        <td></td>
-                                        <td><strong>Jabatan</strong></td>
-                                        <td>: {{ $e['jobtitle'] }}, {{ $e['institute'] }} </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                    @endforeach
-                @endif
-            @break
-
-            @case('clarification')
-                @if ($data->examiners_2)
-                    @foreach ($data->examiners_2 as $k => $e)
-                    <li class="list-group-item">
-                        <div class="box-body table-responsive no-padding">
-                            <table id="example2" class="table table-bordered table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td width="5%">{{ $k+1 }}. </td>
-                                        <td width="15%"><strong>Nama</strong></td>
-                                        <td>: {{ $e['name'] }}</td>
-                                        <td width="10%">
-                                            {{--  <a href="#" class="btn btn-flat btn-xs btn-default"><i class="fa fa-remove"></i></a>  --}}
-                                        </td>
-                                    </tr>
-
-                                    {{--  <tr>
-                                        <td></td>
-                                        <td><strong>Pangkat</strong></td>
-                                        <td>: [Pangkat], [Golongan] </td>
-                                        <td></td>
-                                    </tr>  --}}
-
-                                    <tr>
-                                        <td></td>
-                                        <td><strong>NIP / NRP</strong></td>
-                                        <td>: {{ $e['nip'] }} | {{ $e['nrp'] }} </td>
-                                        <td></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td><strong>Jabatan</strong></td>
-                                        <td>: {{ $e['jobtitle'] }}, {{ $e['institute'] }} </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </li>
-                    @endforeach
-                @endif
-            @break
-        @endswitch
+                        <tr>
+                            <td></td>
+                            <td><strong>Jabatan</strong></td>
+                            <td>: {{ $e['jobtitle'] }}, {{ $e['institute'] }} </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+        @endforeach
     </ul>
 </div>
