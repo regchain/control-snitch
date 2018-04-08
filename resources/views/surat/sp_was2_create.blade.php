@@ -35,11 +35,11 @@
                 <div class="col-sm-8">
                     <h4>
                         <div class="input-group" style="width: 95%">
-                            <select class="form-control select2 no-border" name="warrant_2_by" id="warrant_2_by">
-                                <option selected="selected" value="jaksa agung">JAKSA AGUNG</option>
-                                <option value="jaksa agung muda bidang pengawasan">JAKSA AGUNG MUDA BIDANG PENGAWASAN</option>
-                                <option value="kepala kejaksaan tinggi">KEPALA KEJAKSAAN TINGGI</option>
-                                <option value="kepala kejaksaan negeri">KEPALA KEJAKSAAN NEGERI</option>
+                            <select class="form-control select2 no-border" name="{{ $type }}[warrant_by]" id="warrant_by">
+                                <option value="jaksa agung" {{ array_key_exists('warrant_by', $data->$type) ? ($data->$type['warrant_by'] == 'jaksa agung' ? 'selected' : '') : '' }}>JAKSA AGUNG</option>
+                                <option value="jaksa agung muda bidang pengawasan" {{ array_key_exists('warrant_by', $data->$type) ? ($data->$type['warrant_by'] == 'jaksa agung muda bidang pengawasan' ? 'selected' : '') : '' }}>JAKSA AGUNG MUDA BIDANG PENGAWASAN</option>
+                                <option value="kepala kejaksaan tinggi" {{ array_key_exists('warrant_by', $data->$type) ? ($data->$type['warrant_by'] == 'kepala kejaksaan tinggi' ? 'selected' : '') : '' }}>KEPALA KEJAKSAAN TINGGI</option>
+                                <option value="kepala kejaksaan negeri" {{ array_key_exists('warrant_by', $data->$type) ? ($data->$type['warrant_by'] == 'kepala kejaksaan negeri' ? 'selected' : '') : '' }}>KEPALA KEJAKSAAN NEGERI</option>
                             </select>
 
                             <span class="input-group-addon btn-default">
@@ -59,7 +59,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">NO :</span>
 
-                    <input type="text" class="form-control" placeholder="PRIN -" name="number_warrant_2" id="number_warrant_2">
+                    <input type="text" class="form-control" placeholder="PRIN -" name="{{ $type }}[number_warrant]" id="number_warrant" value="{{ array_key_exists('number_warrant', $data->$type) ? $data->$type['number_warrant'] : '' }}">
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                             <i class="fa fa-calendar"></i>
                         </div>
 
-                        <input type="text" class="form-control pull-right" id="spklarifikasi" name="date_warrant_2">
+                        <input type="text" class="form-control pull-right datepicker" id="spklarifikasi" name="{{ $type }}[date_warrant]">
                     </div>
                     <!-- /.input group -->
                 </div>
@@ -179,7 +179,7 @@
                     <a href="javascript:void(0)" class="btn btn-success pull-right" id="save-sp"><i class="fa fa-check-square-o"></i> Lanjut
                     </a>
 
-                    <a href='klarifikasi' class="btn btn-danger pull-right" style="margin-right: 5px;">
+                    <a href="{{ route('lapdu.operator.klarifikasi.show', ['id' => $data->_id]) }}" class="btn btn-danger pull-right" style="margin-right: 5px;">
                         <i class="fa fa-exclamation-triangle"></i> Batal
                     </a>
                 </div>
@@ -219,50 +219,37 @@
             //Initialize Select2 Elements
             $('.select2').select2()
 
-            //iCheck for checkbox and radio inputs
-            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-                checkboxClass: 'icheckbox_minimal-blue',
-                radioClass   : 'iradio_minimal-blue'
-            })
-            //Red color scheme for iCheck
-            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-                checkboxClass: 'icheckbox_minimal-red',
-                radioClass   : 'iradio_minimal-red'
-            })
             //Flat red color scheme for iCheck
             $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
                 checkboxClass: 'icheckbox_flat-green',
                 radioClass   : 'iradio_flat-green'
             })
-            //Date picker
-            $('#datepicker').datepicker({
-                autoclose: true
-            })
-            //Date picker
-            $('#datepicker2').datepicker({
-                autoclose: true
-            })
-            //Date picker
-            $('#notadinas').datepicker({
-              autoclose: true
-            })
 
             //Date picker
-            $('#spklarifikasi').datepicker({
-                autoclose: true
+            $('.datepicker').datepicker({
+                format: "dd MM yyyy",
+                weekStart: 1,
+                todayBtn: true,
+                language: "id-ID",
+                // multidate: true,
+                // multidateSeparator: "-",
+                forceParse: false,
+                daysOfWeekHighlighted: "0",
+                autoclose: true,
+                todayHighlight: true
             })
 
             $('#ja').select2({
                 minimumInputLength: 3
             })
 
-            let counter = {{ $data->examiners_2 ? count($data->examiners_2)+1 : 1 }}
+            let counter = {{ array_key_exists('examiners', $data->$type) ? count($data->$type['examiners'])+1 : 1 }}
 
             $('#add-pemeriksa').click(function() {
                 let data = {
                     'id': "{{ $data->_id }}",
                     'examiner-id': $('#ja').val(),
-                    'type': 'clarification'
+                    'type': 'klarifikasi'
                 }
 
                 $.post("{{ route('api.lapdu.examiner.store') }}", data, function(res) {
@@ -299,9 +286,11 @@
             $('#save-sp').click(function() {
                 let data = {
                     '_method': 'PUT',
-                    'warrant_2_by': $('#warrant_2_by').val(),
-                    'number_warrant_2': $('#number_2_warrant').val(),
-                    'date_warrant_2': $('#spklarifikasi').val()
+                    'klarifikasi': {
+                        'warrant_by': $('#warrant_by').val(),
+                        'number_warrant': $('#number_warrant').val(),
+                        'date_warrant': $('#spklarifikasi').val()
+                    }
                 }
 
                 $.post("{{ route('api.lapdu.report.update', ['id' => $data->_id]) }}", data)

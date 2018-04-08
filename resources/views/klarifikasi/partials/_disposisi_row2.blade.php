@@ -1,5 +1,5 @@
 <div class="panel-group" id="pengaduan" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
+    {{-- <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingJa">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#pengaduan" href="#collapseJa" aria-expanded="true" aria-controls="collapseJa">
@@ -21,9 +21,8 @@
                 @endif
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    @if ($data->disposition_ja || $data->disposition_waja)
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingJamwas">
             <h4 class="panel-title">
@@ -37,19 +36,18 @@
             <div class="panel-body">
                 @include('lapdu::lapdu.partials._disposisi_jamwas')
 
-                @if ($data->interviews)
+                {{-- @if ($data->interviews)
                 <div class="box-footer">
                     <a href="{{ route('lapdu.operator.klarifikasi.warrant', ['id' => $data->_id]) }}" for="spwas2" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="SURAT PERINTAH INSPEKSI KASUS" style="margin-right: 5px;">
                         <i class="fa fa-plus"></i> SP.WAS-2
                     </a>
                 </div>
-                @endif
+                @endif --}}
             </div>
         </div>
     </div>
-    @endif
 
-    @if ($data->disposition_jamwas || $data->disposition_sesjamwas)
+    @if ($data->$type && ((array_key_exists('disposition_jamwas', $data->$type) || array_key_exists('disposition_sesjamwas', $data->$type)) && array_key_exists('to_inspector', $data->$type)))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingInspektur">
             <h4 class="panel-title">
@@ -67,7 +65,7 @@
     </div>
     @endif
 
-    @if ($data->disposition_inspector)
+    @if ($data->$type && array_key_exists('disposition_inspector', $data->$type) && array_key_exists('to_young_inspector', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingIrmud">
             <h4 class="panel-title">
@@ -85,7 +83,7 @@
     </div>
     @endif
 
-    @if ($data->disposition_young_inspector)
+    @if ($data->$type && array_key_exists('disposition_young_inspector', $data->$type) && array_key_exists('to_riksa', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingRiksa">
             <h4 class="panel-title">

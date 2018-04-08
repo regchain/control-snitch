@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    @if ($data->interviews)
+    @if ($data->$type && array_key_exists('interviews', $data->$type))
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSix">
             <h4 class="panel-title">

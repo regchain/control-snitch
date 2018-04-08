@@ -17,15 +17,17 @@ class ClarificationController extends Controller
      */
     public function index()
     {
-        $new = Report::where('date_warrant', '!=', NULL)
-            ->where('interviews', NULL)
+        $new = Report::where('lapdu.date_warrant', '!=', NULL)
+            ->where('klarifikasi.interviews', NULL)
             ->get();
 
-        $advanced = Report::where('interviews', '!=', NULL)
-            ->where('date_warrant_2', NULL)
+        $advanced = Report::where('klarifikasi.interviews', '!=', NULL)
+            ->where('klarifikasi.date_warrant', NULL)
             ->get();
 
-        return view('lapdu::klarifikasi.list', compact('new', 'advanced'));
+        $type = 'klarifikasi';
+
+        return view('lapdu::klarifikasi.list', compact('new', 'advanced', 'type'));
     }
 
     /**
@@ -56,7 +58,9 @@ class ClarificationController extends Controller
     public function show($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::klarifikasi.view', compact('data')) : redirect()->back();
+        $type = 'klarifikasi';
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::klarifikasi.view', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 
     /**
@@ -68,7 +72,8 @@ class ClarificationController extends Controller
     public function edit($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::klarifikasi.edit', compact('data')) : redirect()->back();
+        $type = 'klarifikasi';
+        return $data ? view('lapdu::klarifikasi.edit', compact('data', 'type')) : redirect()->back();
     }
 
     /**
@@ -129,32 +134,39 @@ class ClarificationController extends Controller
     {
         $data = Report::find($id);
         $institutions = Institution::get();
-        return $data ? view('lapdu::klarifikasi.proses', compact('data', 'institutions')) : redirect()->back();
+        $type = 'klarifikasi';
+        $previousType = 'lapdu';
+
+        return $data ? view('lapdu::klarifikasi.proses', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
     }
 
     public function warrant($id)
     {
         $data = Report::find($id);
-        $users = User::where('institute', '!=', NULL)->get();
-        $type = 'clarification';
-        return $data ? view('lapdu::surat.sp_was2_create', compact('data', 'users', 'type')) : redirect()->back();
+        $users = User::where('institute', '!=', NULL)
+            ->where('unit', 'PENGAWASAN')
+            ->get();
+        $type = 'klarifikasi';
+        $previousType = 'lapdu';
+        return $data ? view('lapdu::surat.sp_was2_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
     }
 
     public function interview($id, Request $request)
     {
         $data = Report::find($id);
         $item = null;
+        $type = 'klarifikasi';
 
         if ($request->has('subjek') && $request->has('tanggal')) {
-            foreach ($data->interviews as $i) {
+            foreach ($data->$type['interviews'] as $i) {
                 if (($i['witness'] == $request->get('subjek')) && ($i['date'] == $request->get('tanggal'))) {
                     $item = $i;
                 }
             }
 
-            return $data ? view('lapdu::surat.ba_was2_view', compact('data', 'item')) : redirect()->back();
+            return $data ? view('lapdu::surat.ba_was2_view', compact('data', 'item', 'type')) : redirect()->back();
         } else {
-            return $data ? view('lapdu::surat.ba_was2_qna', compact('data')) : redirect()->back();
+            return $data ? view('lapdu::surat.ba_was2_qna', compact('data', 'type')) : redirect()->back();
         }
     }
 }

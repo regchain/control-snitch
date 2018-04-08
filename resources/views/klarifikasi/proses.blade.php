@@ -7,6 +7,8 @@
 @section('subjudul', 'Kejaksaan Agung Republik Indonesia')
 
 @section('stylesheets')
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{ asset('vendor/core/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')}}">
     <!-- UI Tool Tip -->
     <link rel="stylesheet" href="{{ asset('vendor/core/jquery-ui/themes/base/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{ asset('vendor/lapdu/templates/alpha/assets/css/tooltip.css')}}">
@@ -23,21 +25,30 @@
             <h1 class="box-title">KARTU PENERUS DISPOSISI</h1><br>
         </div>
 
-        <div class="box-body">
-            @include('lapdu::klarifikasi.partials._disposisi_register')
-        </div>
+        <form action="{{ route('lapdu.operator.laporan.update', ['id' => $data->_id]) }}" method="post">
+            <div class="box-body">
+                @include('lapdu::klarifikasi.partials._disposisi_register')
+            </div>
 
+            <div class="box-header with-border">
+                <h3 class="box-title">DISPOSISI</h3><br>
+            </div>
+
+            <div class="box-body">
+                @include('lapdu::klarifikasi.partials._disposisi_row2')
+            </div>
+            <!-- /.row -->
+
+            <div class="box-body">
+                @include('lapdu::klarifikasi.partials._lanjutan_inspektur')
+            </div>
+        </form>
+    </div>
+
+    <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">DISPOSISI</h3><br>
-        </div>
-
-        <div class="box-body">
-           @include('lapdu::klarifikasi.partials._disposisi_row2')
-        </div>
-        <!-- /.row -->
-
-        <div class="box-header with-border">
-            <h3 class="box-title">LAPORAN PENGADUAN</h3><br>
+            <small class="pull-right">L.WAS-1</small>
+            <h3 class="box-title">LAPORAN KLARIFIKASI</h3><br>
         </div>
 
         <div class="box-body">
@@ -72,10 +83,13 @@
     <script src="{{ asset('vendor/core/fastclick/lib/fastclick.js')}}"></script>
     <!-- bootstrap datepicker -->
     <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{ asset('vendor/core/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js')}}"></script>
 
     <script src="{{ asset('vendor/core/ckeditor/ckeditor.js')}}"></script>
     <!-- Select2 -->
     <script src="{{ asset('vendor/core/select2/dist/js/select2.full.min.js')}}"></script>
+
+    <script src="{{ asset('vendor/core/moment/min/moment.min.js')}}"></script>
 
     <script>
         $(function () {
@@ -94,37 +108,35 @@
                 }
                 }
             });
-            //iCheck for checkbox and radio inputs
-            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-                checkboxClass: 'icheckbox_minimal-blue',
-                radioClass   : 'iradio_minimal-blue'
-            })
-            //Red color scheme for iCheck
-            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-                checkboxClass: 'icheckbox_minimal-red',
-                radioClass   : 'iradio_minimal-red'
-            })
+
             //Flat red color scheme for iCheck
             $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
                 checkboxClass: 'icheckbox_flat-green',
                 radioClass   : 'iradio_flat-green'
             })
+
+            @if ($data->$type && array_key_exists('date_done', $data->$type))
+            $('#tgl_selesai').val(moment("{{ $data->$type['date_done']['date'] }}").format('DD MMMM YYYY'))
+            @endif
+
+            @if ($data->$type && array_key_exists('date_letter', $data->$type))
+            $('#tgl_surat').val(moment("{{ $data->$type['date_letter']['date'] }}").format('DD MMMM YYYY'))
+            @endif
+
             //Date picker
-            $('#datepicker').datepicker({
-            autoclose: true
+            $('.datepicker').datepicker({
+                format: "dd MM yyyy",
+                weekStart: 1,
+                todayBtn: true,
+                language: "id-ID",
+                // multidate: true,
+                // multidateSeparator: "-",
+                forceParse: false,
+                daysOfWeekHighlighted: "0",
+                autoclose: true,
+                todayHighlight: true
             })
-            //Date picker
-            $('#datepicker2').datepicker({
-            autoclose: true
-            })
-            //Date picker
-            $('#notadinas').datepicker({
-            autoclose: true
-            })
-            //Date picker
-            $('#klarifikasi').datepicker({
-            autoclose: true
-            })
+
             //Initialize Select2 Elements
             $('.select2').select2()
         })

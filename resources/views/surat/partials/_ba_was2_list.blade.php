@@ -17,15 +17,15 @@
         </thead>
 
         <tbody>
-            @if ($data->interviews)
-            @foreach ($data->interviews as $i)
+            @if (array_key_exists('interviews', $data->$type))
+            @foreach ($data->$type['interviews'] as $i)
             <tr>
                 <td>{{ $i['date'] }}</td>
                 <td>{{ $i['witness'] }}</td>
                 {{--  <td>[Pelapor/ <br>
                 Terlapor/ <br>
                 Saksi]</td>  --}}
-                <td>{{ array_key_exists('summary', $i) ? $i['summary'] : '' }}</td>
+                <td>{!! array_key_exists('summary', $i) ? $i['summary'] : '' !!}</td>
                 <td>{{ $i['interviewer'] }}</td>
                 <td>
                     <div class="btn-group pull-right" role="group" aria-label="...">

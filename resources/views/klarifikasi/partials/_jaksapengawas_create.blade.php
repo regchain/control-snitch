@@ -20,6 +20,7 @@
     <!-- List group -->
 
     <ul class="list-group" id="list-pemeriksa">
+        @if (array_key_exists('examiners', $data->$type))
         @foreach ($data->$type['examiners'] as $k => $e)
         <li class="list-group-item">
             <div class="box-body table-responsive no-padding">
@@ -59,5 +60,6 @@
             </div>
         </li>
         @endforeach
+        @endif
     </ul>
 </div>
