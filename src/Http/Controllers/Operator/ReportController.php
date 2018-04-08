@@ -7,6 +7,7 @@ use EKejaksaan\Core\Models\User;
 use EKejaksaan\Lapdu\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -17,18 +18,20 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $new = Report::where('analysis', NULL)
+        $new = Report::where('lapdu.analysis', NULL)
             ->where('reporteds', '!=', NULL)
             ->where('reporters', '!=', NULL)
             ->get();
 
-        $advanced = Report::where('analysis', '!=', NULL)
+        $advanced = Report::where('lapdu.analysis', '!=', NULL)
             ->where('date_warrant', NULL)
             ->where('reporteds', '!=', NULL)
             ->where('reporters', '!=', NULL)
             ->get();
 
-        return view('lapdu::lapdu.list', compact('new', 'advanced'));
+        $type = 'lapdu';
+
+        return view('lapdu::lapdu.list', compact('new', 'advanced', 'type'));
     }
 
     /**
@@ -91,7 +94,21 @@ class ReportController extends Controller
 
         foreach ($input as $k => $i) {
             if ($k != 'files') {
-                $data->$k = $i;
+                if ($k == 'lapdu') {
+                    foreach ($i as $ki => $item) {
+                        if (str_contains($ki, 'date')) {
+                            $i[$ki] = Carbon::parse($item)->setTimezone('Asia/Jakarta');
+                        }
+                    }
+
+                    if (!$data->$k) {
+                        $data->$k = [];
+                    }
+
+                    $data->$k = array_merge($data->$k, $i);
+                } else {
+                    $data->$k = $i;
+                }
             } else {
                 $items = [];
 
@@ -135,7 +152,8 @@ class ReportController extends Controller
     {
         $data = Report::find($id);
         $institutions = Institution::get();
-        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions')) : redirect()->back();
+        $type = 'lapdu';
+        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions', 'type')) : redirect()->back();
     }
 
     public function warrant($id)
@@ -149,6 +167,7 @@ class ReportController extends Controller
     public function study($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::surat.was1_create', compact('data')) : redirect()->back();
+        $type = 'lapdu';
+        return $data ? view('lapdu::surat.was1_create', compact('data', 'type')) : redirect()->back();
     }
 }
