@@ -242,7 +242,7 @@
                 minimumInputLength: 3
             })
 
-            let counter = {{ $data->examiners ? count($data->examiners)+1 : 1 }}
+            let counter = {{ array_key_exists('examiners', $data->$type) ? count($data->$type['examiners'])+1 : 1 }}
 
             $('#add-pemeriksa').click(function() {
                 let data = {
