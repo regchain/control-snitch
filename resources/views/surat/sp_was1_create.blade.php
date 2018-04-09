@@ -226,7 +226,7 @@
 
             //Date picker
             $('.datepicker').datepicker({
-                format: "dd MM yyyy",
+                format: "d MM yyyy",
                 weekStart: 1,
                 todayBtn: true,
                 language: "id-ID",
