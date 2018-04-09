@@ -140,7 +140,8 @@
                     'witness': $('#witness').val(),
                     'interview_date': $('#interview_date').val(),
                     'summary': CKEDITOR.instances.kesimpulan.getData(),
-                    'interviewer': "{{ Auth::user()->name }}"
+                    'interviewer': "{{ Auth::user()->name }}",
+                    'type': 'klarifikasi'
                 }
 
                 $.post("{{ route('api.lapdu.qna.update', ['id' => $data->_id]) }}", data)
@@ -156,7 +157,8 @@
                     'interview_date': $('#interview_date').val(),
                     'question': $('#question').val(),
                     'answer': CKEDITOR.instances.answer.getData(),
-                    'interviewer': "{{ Auth::user()->name }}"
+                    'interviewer': "{{ Auth::user()->name }}",
+                    'type': 'klarifikasi'
                 }
 
                 $.post("{{ route('api.lapdu.qna.store') }}", data)
