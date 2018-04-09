@@ -35,7 +35,7 @@
 
           <div class="box box-success">
 
-          @include('lapdu::surat.partials._was1_view')
+          @include('lapdu::surat.partials._was1_view', ['previousType' => 'lapdu'])
 
           </div>
 
