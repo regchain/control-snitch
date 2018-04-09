@@ -97,20 +97,8 @@ class ReportController extends Controller
 
         foreach ($input as $k => $i) {
             if ($k != 'files') {
-                if (in_array($k, ['lapdu', 'klarifikasi'])) {
-                    switch ($k) {
-                        case 'lapdu':
-                            $redirect = 'laporan';
-                            break;
-
-                        case 'klarifikasi':
-                            $redirect = 'klarifikasi';
-                            break;
-
-                        default:
-                            # code...
-                            break;
-                    }
+                if (in_array($k, ['lapdu', 'klarifikasi', 'inspeksi'])) {
+                    $redirect = $k;
 
                     foreach ($i as $ki => $item) {
                         if (str_contains($ki, 'date')) {
