@@ -24,5 +24,11 @@ Route::prefix('lapdu')->group(function () {
         Route::get('klarifikasi/{id}/surat-perintah', 'EKejaksaan\Lapdu\Http\Controllers\Operator\ClarificationController@warrant')->name('lapdu.operator.klarifikasi.warrant');
 
         Route::resource('inspeksi', 'EKejaksaan\Lapdu\Http\Controllers\Operator\InspectionController', ['as' => 'lapdu.operator']);
+        Route::get('inspeksi/{id}/tindak-lanjut', 'EKejaksaan\Lapdu\Http\Controllers\Operator\InspectionController@action')->name('lapdu.operator.inspeksi.action');
+        Route::get('inspeksi/{id}/wawancara', 'EKejaksaan\Lapdu\Http\Controllers\Operator\InspectionController@interview')->name('lapdu.operator.inspeksi.interview');
+        Route::get('inspeksi/{id}/laporan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\InspectionController@report')->name('lapdu.operator.inspeksi.report');
+        Route::get('inspeksi/{id}/surat-perintah', 'EKejaksaan\Lapdu\Http\Controllers\Operator\InspectionController@warrant')->name('lapdu.operator.inspeksi.warrant');
+
+        Route::resource('usulan', 'EKejaksaan\Lapdu\Http\Controllers\Operator\UsulanController', ['as' => 'lapdu.operator']);
     });
 });

@@ -30,4 +30,9 @@ class Report extends Eloquent
         'updated_at',
         'deleted_at'
     ];
+
+    public function punishments()
+    {
+        return $this->hasMany('EKejaksaan\Core\Models\Punishment');
+    }
 }

@@ -18,21 +18,21 @@ class OperatorController extends Controller
             'berhenti' => Report::where('status', 'berhenti')->count(),
             'terlapor' => Report::where('reporteds', '!=', NULL)
                 ->where('reporters', '!=', NULL)
-                ->where('date_warrant', NULL)
+                ->where('lapdu.date_warrant', NULL)
                 ->count(),
-            'terklarifikasi' => Report::where('date_warrant', '!=', NULL)
-                ->where('date_warrant_2', NULL)
+            'terklarifikasi' => Report::where('lapdu.date_warrant', '!=', NULL)
+                ->where('klarifikasi.date_warrant', NULL)
                 ->count(),
-            'terinspeksi' => Report::where('date_warrant_2', '!=', NULL)
+            'terinspeksi' => Report::where('klarifikasi.date_warrant', '!=', NULL)
                 ->count(),
             'laporan' => Report::where('reporteds', '!=', NULL)
                 ->where('reporters', '!=', NULL)
-                ->where('date_warrant', NULL)
+                ->where('lapdu.date_warrant', NULL)
                 ->count(),
-            'klarifikasi' => Report::where('date_warrant', '!=', NULL)
-                ->where('date_warrant_2', NULL)
+            'klarifikasi' => Report::where('lapdu.date_warrant', '!=', NULL)
+                ->where('klarifikasi.date_warrant', NULL)
                 ->count(),
-            'inspeksi' => Report::where('date_warrant_2', '!=', NULL)
+            'inspeksi' => Report::where('klarifikasi.date_warrant', '!=', NULL)
                 ->count(),
             'ringan' => Punishment::where('status', 'RINGAN')->count(),
             'sedang' => Punishment::where('status', 'SEDANG')->count(),

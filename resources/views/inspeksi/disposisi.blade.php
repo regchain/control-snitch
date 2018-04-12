@@ -144,6 +144,75 @@
 
             //Initialize Select2 Elements
             $('.select2').select2()
+
+            $('#update-irmud').click(function() {
+                let data = {
+                    '_method': 'PUT',
+                    'report_id': "{{ $data->_id }}",
+                    'opinion_young_inspector': [],
+                    'suggestion_young_inspector': []
+                }
+
+                $('input[name="opinion_young_inspector[]"]').each(function(index) {
+                    data['opinion_young_inspector'].push($(this).val())
+                })
+
+                $('input[name="suggestion_young_inspector[]"]').each(function(index) {
+                    data['suggestion_young_inspector'].push($(this).val())
+                })
+
+                $.post("{{ route('api.lapdu.inspection.update', ['id' => $data->_id]) }}", data)
+                    .done(function(res) {
+                        alert('Data berhasil disimpan!')
+                        window.location.replace("{{ env('APP_URL') }}/lapdu/operator/inspeksi")
+                    })
+            })
+
+            $('#update-inspektur').click(function() {
+                let data = {
+                    '_method': 'PUT',
+                    'report_id': "{{ $data->_id }}",
+                    'opinion_inspector': [],
+                    'suggestion_inspector': []
+                }
+
+                $('input[name="opinion_inspector[]"]').each(function(index) {
+                    data['opinion_inspector'].push($(this).val())
+                })
+
+                $('input[name="suggestion_inspector[]"]').each(function(index) {
+                    data['suggestion_inspector'].push($(this).val())
+                })
+
+                $.post("{{ route('api.lapdu.inspection.update', ['id' => $data->_id]) }}", data)
+                    .done(function(res) {
+                        alert('Data berhasil disimpan!')
+                        window.location.replace("{{ env('APP_URL') }}/lapdu/operator/inspeksi")
+                    })
+            })
+
+            $('#update-jamwas').click(function() {
+                let data = {
+                    '_method': 'PUT',
+                    'report_id': "{{ $data->_id }}",
+                    'opinion_jamwas': [],
+                    'suggestion_jamwas': []
+                }
+
+                $('input[name="opinion_jamwas[]"]').each(function(index) {
+                    data['opinion_jamwas'].push($(this).val())
+                })
+
+                $('input[name="suggestion_jamwas[]"]').each(function(index) {
+                    data['suggestion_jamwas'].push($(this).val())
+                })
+
+                $.post("{{ route('api.lapdu.inspection.update', ['id' => $data->_id]) }}", data)
+                    .done(function(res) {
+                        alert('Data berhasil disimpan!')
+                        window.location.replace("{{ env('APP_URL') }}/lapdu/operator/inspeksi")
+                    })
+            })
         })
     </script>
 @endsection

@@ -77,23 +77,21 @@
                                             <br><strong>Perihal: </strong>{{ $d->title }}
                                         </td>
                                         <td>
-                                            @if (!$d->disposition_ja && !$d->disposition_waja)
-                                            JAKSA AGUNG
-                                            @elseif (!$d->disposition_jamwas && !$d->disposition_sesjamwas)
+                                            @if (!$d->$type || ((!array_key_exists('disposition_jamwas', $d->$type) && !array_key_exists('disposition_sesjamwas', $d->$type)) || !array_key_exists('to_inspector', $d->$type)))
                                             JAMWAS
-                                            @elseif (!$d->disposition_inspector)
-                                            {{ strtoupper($d->to_inspector) }}
-                                            @elseif (!$d->disposition_young_inspector)
-                                            {{ strtoupper($d->to_young_inspector) }}
-                                            @elseif ($d->disposition_young_inspector)
+                                            @elseif ((!array_key_exists('disposition_inspector', $d->$type) && array_key_exists('to_inspector', $d->$type)) || !array_key_exists('to_young_inspector', $d->$type))
+                                            {{ strtoupper($d->$type['to_inspector']) }}
+                                            @elseif ((!array_key_exists('disposition_young_inspector', $d->$type) && array_key_exists('to_young_inspector', $d->$type)) || array_key_exists('analysis', $d->$type) || !array_key_exists('to_riksa', $d->$type))
+                                            {{ strtoupper($d->$type['to_young_inspector']) }}
+                                            @elseif (array_key_exists('disposition_young_inspector', $d->$type) && !array_key_exists('analysis', $d->$type))
                                             RIKSA
                                             @endif
                                         </td>
                                         <td>
                                             <div class="btn-group-vertical pull-right" role="group" aria-label="...">
                                             <a href="{{ route('lapdu.operator.inspeksi.show', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                            {{--  <a href="{{ route('lapdu.operator.inspeksi.edit', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="{{ route('lapdu.operator.inspeksi.action', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>  --}}
+                                            {{-- <a href="{{ route('lapdu.operator.inspeksi.edit', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a> --}}
+                                            <a href="{{ route('lapdu.operator.inspeksi.action', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -185,23 +183,25 @@
                                             <br><strong>Perihal: </strong>{{ $d->title }}
                                         </td>
                                         <td>
-                                            @if (!$d->disposition_ja && !$d->disposition_waja)
-                                            JAKSA AGUNG
-                                            @elseif (!$d->disposition_jamwas && !$d->disposition_sesjamwas)
-                                            JAMWAS
-                                            @elseif (!$d->disposition_inspector)
-                                            {{ strtoupper($d->to_inspector) }}
-                                            @elseif (!$d->disposition_young_inspector)
-                                            {{ strtoupper($d->to_young_inspector) }}
-                                            @elseif ($d->disposition_young_inspector)
+                                            @if (array_key_exists('interviews', $d->$type) && $d->punishments->isEmpty())
                                             RIKSA
+                                            @elseif (!($d->punishments->isEmpty()) && !($d->punishments[0]->opinion_young_inspector))
+                                            {{ strtoupper($d->$type['to_young_inspector']) }}
+                                            @elseif (!($d->punishments->isEmpty()) && $d->punishments[0]->opinion_young_inspector && !($d->punishments[0]->opinion_inspector))
+                                            {{ strtoupper($d->$type['to_inspector']) }}
+                                            @elseif (!($d->punishments->isEmpty()) && $d->punishments[0]->opinion_inspector && !($d->punishments[0]->opinion_jamwas))
+                                            JAMWAS
+                                            @elseif (!($d->punishments->isEmpty()) && $d->punishments[0]->opinion_jamwas && !($d->punishments[0]->opinion_ja))
+                                            JAKSA AGUNG
+                                            @elseif (!($d->punishments->isEmpty()) && $d->punishments[0]->opinion_ja)
+                                            SESJAMWAS
                                             @endif
                                         </td>
                                         <td>
                                             <div class="btn-group-vertical pull-right" role="group" aria-label="...">
                                             <a href="{{ route('lapdu.operator.inspeksi.show', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-eye"></i> Lihat Detil</a>
-                                            {{--  <a href="{{ route('lapdu.operator.inspeksi.edit', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="{{ route('lapdu.operator.inspeksi.action', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>  --}}
+                                            {{-- <a href="{{ route('lapdu.operator.inspeksi.edit', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a> --}}
+                                            <a href="{{ route('lapdu.operator.inspeksi.action', ['id' => $d->_id]) }}" class="btn btn-default"><i class="fa fa-mail-forward"></i> Tindak Lanjut</a>
                                             </div>
                                         </td>
                                     </tr>

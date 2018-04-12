@@ -9,7 +9,7 @@ use EKejaksaan\Core\Models\Punishment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class InspectionController extends Controller
+class UsulanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class InspectionController extends Controller
      */
     public function index()
     {
-        $new = Report::where('klarifikasi.date_warrant', '!=', NULL)
+        $new = Report::where('inspeksi.date_warrant', '!=', NULL)
             ->where('inspeksi.interviews', NULL)
             ->get();
 
@@ -27,7 +27,7 @@ class InspectionController extends Controller
 
         $type = 'inspeksi';
 
-        return view('lapdu::inspeksi.list', compact('new', 'advanced', 'type'));
+        return view('lapdu::usulan.list', compact('new', 'advanced', 'type'));
     }
 
     /**
