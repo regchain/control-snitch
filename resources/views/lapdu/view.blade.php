@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Lapdu Baru')
 
@@ -21,7 +21,7 @@
         </div>
 
         <div class="box-body">
-            @include('lapdu::lapdu.partials._pengaduan')
+            @include('control-snitch::lapdu.partials._pengaduan')
         </div>
 
         <div class="box-footer">

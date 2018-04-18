@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -33,7 +33,7 @@
 
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                        @include('lapdu::lapdu.partials.kasus_view')
+                        @include('control-snitch::lapdu.partials.kasus_view')
 
                         </div>
                     </div>
@@ -52,13 +52,13 @@
                         <div class="panel-body">
                             <h4>1. Data Pelapor</h4>
 
-                            @include('lapdu::lapdu.partials.pelapor_view')
+                            @include('control-snitch::lapdu.partials.pelapor_view')
 
                             <h4>2. Data Terlapor</h4>
-                            @include('lapdu::lapdu.partials.terlapor_view')
+                            @include('control-snitch::lapdu.partials.terlapor_view')
 
                             <h4>3. Data Penunjang</h4>
-                            @include('lapdu::lapdu.partials.datapenunjang_view')
+                            @include('control-snitch::lapdu.partials.datapenunjang_view')
                         </div>
                     </div>
                 </div>

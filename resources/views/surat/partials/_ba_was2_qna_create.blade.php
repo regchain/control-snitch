@@ -59,7 +59,7 @@
         <button type="submit" id="add-qna" class="btn btn-primary pull-right">Kirim</button>
     </div>
 
-    @include('lapdu::surat.partials._ba_was2_detail')
+    @include('control-snitch::surat.partials._ba_was2_detail')
 </div>
 
 <div class="col-md-12">

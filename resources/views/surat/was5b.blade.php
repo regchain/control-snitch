@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Nota Dinas')
 
@@ -24,12 +24,12 @@
 
           <div class="box-body">
 
-          @include('lapdu::surat.partials._was5b_create')
+          @include('control-snitch::surat.partials._was5b_create')
 
           </div>
 
          <div class="box-body">
-            {{-- @include('lapdu::klarifikasi.partials._klarifikasi_view') --}}
+            {{-- @include('control-snitch::klarifikasi.partials._klarifikasi_view') --}}
          </div>
 
 

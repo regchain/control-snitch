@@ -30,7 +30,7 @@
         <dl class="dl-horizontal">
             <dt>Kepada</dt>
             <dd>
-                @include('lapdu::klarifikasi.partials._jaksapengawas_create')
+                @include('control-snitch::klarifikasi.partials._jaksapengawas_create')
             </dd>
             <dt>Untuk</dt>
             <dd>

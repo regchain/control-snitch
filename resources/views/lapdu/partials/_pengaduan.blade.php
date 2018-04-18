@@ -11,7 +11,7 @@
         <div id="collapseMasalah" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMasalah">
             <div class="panel-body">
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.kasus_view')
+                    @include('control-snitch::lapdu.partials.kasus_view')
                 </div>
             </div>
         </div>
@@ -29,15 +29,15 @@
         <div id="collapseData" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingData">
             <div class="panel-body">
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.pelapor_view')
+                    @include('control-snitch::lapdu.partials.pelapor_view')
                 </div>
 
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.terlapor_view')
+                    @include('control-snitch::lapdu.partials.terlapor_view')
                 </div>
 
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.datapenunjang_view')
+                    @include('control-snitch::lapdu.partials.datapenunjang_view')
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div id="collapseTelaahan" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTelaahan">
             <div class="panel-body">
                 <div class="row">
-                    @include('lapdu::surat.partials._was1_view')
+                    @include('control-snitch::surat.partials._was1_view')
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
         <div id="collapseNotadinas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotadinas">
             <div class="panel-body">
                 <div class="row">
-                    @include('lapdu::surat.partials._was2_view')
+                    @include('control-snitch::surat.partials._was2_view')
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
         <div id="collapseKlarifikasi" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingKlarifikasi">
             <div class="panel-body">
                 <div class="row">
-                    @include('lapdu::lapdu.partials._was3_create')
+                    @include('control-snitch::lapdu.partials._was3_create')
                 </div>
             </div>
         </div>

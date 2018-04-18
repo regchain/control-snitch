@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Kartu Disposisi')
 
@@ -30,7 +30,7 @@
 
         <form action="{{ route('lapdu.operator.laporan.update', ['id' => $data->_id]) }}" method="post">
             <div class="box-body">
-                @include('lapdu::inspeksi.partials._disposisi_register')
+                @include('control-snitch::inspeksi.partials._disposisi_register')
             </div>
 
             <div class="box-header with-border">
@@ -38,11 +38,11 @@
             </div>
 
             <div class="box-body">
-                @include('lapdu::inspeksi.partials._disposisi_row2')
+                @include('control-snitch::inspeksi.partials._disposisi_row2')
             </div>
 
             <div class="box-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur')
             </div>
         </form>
         <!-- /.row -->
@@ -52,7 +52,7 @@
         </div>
 
         <div class="box-body">
-            @include('lapdu::inspeksi.partials._inspeksi_view')
+            @include('control-snitch::inspeksi.partials._inspeksi_view')
         </div>
     </div>
 

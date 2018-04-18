@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -29,17 +29,17 @@
       <div class="col-xs-12">
 
         <h4>I. PERMASALAHAN</h4>
-        @include('lapdu::lapdu.partials.kasus_view')
+        @include('control-snitch::lapdu.partials.kasus_view')
 
         <h4>II. DATA</h4>
         <h4>1. Data Pelapor</h4>
-        @include('lapdu::lapdu.partials.pelapor_view')
+        @include('control-snitch::lapdu.partials.pelapor_view')
 
         <h4>2. Data Terlapor</h4>
-        @include('lapdu::lapdu.partials.terlapor_view')
+        @include('control-snitch::lapdu.partials.terlapor_view')
 
         <h4>3. Data Penunjang</h4>
-        @include('lapdu::lapdu.partials.datapenunjang_view')
+        @include('control-snitch::lapdu.partials.datapenunjang_view')
       </div>
     </div>
         <div class="box-footer">
@@ -56,10 +56,10 @@
     <div class="box-header with-border">
       <div class="col-xs-12">
 
-         @include('lapdu::surat.partials._was1_edit')
+         @include('control-snitch::surat.partials._was1_edit')
     </div>
 
-    {{-- @include('lapdu::lapdu.partials._telaahan_view') --}}
+    {{-- @include('control-snitch::lapdu.partials._telaahan_view') --}}
 
 
     <div class="box-footer">

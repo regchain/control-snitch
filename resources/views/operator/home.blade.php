@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Dashboard')
 
@@ -24,11 +24,11 @@
 
         <div class="box-body">
             <div class="row">
-                @include('lapdu::partials.dashboard.putusan')
+                @include('control-snitch::partials.dashboard.putusan')
 
-                @include('lapdu::partials.dashboard.subyek_hukum')
+                @include('control-snitch::partials.dashboard.subyek_hukum')
 
-                @include('lapdu::partials.dashboard.kasus')
+                @include('control-snitch::partials.dashboard.kasus')
             </div>
         </div>
         <!-- /.box-body -->

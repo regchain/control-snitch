@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Kartu Disposisi')
 
@@ -25,9 +25,9 @@
     <h1 class="box-title">EDIT HASIL WAWANCARA</h1><br>
   </div>
   <div class="box-body">
-    @include('lapdu::surat.partials._ba_was2_edit')
+    @include('control-snitch::surat.partials._ba_was2_edit')
 
-       @include('lapdu::surat.partials._ba_was2_detail')
+       @include('control-snitch::surat.partials._ba_was2_detail')
        <div class="col-md-12">
        <label for="">Kesimpulan : </label>
        <form>

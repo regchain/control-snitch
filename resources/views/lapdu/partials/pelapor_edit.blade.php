@@ -94,4 +94,4 @@
 </div>
 	<!-- /.box-body -->
 
-    @include('lapdu::lapdu.partials.pelapor_view')
+    @include('control-snitch::lapdu.partials.pelapor_view')

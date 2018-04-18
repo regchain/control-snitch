@@ -118,15 +118,15 @@
                 </div>
 
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.pelapor_view')
+                    @include('control-snitch::lapdu.partials.pelapor_view')
                 </div>
 
                 <div class="box-body">
-                    @include('lapdu::lapdu.partials.kasus_view')
+                    @include('control-snitch::lapdu.partials.kasus_view')
                 </div>
 
                 <div class="box-body">
-                    @include('lapdu::surat.partials._l_was2_view')
+                    @include('control-snitch::surat.partials._l_was2_view')
                 </div>
 
             </p>

@@ -39,7 +39,7 @@ class DecisionController extends Controller
         }
 
         $data = $data->get();
-        return view('lapdu::subyek.putusan', compact('data'));
+        return view('control-snitch::subyek.putusan', compact('data'));
     }
 
     /**

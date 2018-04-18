@@ -1,4 +1,4 @@
-@extends('lapdu::pelapor.template')
+@extends('control-snitch::pelapor.template')
 
 @section('title', 'Pelapor')
 
@@ -32,7 +32,7 @@
                     <div class="tab-pane active" id="tab_1-1">
                         <div class="row">
                             <div class="box-body">
-                                @include('lapdu::pelapor.partials.progress')
+                                @include('control-snitch::pelapor.partials.progress')
                             </div>
                             <!-- /.box-body -->
                         </div>

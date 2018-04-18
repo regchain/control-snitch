@@ -16,7 +16,7 @@
 
         <div id="collapseLanJa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLanJa">
             <div class="panel-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur_ja')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur_ja')
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
 
         <div id="collapseLanJamwas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLanJamwas">
             <div class="panel-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur_jamwas')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur_jamwas')
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@
 
         <div id="collapseLanInspektur" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLanInspektur">
             <div class="panel-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur_inspektur')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur_inspektur')
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
 
         <div id="collapseLanIrmud" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLanIrmud">
             <div class="panel-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur_irmud')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur_irmud')
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
 
         <div id="collapseLanRiksa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLanRiksa">
             <div class="panel-body">
-                @include('lapdu::inspeksi.partials._lanjutan_inspektur_riksa')
+                @include('control-snitch::inspeksi.partials._lanjutan_inspektur_riksa')
 
                 <div class="box-footer">
                     <br>

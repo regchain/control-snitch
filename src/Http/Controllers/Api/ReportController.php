@@ -122,6 +122,6 @@ class ReportController extends Controller
     public function action($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.disposisi', compact('data')) : redirect()->back();
+        return $data ? view('control-snitch::lapdu.disposisi', compact('data')) : redirect()->back();
     }
 }

@@ -10,7 +10,7 @@
 
         <div id="collapseJa" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingJa">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_ja')
+                @include('control-snitch::lapdu.partials._disposisi_ja')
 
                 @if ($data->interviews)
                 <div class="box-footer">
@@ -34,7 +34,7 @@
 
         <div id="collapseJamwas" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingJamwas">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_jamwas')
+                @include('control-snitch::lapdu.partials._disposisi_jamwas')
 
                 {{-- @if ($data->interviews)
                 <div class="box-footer">
@@ -59,7 +59,7 @@
 
         <div id="collapseInspektur" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInspektur">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_inspektur')
+                @include('control-snitch::lapdu.partials._disposisi_inspektur')
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
 
         <div id="collapseIrmud" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIrmud">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_irmud')
+                @include('control-snitch::lapdu.partials._disposisi_irmud')
             </div>
         </div>
     </div>
@@ -95,7 +95,7 @@
 
         <div id="collapseRiksa" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingRiksa">
             <div class="panel-body">
-                @include('lapdu::klarifikasi.partials._disposisi_riksa')
+                @include('control-snitch::klarifikasi.partials._disposisi_riksa')
 
                 <div class="box-footer">
                     <br>

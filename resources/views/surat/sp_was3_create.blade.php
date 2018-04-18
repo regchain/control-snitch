@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Surat Penetapan Hukuman')
 
@@ -81,7 +81,7 @@
 
 
   <div class="box-body">
-    @include('lapdu::surat.partials._sp_was3_create')
+    @include('control-snitch::surat.partials._sp_was3_create')
   </div>
 
 
@@ -98,7 +98,7 @@
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
 
-          @include('lapdu::lapdu.partials.kasus_view')
+          @include('control-snitch::lapdu.partials.kasus_view')
 
         </div>
       </div>
@@ -116,19 +116,19 @@
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.pelapor_view')
+            @include('control-snitch::lapdu.partials.pelapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.terlapor_view')
+            @include('control-snitch::lapdu.partials.terlapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.datapenunjang_view')
+            @include('control-snitch::lapdu.partials.datapenunjang_view')
 
           </div>
 
@@ -146,9 +146,9 @@
       <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
 
-        @include('lapdu::klarifikasi.partials._spklarifikasi_view')
+        @include('control-snitch::klarifikasi.partials._spklarifikasi_view')
 
-        @include('lapdu::klarifikasi.partials._wawancara_view')
+        @include('control-snitch::klarifikasi.partials._wawancara_view')
 
        </div>
      </div>
@@ -164,7 +164,7 @@
     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="panel-body">
 
-        @include('lapdu::klarifikasi.partials._notadinas_view')
+        @include('control-snitch::klarifikasi.partials._notadinas_view')
 
 
       </div>

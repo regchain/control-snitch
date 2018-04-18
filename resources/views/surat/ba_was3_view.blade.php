@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Kartu Disposisi')
 
@@ -35,7 +35,7 @@
     </div>
 
 
-       @include('lapdu::surat.partials._ba_was2_detail')
+       @include('control-snitch::surat.partials._ba_was2_detail')
 
      </div>
    <div class="box-footer">

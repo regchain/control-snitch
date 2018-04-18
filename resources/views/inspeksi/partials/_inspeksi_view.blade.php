@@ -13,7 +13,7 @@
 
           <div class="box-body">
 
-            @include('lapdu::surat.partials._sp_was2_view')
+            @include('control-snitch::surat.partials._sp_was2_view')
 
           </div>
 
@@ -31,11 +31,11 @@
       <div id="collapsePermasalahan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPermasalahan">
         <div class="panel-body">
 
-          @include('lapdu::lapdu.partials.kasus_view')
+          @include('control-snitch::lapdu.partials.kasus_view')
 
           <div class="box box-success">
 
-          @include('lapdu::surat.partials._was1_view', ['previousType' => 'lapdu'])
+          @include('control-snitch::surat.partials._was1_view', ['previousType' => 'lapdu'])
 
           </div>
 
@@ -55,19 +55,19 @@
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.pelapor_view')
+            @include('control-snitch::lapdu.partials.pelapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.terlapor_view')
+            @include('control-snitch::lapdu.partials.terlapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.datapenunjang_view')
+            @include('control-snitch::lapdu.partials.datapenunjang_view')
 
           </div>
 
@@ -85,7 +85,7 @@
     <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
       <div class="panel-body">
         <div class="row">
-          @include('lapdu::inspeksi.partials._inspeksi_hasil')
+          @include('control-snitch::inspeksi.partials._inspeksi_hasil')
           </div>
       </div>
     </div>

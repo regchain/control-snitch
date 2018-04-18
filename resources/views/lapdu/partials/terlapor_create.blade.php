@@ -103,4 +103,4 @@
     </div>
 </form>
 
-@include('lapdu::lapdu.partials.terlapor_view')
+@include('control-snitch::lapdu.partials.terlapor_view')

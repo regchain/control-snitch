@@ -9,17 +9,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="UTF-8">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content=" {{ csrf_token() }}">
-    @include('lapdu::templates.alpha.head')
+    @include('control-snitch::templates.alpha.head')
     @yield('stylesheets')
 </head>
 
 <body>
     <div id="page-wrapper">
         <!-- Header -->
-        @include('lapdu::templates.alpha.headeralt')
+        @include('control-snitch::templates.alpha.headeralt')
 
         <!-- Banner -->
-        {{--  @include('lapdu::guest.pages.banner')  --}}
+        {{--  @include('control-snitch::guest.pages.banner')  --}}
 
         <!-- Main -->
         <section id="main" class="container">
@@ -28,11 +28,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </section>
 
         <!-- Footer -->
-        @include('lapdu::templates.alpha.footer')
+        @include('control-snitch::templates.alpha.footer')
     </div>
 
     <!-- REQUIRED JS SCRIPTS -->
-    @include('lapdu::templates.alpha.scripts')
+    @include('control-snitch::templates.alpha.scripts')
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
         Both of these plugins are recommended to enhance the

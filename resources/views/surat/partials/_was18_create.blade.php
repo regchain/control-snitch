@@ -76,10 +76,10 @@
 <p>Sehubungan dengan disposisi Jaksa Agung tanggal [Tanggal Surat] pada Nota Dinas Jaksa Agung Muda Pengawasan Nomor : [Nomor Surat] tanggal [Tanggal Surat] telah memutuskan untuk menjatuhkan hukuman disiplin [ringan / sedang / berat] berupa [Hukuman] terhadap terlapor atas nama [Terlapor] , bersama ini dengan hormat diharapkan menandatangani Surat Keputusan Penjatuhan Hukuman Disiplin (terlampir), dengan penjelasan sebagai berikut :</p>
 <p>
   <div class="box-body">
-    @include('lapdu::lapdu.partials.terhukum_view')
-    @include('lapdu::klarifikasi.partials._jaksapengawas')
-    @include('lapdu::lapdu.partials.terlapor_view')
-    @include('lapdu::lapdu.partials.kasus_view')
+    @include('control-snitch::lapdu.partials.terhukum_view')
+    @include('control-snitch::klarifikasi.partials._jaksapengawas')
+    @include('control-snitch::lapdu.partials.terlapor_view')
+    @include('control-snitch::lapdu.partials.kasus_view')
 <ol style="list-style-type: lower-alpha; margin-left: -20px">
   <li>lsi laporan (nomor, tanggal/tahun laporan, pokok-pokok laporan);</li>
 <li>Jenis pelanggaran disiplin yang dilakukan;</li>

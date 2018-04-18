@@ -31,7 +31,7 @@ class ReportController extends Controller
 
         $type = 'lapdu';
 
-        return view('lapdu::lapdu.list', compact('new', 'advanced', 'type'));
+        return view('control-snitch::lapdu.list', compact('new', 'advanced', 'type'));
     }
 
     /**
@@ -43,7 +43,7 @@ class ReportController extends Controller
     {
         $data = new Report();
         $data->save();
-        return view('lapdu::lapdu.create', compact('data'));
+        return view('control-snitch::lapdu.create', compact('data'));
     }
 
     /**
@@ -67,7 +67,7 @@ class ReportController extends Controller
         $data = Report::find($id);
         $type = 'lapdu';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::lapdu.view', compact('data', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::lapdu.view', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 
     /**
@@ -79,7 +79,7 @@ class ReportController extends Controller
     public function edit($id)
     {
         $data = Report::find($id);
-        return $data ? view('lapdu::lapdu.edit', compact('data')) : redirect()->back();
+        return $data ? view('control-snitch::lapdu.edit', compact('data')) : redirect()->back();
     }
 
     /**
@@ -159,7 +159,7 @@ class ReportController extends Controller
         $institutions = Institution::get();
         $type = 'lapdu';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::lapdu.disposisi', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::lapdu.disposisi', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
     }
 
     public function warrant($id)
@@ -170,7 +170,7 @@ class ReportController extends Controller
             ->get();
         $type = 'lapdu';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::surat.sp_was1_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::surat.sp_was1_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
     }
 
     public function study($id)
@@ -178,6 +178,6 @@ class ReportController extends Controller
         $data = Report::find($id);
         $type = 'lapdu';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::surat.was1_create', compact('data', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::surat.was1_create', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 }

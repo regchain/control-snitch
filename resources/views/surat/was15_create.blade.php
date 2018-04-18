@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Nota Dinas')
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="box-body">
-            @include('lapdu::surat.partials._was15_create')
+            @include('control-snitch::surat.partials._was15_create')
         </div>
 
         <div class="box-footer">

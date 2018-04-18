@@ -10,7 +10,7 @@
 
         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_ja')
+                @include('control-snitch::lapdu.partials._disposisi_ja')
 
                 @if ($data->analysis)
                 <div class="box-footer">
@@ -32,7 +32,7 @@
 
         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_jamwas')
+                @include('control-snitch::lapdu.partials._disposisi_jamwas')
 
                 {{-- @if ($data->$type['analysis'])
                 <div class="box-footer">
@@ -55,7 +55,7 @@
 
         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_inspektur')
+                @include('control-snitch::lapdu.partials._disposisi_inspektur')
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
 
         <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_irmud')
+                @include('control-snitch::lapdu.partials._disposisi_irmud')
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
 
         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
             <div class="panel-body">
-                @include('lapdu::lapdu.partials._disposisi_riksa')
+                @include('control-snitch::lapdu.partials._disposisi_riksa')
 
                 <div class="box-footer">
                     <a href="{{ route('lapdu.operator.laporan.study', ['id' => $data->_id]) }}" class="btn btn-info pull-right" data-toggle="tooltip" data-placement="top" title="TELAAHAN" style="margin-right: 5px;"><i class="fa fa-plus"></i> WAS-1</a>

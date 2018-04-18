@@ -11,21 +11,21 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab_1-1">
 
-            	@include('lapdu::partials.kasus')
+            	@include('control-snitch::partials.kasus')
 
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2-2">
 
-            	@include('lapdu::partials.datapenunjang')
+            	@include('control-snitch::partials.datapenunjang')
 
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_3-2">
 
-              @include('lapdu::partials.terlapor_view')
+              @include('control-snitch::partials.terlapor_view')
 
-              @include('lapdu::partials.pelapor_view')
+              @include('control-snitch::partials.pelapor_view')
 
             </div>
             <!-- /.tab-pane -->

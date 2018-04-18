@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Laporan Hasil Inspeksi')
 
@@ -49,14 +49,14 @@
                 Berdasarkan Surat Perintah {{ strtoupper($data->klarifikasi['warrant_by']) }} Nomor: {{ $data->klarifikasi['number_warrant'] }} tanggal {{ \Carbon\Carbon::parse($data->klarifikasi['date_warrant']['date'])->format('d F Y') }}, telah ditugaskan :
                 <p>
                     <ul style="list-style-type:none">
-                        <li>@include('lapdu::klarifikasi.partials._jaksapengawas', ['previousType' => 'klarifikasi'])</li>
+                        <li>@include('control-snitch::klarifikasi.partials._jaksapengawas', ['previousType' => 'klarifikasi'])</li>
                     </ul>
                 </p>
                 <p>untuk melakukan Klarifikasi terhadap :</p>
                 <p>
                     <ul style="list-style-type:none">
-                        <li>@include('lapdu::lapdu.partials.pelapor_view')</li>
-                        <li>@include('lapdu::lapdu.partials.terlapor_view')</li>
+                        <li>@include('control-snitch::lapdu.partials.pelapor_view')</li>
+                        <li>@include('control-snitch::lapdu.partials.terlapor_view')</li>
                     </ul>
                 </p>
                 <p>Dengan hasil sebagai berikut :</p>
@@ -69,7 +69,7 @@
 
                     <h3>DATA</h3>
 
-                    @include('lapdu::surat.partials._ba_was3_list')
+                    @include('control-snitch::surat.partials._ba_was3_list')
 
                     <h3>ANALISA</h3>
 
@@ -103,13 +103,13 @@
                         @foreach ($data->reporteds as $r)
                             @if ($r['status'] == 'terlapor')
                             <h4><li>&nbsp;{{ $r['name'] }} </li></h4>
-                            @include('lapdu::surat.partials._l_was2_terlapor', ['reported' => $r, 'type' => 'punishment'])
+                            @include('control-snitch::surat.partials._l_was2_terlapor', ['reported' => $r, 'type' => 'punishment'])
                             <hr>
                             @endif
                         @endforeach
                     </ol>
                 </div>
-                {{-- @include('lapdu::lapdu.partials._telaahan_view') --}}
+                {{-- @include('control-snitch::lapdu.partials._telaahan_view') --}}
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Laporan Hasil Klarifikasi')
 
@@ -42,14 +42,14 @@
 Sehubungan dengan Surat Perintah [id_sp.was1] Nomor: [no_sp.was1] tanggal [tgl_sp.was1], telah ditugaskan :
 <p>
   <ul style="list-style-type:none">
-  <li>@include('lapdu::klarifikasi.partials._jaksapengawas')</li>
+  <li>@include('control-snitch::klarifikasi.partials._jaksapengawas')</li>
 </ul>
 </p>
     <p>untuk melakukan Klarifikasl terhadap :</p>
     <p>
   <ul style="list-style-type:none">
-  <li>@include('lapdu::lapdu.partials.terlapor_view')</li>
-  <li>@include('lapdu::lapdu.partials.pelapor_view')</li>
+  <li>@include('control-snitch::lapdu.partials.terlapor_view')</li>
+  <li>@include('control-snitch::lapdu.partials.pelapor_view')</li>
 </ul>
 </p>
 <p>Dengan hasil sebagai berikut :</p>
@@ -68,11 +68,11 @@ Sehubungan dengan Surat Perintah [id_sp.was1] Nomor: [no_sp.was1] tanggal [tgl_s
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.kasus_view')
+            @include('control-snitch::lapdu.partials.kasus_view')
 
           <div class="box box-success">
 
-          @include('lapdu::surat.partials._was1_view')
+          @include('control-snitch::surat.partials._was1_view')
 
           </div>
 
@@ -94,25 +94,25 @@ Sehubungan dengan Surat Perintah [id_sp.was1] Nomor: [no_sp.was1] tanggal [tgl_s
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.pelapor_view')
+            @include('control-snitch::lapdu.partials.pelapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.terlapor_view')
+            @include('control-snitch::lapdu.partials.terlapor_view')
 
           </div>
 
           <div class="box-body">
 
-            @include('lapdu::lapdu.partials.datapenunjang_view')
+            @include('control-snitch::lapdu.partials.datapenunjang_view')
 
           </div>
           <div class="box-body">
-          {{-- @include('lapdu::surat.partials._was4_view') --}}
+          {{-- @include('control-snitch::surat.partials._was4_view') --}}
 
-          @include('lapdu::surat.partials._ba_was2_list')
+          @include('control-snitch::surat.partials._ba_was2_list')
         </div>
 
         </div>

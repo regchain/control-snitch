@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>@yield('title') | e-LAPDU</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    @include('lapdu::operator.head')
+    @include('control-snitch::operator.head')
 
     @yield('stylesheets')
 
@@ -19,10 +19,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
     <!-- Header -->
-    @include('lapdu::operator.header')
+    @include('control-snitch::operator.header')
 
     <!-- Sidebar -->
-    @include('lapdu::operator.sidebar')
+    @include('control-snitch::operator.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -58,11 +58,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div><!-- /.content-wrapper -->
 
   <!-- Footer -->
-    @include('lapdu::operator.footer')
+    @include('control-snitch::operator.footer')
 
   <!-- Control Sidebar -->
 
-  @include('lapdu::operator.sidebar-right')
+  @include('control-snitch::operator.sidebar-right')
 
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED JS SCRIPTS -->
 
- @include('lapdu::operator.scripts')
+ @include('control-snitch::operator.scripts')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

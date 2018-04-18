@@ -35,25 +35,25 @@
       <div id="tabs-1">
         <div class="row">
           <p>Pada hari ini <b>[tanggal berita acara]</b> , bertempat di <b>[institusi]</b> saya / kami *) :</p>
-          @include('lapdu::klarifikasi.partials._jaksapengawas_create')
+          @include('control-snitch::klarifikasi.partials._jaksapengawas_create')
         </div>
       </div>
       <div id="tabs-2">
         <div class="row">
           <p>berdasarkan Surat Perintah <b>[Jabatan / institusi] [Nomor surat] [Tanggal Surat]</b>, telah melakukan wawancara terhadap :</p>
-          @include('lapdu::lapdu.partials.pelapor_edit')
+          @include('control-snitch::lapdu.partials.pelapor_edit')
         </div>
       </div>
       <div id="tabs-3">
         <div class="row">
           <p>berdasarkan Surat Perintah <b>[Jabatan / institusi] [Nomor surat] [Tanggal Surat]</b>, telah melakukan wawancara terhadap :</p>
-          @include('lapdu::lapdu.partials.terlapor_edit')
+          @include('control-snitch::lapdu.partials.terlapor_edit')
         </div>
       </div>
       <div id="tabs-4">
         <div class="row">
           <p>Dengan hasil sebagai berikut :</p>
-          @include('lapdu::surat.partials._ba_was2_list')
+          @include('control-snitch::surat.partials._ba_was2_list')
         </div>
       </div>
     </div>

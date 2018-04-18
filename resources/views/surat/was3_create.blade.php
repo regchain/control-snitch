@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Klarifikasi')
 
@@ -24,7 +24,7 @@
   </div>
 
   <div class="box-body">
-    @include('lapdu::surat.partials._was3_create')
+    @include('control-snitch::surat.partials._was3_create')
   </div>
 
 

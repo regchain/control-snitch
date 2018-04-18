@@ -1,4 +1,4 @@
-@extends('lapdu::templates.alpha.templatealt')
+@extends('control-snitch::templates.alpha.templatealt')
 
 @section('title', 'Pengaduan Masyarakat')
 

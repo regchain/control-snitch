@@ -1,4 +1,4 @@
-@extends('lapdu::templates.alpha.templatealt')
+@extends('control-snitch::templates.alpha.templatealt')
 
 @section('title', 'Data Pelapor')
 
@@ -151,7 +151,7 @@
         </div>
 
         <div class="row">
-            @include('lapdu::guest.pages.pelapor_view')
+            @include('control-snitch::guest.pages.pelapor_view')
         </div>
 
         <div class="box-footer">

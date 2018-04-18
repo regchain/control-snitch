@@ -40,6 +40,6 @@ class OperatorController extends Controller
             'berhenti' => Punishment::where('status', 'BERHENTI SEMENTARA')->count(),
         ];
 
-        return view('lapdu::operator.home', compact('data'));
+        return view('control-snitch::operator.home', compact('data'));
     }
 }

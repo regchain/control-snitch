@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Edit Klarifikasi')
 
@@ -32,7 +32,7 @@
                     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.kasus_edit')
+                                @include('control-snitch::lapdu.partials.kasus_edit')
                             </div>
                         </div>
                     </div>
@@ -50,13 +50,13 @@
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.pelapor_create')
+                                @include('control-snitch::lapdu.partials.pelapor_create')
 
-                                @include('lapdu::lapdu.partials.terlapor_create')
+                                @include('control-snitch::lapdu.partials.terlapor_create')
 
-                                @include('lapdu::lapdu.partials.datapenunjang_create')
+                                @include('control-snitch::lapdu.partials.datapenunjang_create')
 
-                               {{-- @include('lapdu::lapdu.partials._telaahan') --}}
+                               {{-- @include('control-snitch::lapdu.partials._telaahan') --}}
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">
 
-                   @include('lapdu::lapdu.partials._telaahan')
+                   @include('control-snitch::lapdu.partials._telaahan')
 
                  </div>
                </div>
@@ -90,8 +90,8 @@
               <div class="panel-body">
 
                 <div class="box-body">
-                  {{-- @include('lapdu::surat.partials._was4_create') --}}
-                  @include('lapdu::surat.partials._ba_was2_list')
+                  {{-- @include('control-snitch::surat.partials._was4_create') --}}
+                  @include('control-snitch::surat.partials._ba_was2_list')
                 </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
               <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                 <div class="panel-body">
 
-                  @include('lapdu::surat.partials._was5b_view')
+                  @include('control-snitch::surat.partials._was5b_view')
 
                 </div>
               </div>
@@ -124,7 +124,7 @@
                 <div class="panel-body">
 
                   <div class="box-body">
-                    @include('lapdu::surat.partials._was5a_view')
+                    @include('control-snitch::surat.partials._was5a_view')
                   </div>
               </div>
             </div>

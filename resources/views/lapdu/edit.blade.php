@@ -1,4 +1,4 @@
-@extends('lapdu::operator.template')
+@extends('control-snitch::operator.template')
 
 @section('title', 'Edit LapDu')
 
@@ -45,7 +45,7 @@
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.kasus_edit')
+                                @include('control-snitch::lapdu.partials.kasus_edit')
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.pelapor_create')
+                                @include('control-snitch::lapdu.partials.pelapor_create')
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.terlapor_create')
+                                @include('control-snitch::lapdu.partials.terlapor_create')
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                         <div class="panel-body">
                             <div class="box-body">
-                                @include('lapdu::lapdu.partials.datapenunjang_create')
+                                @include('control-snitch::lapdu.partials.datapenunjang_create')
                             </div>
                         </div>
                     </div>

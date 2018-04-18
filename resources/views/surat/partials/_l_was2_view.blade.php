@@ -47,7 +47,7 @@
   </div>
 <ol type="1">
   <h4><li>[Nama Terlapor]</li></h4>
-  @include('lapdu::surat.partials._l_was2_terlapor_view')
+  @include('control-snitch::surat.partials._l_was2_terlapor_view')
   </ol>
 </div>
     <div class="box-footer">

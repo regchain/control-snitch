@@ -10,17 +10,17 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('lapdu::home');
+        return view('control-snitch::home');
     }
 
     public function lapdu()
     {
-        return view('lapdu::guest.pages.cara_lapdu');
+        return view('control-snitch::guest.pages.cara_lapdu');
     }
 
     public function whistle()
     {
-        return view('lapdu::guest.pages.cara_whistle');
+        return view('control-snitch::guest.pages.cara_whistle');
     }
 
     public function question($page, Request $request)
@@ -29,7 +29,7 @@ class PageController extends Controller
             case 1:
                 $data = new Report();
                 $data->save();
-                return view('lapdu::guest.pages.question1', compact('data'));
+                return view('control-snitch::guest.pages.question1', compact('data'));
                 break;
 
             case 2:
@@ -37,7 +37,7 @@ class PageController extends Controller
                     $data = Report::find($request->get('id'));
 
                     if ($data) {
-                        return view('lapdu::guest.pages.question2', compact('data'));
+                        return view('control-snitch::guest.pages.question2', compact('data'));
                     }
                 }
 
@@ -49,7 +49,7 @@ class PageController extends Controller
                     $data = Report::find($request->get('id'));
 
                     if ($data) {
-                        return view('lapdu::guest.pages.question3', compact('data'));
+                        return view('control-snitch::guest.pages.question3', compact('data'));
                     }
                 }
 
@@ -61,7 +61,7 @@ class PageController extends Controller
                     $data = Report::find($request->get('id'));
 
                     if ($data) {
-                        return view('lapdu::guest.pages.question4', compact('data'));
+                        return view('control-snitch::guest.pages.question4', compact('data'));
                     }
                 }
 
@@ -77,6 +77,6 @@ class PageController extends Controller
 
     public function trace()
     {
-        return view('lapdu::guest.pages.kawal');
+        return view('control-snitch::guest.pages.kawal');
     }
 }

@@ -1,4 +1,4 @@
-@extends('lapdu::templates.alpha.templatealt')
+@extends('control-snitch::templates.alpha.templatealt')
 
 @section('title', 'Data Terlapor')
 
@@ -106,7 +106,7 @@
         </div>
 
         <div class="row">
-            @include('lapdu::guest.pages.terlapor_view')
+            @include('control-snitch::guest.pages.terlapor_view')
         </div>
 
         <div class="row">

@@ -27,7 +27,7 @@ class InspectionController extends Controller
 
         $type = 'inspeksi';
 
-        return view('lapdu::inspeksi.list', compact('new', 'advanced', 'type'));
+        return view('control-snitch::inspeksi.list', compact('new', 'advanced', 'type'));
     }
 
     /**
@@ -60,7 +60,7 @@ class InspectionController extends Controller
         $data = Report::find($id);
         $type = 'inspeksi';
         $previousType = 'klarifikasi';
-        return $data ? view('lapdu::inspeksi.view', compact('data', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::inspeksi.view', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 
     /**
@@ -73,7 +73,7 @@ class InspectionController extends Controller
     {
         $data = Report::find($id);
         $type = 'inspeksi';
-        return $data ? view('lapdu::inspeksi.edit', compact('data', 'type')) : redirect()->back();
+        return $data ? view('control-snitch::inspeksi.edit', compact('data', 'type')) : redirect()->back();
     }
 
     /**
@@ -105,7 +105,7 @@ class InspectionController extends Controller
         $institutions = Institution::get();
         $type = 'inspeksi';
         $previousType = 'klarifikasi';
-        return $data ? view('lapdu::inspeksi.disposisi', compact('data', 'institutions', 'type', 'previousType', 'punishments')) : redirect()->back();
+        return $data ? view('control-snitch::inspeksi.disposisi', compact('data', 'institutions', 'type', 'previousType', 'punishments')) : redirect()->back();
     }
 
     public function warrant($id)
@@ -116,7 +116,7 @@ class InspectionController extends Controller
             ->get();
         $type = 'inspeksi';
         $previousType = 'klarifikasi';
-        return $data ? view('lapdu::surat.was15_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::surat.was15_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
     }
 
     public function interview($id, Request $request)
@@ -132,9 +132,9 @@ class InspectionController extends Controller
                 }
             }
 
-            return $data ? view('lapdu::surat.ba_was3_view', compact('data', 'item', 'type')) : redirect()->back();
+            return $data ? view('control-snitch::surat.ba_was3_view', compact('data', 'item', 'type')) : redirect()->back();
         } else {
-            return $data ? view('lapdu::surat.ba_was3_qna', compact('data', 'type')) : redirect()->back();
+            return $data ? view('control-snitch::surat.ba_was3_qna', compact('data', 'type')) : redirect()->back();
         }
     }
 
@@ -158,6 +158,6 @@ class InspectionController extends Controller
         //     }
         // }
 
-        return view('lapdu::surat.l_was2_create', compact('data', 'type'));
+        return view('control-snitch::surat.l_was2_create', compact('data', 'type'));
     }
 }

@@ -27,7 +27,7 @@ class ClarificationController extends Controller
 
         $type = 'klarifikasi';
 
-        return view('lapdu::klarifikasi.list', compact('new', 'advanced', 'type'));
+        return view('control-snitch::klarifikasi.list', compact('new', 'advanced', 'type'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ClarificationController extends Controller
         $data = Report::find($id);
         $type = 'klarifikasi';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::klarifikasi.view', compact('data', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::klarifikasi.view', compact('data', 'type', 'previousType')) : redirect()->back();
     }
 
     /**
@@ -73,7 +73,7 @@ class ClarificationController extends Controller
     {
         $data = Report::find($id);
         $type = 'klarifikasi';
-        return $data ? view('lapdu::klarifikasi.edit', compact('data', 'type')) : redirect()->back();
+        return $data ? view('control-snitch::klarifikasi.edit', compact('data', 'type')) : redirect()->back();
     }
 
     /**
@@ -137,7 +137,7 @@ class ClarificationController extends Controller
         $type = 'klarifikasi';
         $previousType = 'lapdu';
 
-        return $data ? view('lapdu::klarifikasi.proses', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::klarifikasi.proses', compact('data', 'institutions', 'type', 'previousType')) : redirect()->back();
     }
 
     public function warrant($id)
@@ -148,7 +148,7 @@ class ClarificationController extends Controller
             ->get();
         $type = 'klarifikasi';
         $previousType = 'lapdu';
-        return $data ? view('lapdu::surat.sp_was2_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
+        return $data ? view('control-snitch::surat.sp_was2_create', compact('data', 'users', 'type', 'previousType')) : redirect()->back();
     }
 
     public function interview($id, Request $request)
@@ -164,9 +164,9 @@ class ClarificationController extends Controller
                 }
             }
 
-            return $data ? view('lapdu::surat.ba_was2_view', compact('data', 'item', 'type')) : redirect()->back();
+            return $data ? view('control-snitch::surat.ba_was2_view', compact('data', 'item', 'type')) : redirect()->back();
         } else {
-            return $data ? view('lapdu::surat.ba_was2_qna', compact('data', 'type')) : redirect()->back();
+            return $data ? view('control-snitch::surat.ba_was2_qna', compact('data', 'type')) : redirect()->back();
         }
     }
 }

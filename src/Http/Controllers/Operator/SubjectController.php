@@ -38,7 +38,7 @@ class SubjectController extends Controller
         }
 
         $data = $data->get();
-        return view('lapdu::subyek.'.$type, compact('data'));
+        return view('control-snitch::subyek.'.$type, compact('data'));
     }
 
     /**
