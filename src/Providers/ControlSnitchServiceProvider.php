@@ -5,7 +5,7 @@ namespace Regchain\ControlSnitch\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 
-class LapduServiceProvider extends ServiceProvider
+class ControlSnitchServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
