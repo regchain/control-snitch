@@ -6,7 +6,7 @@ use Closure;
 use EKejaksaan\Core\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class LapduMiddleware
+class ControlSnitchMiddleware
 {
     /**
      * Handle an incoming request.
