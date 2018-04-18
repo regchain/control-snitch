@@ -1,8 +1,8 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Http\Controllers\Api;
+namespace Regchain\ControlSnitch\Http\Controllers\Api;
 
-use EKejaksaan\Lapdu\Models\Report;
+use Regchain\ControlSnitch\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;

@@ -1,6 +1,6 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Http\Middleware;
+namespace Regchain\ControlSnitch\Http\Middleware;
 
 use Closure;
 use EKejaksaan\Core\Models\User;

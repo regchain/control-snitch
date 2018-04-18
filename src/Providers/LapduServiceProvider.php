@@ -1,6 +1,6 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Providers;
+namespace Regchain\ControlSnitch\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;

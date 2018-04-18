@@ -1,6 +1,6 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Models;
+namespace Regchain\ControlSnitch\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;

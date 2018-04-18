@@ -1,8 +1,8 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Http\Controllers\Operator;
+namespace Regchain\ControlSnitch\Http\Controllers\Operator;
 
-use EKejaksaan\Lapdu\Models\Report;
+use Regchain\ControlSnitch\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

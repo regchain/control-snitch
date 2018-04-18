@@ -1,6 +1,6 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Http\Controllers\Operator;
+namespace Regchain\ControlSnitch\Http\Controllers\Operator;
 
 use EKejaksaan\Core\Models\Punishment;
 use App\Http\Controllers\Controller;

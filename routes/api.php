@@ -3,13 +3,13 @@
 Route::prefix('api')->group(function() {
     Route::prefix('lapdu')->as('api.lapdu.')->group(function () {
         Route::resources([
-            'report' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReportController',
-            'reporter' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReporterController',
-            'reported' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ReportedController',
-            'examiner' => 'EKejaksaan\Lapdu\Http\Controllers\Api\ExaminerController',
-            'qna' => 'EKejaksaan\Lapdu\Http\Controllers\Api\QnaController',
-            'inspection' => 'EKejaksaan\Lapdu\Http\Controllers\Api\InspectionController',
-            'punishment' => 'EKejaksaan\Lapdu\Http\Controllers\Api\PunishmentController',
+            'report' => 'Regchain\ControlSnitch\Http\Controllers\Api\ReportController',
+            'reporter' => 'Regchain\ControlSnitch\Http\Controllers\Api\ReporterController',
+            'reported' => 'Regchain\ControlSnitch\Http\Controllers\Api\ReportedController',
+            'examiner' => 'Regchain\ControlSnitch\Http\Controllers\Api\ExaminerController',
+            'qna' => 'Regchain\ControlSnitch\Http\Controllers\Api\QnaController',
+            'inspection' => 'Regchain\ControlSnitch\Http\Controllers\Api\InspectionController',
+            'punishment' => 'Regchain\ControlSnitch\Http\Controllers\Api\PunishmentController',
         ]);
     });
 });

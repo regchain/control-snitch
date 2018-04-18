@@ -1,10 +1,10 @@
 <?php
 
-namespace EKejaksaan\Lapdu\Http\Controllers\Operator;
+namespace Regchain\ControlSnitch\Http\Controllers\Operator;
 
 use EKejaksaan\Core\Models\Institution;
 use EKejaksaan\Core\Models\User;
-use EKejaksaan\Lapdu\Models\Report;
+use Regchain\ControlSnitch\Models\Report;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
