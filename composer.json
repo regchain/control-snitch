@@ -7,6 +7,10 @@
         {
             "name": "Willy Nugraha",
             "email": "willymiiee@gmail.com"
+        },
+        {
+            "name": "Tonny H. Soerojo",
+            "email": "tonny@soerojo.com"
         }
     ],
     "minimum-stability": "dev",
@@ -23,7 +27,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0"
+            "dev-master": "1.0.0-dev"
         }
     }
 }
